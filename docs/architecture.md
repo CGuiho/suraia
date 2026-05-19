@@ -591,7 +591,7 @@ suraira/
     react/
       src/
         Button.tsx
-        useSurairaButton.ts
+        useSuraiaButton.ts
 
     arrow/
       src/
@@ -683,7 +683,7 @@ data-sui-tone
 data-sui-size
 ```
 
-The `sui` prefix is short, readable, and tied to Suraira UI.
+The `sui` prefix is short, readable, and tied to Suraia UI.
 
 ---
 
