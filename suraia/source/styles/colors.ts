@@ -57,6 +57,39 @@ const glassDark = {
   9: 'rgba(0, 0, 0, 0.50)',
 } as const;
 
+export const light_0 = '#ffffff' as const
+export const light_1 = '#fafaff' as const
+export const light_2 = '#f6f6f8' as const
+export const light_3 = '#f0f0f2' as const
+export const light_4 = '#eeeeef' as const
+export const light_5 = '#e8e8ea' as const
+export const light_6 = '#dededf' as const
+export const light_7 = '#c4c4c6' as const
+export const light_8 = '#bebebf' as const
+export const light_9 = '#aeaeaf' as const
+
+export const dark_0 = '#6a6a6b' as const
+export const dark_1 = '#505256' as const
+export const dark_2 = '#4c4f56' as const
+export const dark_3 = '#373a40' as const
+export const dark_4 = '#2c2e33' as const
+export const dark_5 = '#25262b' as const
+export const dark_6 = '#1a1b1e' as const
+export const dark_7 = '#141517' as const
+export const dark_8 = '#101113' as const
+export const dark_9 = '#000000' as const
+
+export const brown_0 = '#f7f3f2' as const
+export const brown_1 = '#e8e6e5' as const
+export const brown_2 = '#d2c9c6' as const
+export const brown_3 = '#bdaaa4' as const
+export const brown_4 = '#ab9087' as const
+export const brown_5 = '#a17f74' as const
+export const brown_6 = '#9d766a' as const
+export const brown_7 = '#896459' as const
+export const brown_8 = '#7b594e' as const
+export const brown_9 = '#5d4037' as const
+
 /* Gray */
 const gray = {
   0: '#f8f9fa',
