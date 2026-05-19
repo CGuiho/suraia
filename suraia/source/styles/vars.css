@@ -4,15 +4,6 @@
  */
 
 :root {
-  --suraia-rem: calc(1rem / 16);
-  --suraia-to-rem: var(--suraia-rem);
-  --suraia-px-to-rem: var(--suraia-rem);
-
-  --suraia-z-mobile-bar: 10;
-  --suraia-z-header: 10;
-  --suraia-z-cookies: 20;
-  --suraia-z-notification: 30;
-
-  --suraia-panel-width-collapsed: 72px;
-  --suraia-panel-width-open: 240px;
+  /* Helper variable representing 1px as a rem unit for responsive scaling */
+  --suraia-px-to-rem: 0.0625rem;
 }
