@@ -35,6 +35,8 @@
 
   /* Typography */
   --suraia-font-family-sans: system-ui, -apple-system, sans-serif;
+  --suraia-font-family-sans-condensed: system-ui, -apple-system, sans-serif;
+  --suraia-font-family-sans-extra-condensed: system-ui, -apple-system, sans-serif;
   --suraia-font-family-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
   --suraia-font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
