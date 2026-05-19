@@ -55,46 +55,46 @@ html, body,
   user-select: inherit;
 }
 
-a {
+.suraia-root a {
   user-select: none !important;
   -webkit-tap-highlight-color: transparent !important;
   cursor: pointer !important;
   text-decoration: none;
 }
 
-button {
+.suraia-root button {
   cursor: pointer;
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
+.suraia-root article,
+.suraia-root aside,
+.suraia-root details,
+.suraia-root figcaption,
+.suraia-root figure,
+.suraia-root footer,
+.suraia-root header,
+.suraia-root hgroup,
+.suraia-root menu,
+.suraia-root nav,
+.suraia-root section {
   display: block;
 }
 
-body {
+.suraia-root body {
   line-height: 1.5;
 }
 
-ol,
-ul {
+.suraia-root ol,
+.suraia-root ul {
   list-style: none;
 }
 
-blockquote,
-q {
+.suraia-root blockquote,
+.suraia-root q {
   quotes: none;
 }
 
-table {
+.suraia-root table {
   border-collapse: collapse;
   border-spacing: 0;
 }
