@@ -1,46 +1,59 @@
 :root {
   /* Colors */
-  --suraia-color-primary: #2563eb;
-  --suraia-color-secondary: #475569;
+  --sui-color-primary: #2563eb;
+  --sui-color-on-primary: #ffffff;
+  --sui-color-secondary: #475569;
+  --sui-color-on-secondary: #ffffff;
 
   /* Spacing */
-  --suraia-space-0: 0px;
-  --suraia-space-1: 4px;
-  --suraia-space-2: 8px;
-  --suraia-space-3: 12px;
-  --suraia-space-4: 16px;
-  --suraia-space-5: 20px;
-  --suraia-space-6: 24px;
-  --suraia-space-8: 32px;
-  --suraia-space-10: 40px;
-  --suraia-space-12: 48px;
+  --sui-space-0: 0px;
+  --sui-space-1: 4px;
+  --sui-space-2: 8px;
+  --sui-space-3: 12px;
+  --sui-space-4: 16px;
+  --sui-space-5: 20px;
+  --sui-space-6: 24px;
+  --sui-space-8: 32px;
+  --sui-space-10: 40px;
+  --sui-space-12: 48px;
 
   /* Radius */
-  --suraia-radius-none: 0px;
-  --suraia-radius-xs: 2px;
-  --suraia-radius-sm: 4px;
-  --suraia-radius-md: 6px;
-  --suraia-radius-lg: 8px;
-  --suraia-radius-xl: 12px;
-  --suraia-radius-2xl: 16px;
-  --suraia-radius-full: 9999px;
+  --sui-radius-none: 0px;
+  --sui-radius-xs: 2px;
+  --sui-radius-sm: 4px;
+  --sui-radius-md: 6px;
+  --sui-radius-lg: 8px;
+  --sui-radius-xl: 12px;
+  --sui-radius-2xl: 16px;
+  --sui-radius-full: 9999px;
+
+  /* Borders */
+  --sui-border-none: 0px;
+  --sui-border-sm: 1px;
+  --sui-border-md: 2px;
+  --sui-border-lg: 3px;
 
   /* Typography */
-  --suraia-font-family-sans: system-ui, -apple-system, sans-serif;
-  --suraia-font-family-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
-  --suraia-font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --sui-font-family-sans: system-ui, -apple-system, sans-serif;
+  --sui-font-family-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
+  --sui-font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  --suraia-font-size-xxs: 10px;
-  --suraia-font-size-xs: 12px;
-  --suraia-font-size-sm: 14px;
-  --suraia-font-size-md: 16px;
-  --suraia-font-size-lg: 18px;
-  --suraia-font-size-xl: 20px;
-  --suraia-font-size-2xl: 24px;
+  --sui-font-size-xxs: 10px;
+  --sui-font-size-xs: 12px;
+  --sui-font-size-sm: 14px;
+  --sui-font-size-md: 16px;
+  --sui-font-size-lg: 18px;
+  --sui-font-size-xl: 20px;
+  --sui-font-size-2xl: 24px;
 
   /* Shadows */
-  --suraia-shadow-none: none;
-  --suraia-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --suraia-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  --suraia-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --sui-shadow-none: none;
+  --sui-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --sui-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --sui-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --sui-transition-duration-fast: 150ms;
+  --sui-transition-duration-normal: 250ms;
+  --sui-transition-easing-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
