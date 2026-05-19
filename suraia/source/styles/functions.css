@@ -8,4 +8,17 @@
      Usage: calc(PX_VALUE * var(--suraia-px-to-rem))
      Example: calc(16 * var(--suraia-px-to-rem)) -> 1rem */
   --suraia-px-to-rem: 0.0625rem;
+
+  /* Opacity levels for native CSS alpha manipulation.
+     Since CSS custom functions are not widely supported, use the `color-mix` function to apply these:
+     Example: color-mix(in srgb, var(--suraia-color-blue-5) var(--suraia-alpha-50), transparent) */
+  --suraia-alpha-10: 10%;
+  --suraia-alpha-20: 20%;
+  --suraia-alpha-30: 30%;
+  --suraia-alpha-40: 40%;
+  --suraia-alpha-50: 50%;
+  --suraia-alpha-60: 60%;
+  --suraia-alpha-70: 70%;
+  --suraia-alpha-80: 80%;
+  --suraia-alpha-90: 90%;
 }
