@@ -52,6 +52,25 @@
   --suraia-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   --suraia-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
 
+  /* Z-Index */
+  --suraia-z-index-1: 1;
+  --suraia-z-index-2: 2;
+  --suraia-z-index-3: 3;
+  --suraia-z-index-4: 4;
+  --suraia-z-index-5: 5;
+  --suraia-z-index-6: 6;
+  --suraia-z-index-7: 7;
+  --suraia-z-index-8: 8;
+  --suraia-z-index-9: 9;
+  --suraia-z-index-10: 10;
+  --suraia-z-index-mobile-bar: 10;
+  --suraia-z-index-header: 10;
+  --suraia-z-index-cookies: 20;
+  --suraia-z-index-notification: 30;
+  --suraia-z-index-overlay: 400;
+  --suraia-z-index-modal: 200;
+  --suraia-z-index-max: 9999;
+
   /* Transitions */
   --suraia-transition-duration-fast: 150ms;
   --suraia-transition-duration-normal: 250ms;
