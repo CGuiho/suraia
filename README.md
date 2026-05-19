@@ -1,4 +1,4 @@
-# GUIHO Suraira
+# 🌻 GUIHO Suraira
 
 **npm package:** `@guiho/suraira`
 
