@@ -2,25 +2,21 @@
  * @copyright Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO. All Rights Reserved.
  */
 
-const googleSansFlex = "'Google Sans Flex', sans-serif" as const;
-const firaSans = "'Fira Sans', sans-serif" as const;
-const firaSansCondensed = "'Fira Sans Condensed', sans-serif" as const;
-const firaSansExtraCondensed = "'Fira Sans Extra Condensed', sans-serif" as const;
-const jetbrainsMono = "'JetBrains Mono', monospace" as const;
-const cookie = "'Cookie', cursive" as const;
+const sans = "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" as const;
+const serif = "Georgia, Cambria, 'Times New Roman', Times, serif" as const;
+const mono = "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" as const;
 
 export const FONT = {
-  googleSansFlex,
-  firaSans,
-  firaSansCondensed,
-  firaSansExtraCondensed,
-  jetbrainsMono,
-  cookie,
+  sans,
+  serif,
+  mono,
+  googleSansFlex: `'Google Sans Flex', ${sans}` as const,
+  firaSans: `'Fira Sans', ${sans}` as const,
+  jetbrainsMono: `'JetBrains Mono', ${mono}` as const,
+  cookie: "'Cookie', cursive" as const,
 
-  fontLogo: googleSansFlex,
-  fontSans: firaSans,
-  fontSansCondensed: firaSansCondensed,
-  fontSansExtraCondensed: firaSansExtraCondensed,
-  fontMono: jetbrainsMono,
-  fontCursive: cookie,
+  fontLogo: `'Google Sans Flex', ${sans}` as const,
+  fontSans: `'Fira Sans', ${sans}` as const,
+  fontMono: `'JetBrains Mono', ${mono}` as const,
+  fontCursive: "'Cookie', cursive" as const,
 } as const;
