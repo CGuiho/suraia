@@ -7,7 +7,7 @@
 
 ## 1. Vision & Core Philosophy
 
-**GUIHO Suraia** (`@guiho/suraira`) is an AI-first UI blueprint library. It is designed to store neutral component structures, behavior logic, style tokens, and translation instructions that AI coding assistants use to generate custom components directly inside a target application.
+**GUIHO Suraia** (`@guiho/suraia`) is an AI-first UI blueprint library. It is designed to store neutral component structures, behavior logic, style tokens, and translation instructions that AI coding assistants use to generate custom components directly inside a target application.
 
 Instead of distributing pre-built framework components (e.g., React, Vue, or Svelte libraries), Suraia provides a universal baseline of component specifications, accessibility contracts, and interaction controllers.
 
@@ -39,7 +39,7 @@ Suraia is designed specifically for **AI-augmented development workflows**:
 └────────────────────────────────────────────────────────┘
 ```
 
-1. **DevDependency-Only:** The package `@guiho/suraira` is installed only as a `devDependency` in the developer's project.
+1. **DevDependency-Only:** The package `@guiho/suraia` is installed only as a `devDependency` in the developer's project.
 2. **Zero Production Runtime Footprint:** The library is never imported at runtime in production.
 3. **Local Code Generation:** All components, HTML anatomy, behavior logic, and CSS style sheets are compiled, generated, or copied directly into the target project's codebase. The project gains full ownership and customization of the generated code.
 
