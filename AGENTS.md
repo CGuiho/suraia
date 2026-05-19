@@ -4,6 +4,8 @@
 - `@guiho/suraia` (core) is an AI-first UI blueprint library. Component sources of truth (HTML anatomy, CSS styles, behavior controller JS, and accessibility specs) reside in `packages/core/src/components/`.
 - Framework adapters (React, ArrowJS, Remix, Web Components) are located under their respective packages in `packages/`.
 - Use Bun, not npm/pnpm/yarn. Install dependencies from the workspace root or individual packages using `bun install`.
+- Place all file exports at the top of the file, immediately following any imports, so it is easy to see what is exported at a glance.
+
 
 ## Commands
 
