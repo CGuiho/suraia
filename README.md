@@ -110,21 +110,21 @@ npm package:
 Recommended CSS prefix:
 
 ```txt
-sui
+suraia
 ```
 
 Examples:
 
 ```txt
-.sui-button
-.sui-card
-.sui-input
---sui-color-primary
---sui-radius-md
-data-sui-component
-data-sui-variant
-data-sui-tone
-data-sui-size
+.suraia-button
+.suraia-card
+.suraia-input
+--suraia-color-primary
+--suraia-radius-md
+data-suraia-component
+data-suraia-variant
+data-suraia-tone
+data-suraia-size
 ```
 
 ---
