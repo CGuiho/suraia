@@ -1,0 +1,25 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+/**
+ * CSS Custom Functions (CSS Values and Units Module Level 5 Draft)
+ */
+
+/* Converts pixels to responsive rem based on standard 16px baseline */
+@function --rem(--px) {
+  result: calc(var(--px) * 1rem / 16);
+}
+
+/* Calculates fluid typography/spacing using linear interpolation clamp */
+@function --fluid(--min-size, --max-size, --min-width: 320, --max-width: 1200) {
+  --slope: calc((var(--max-size) - var(--min-size)) / (var(--max-width) - var(--min-width)));
+  --y-intersection: calc(var(--min-size) - var(--slope) * var(--min-width));
+  
+  result: clamp(
+    calc(var(--min-size) * 1px),
+    calc(var(--y-intersection) * 1px + var(--slope) * 100vw),
+    calc(var(--max-size) * 1px)
+  );
+}
