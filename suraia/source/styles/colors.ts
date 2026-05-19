@@ -3,11 +3,34 @@
  * All Rights Reserved.
  */
 
-export const white = '#ffffff' as const;
-export const black = '#000000' as const;
+export {
+  white,
+  black,
+  glassLight,
+  glassDark,
+  gray,
+  blueGray,
+  red,
+  pink,
+  brightPink,
+  grape,
+  violet,
+  indigo,
+  blue,
+  blueBright,
+  cyan,
+  teal,
+  green,
+  lime,
+  yellow,
+  orange,
+};
+
+const white = '#ffffff' as const;
+const black = '#000000' as const;
 
 /* Glass Light */
-export const glassLight = {
+const glassLight = {
   0: 'rgba(255, 255, 255, 0.05)',
   1: 'rgba(255, 255, 255, 0.10)',
   2: 'rgba(255, 255, 255, 0.15)',
@@ -21,7 +44,7 @@ export const glassLight = {
 } as const;
 
 /* Glass Dark */
-export const glassDark = {
+const glassDark = {
   0: 'rgba(0, 0, 0, 0.05)',
   1: 'rgba(0, 0, 0, 0.10)',
   2: 'rgba(0, 0, 0, 0.15)',
@@ -34,9 +57,8 @@ export const glassDark = {
   9: 'rgba(0, 0, 0, 0.50)',
 } as const;
 
-
 /* Gray */
-export const gray = {
+const gray = {
   0: '#f8f9fa',
   1: '#f1f3f5',
   2: '#e9ecef',
@@ -50,7 +72,7 @@ export const gray = {
 } as const;
 
 /* Blue Gray */
-export const blueGray = {
+const blueGray = {
   0: '#f3f3fe',
   1: '#e4e6ed',
   2: '#c8cad3',
@@ -64,7 +86,7 @@ export const blueGray = {
 } as const;
 
 /* Red */
-export const red = {
+const red = {
   0: '#fff5f5',
   1: '#ffe3e3',
   2: '#ffc9c9',
@@ -78,7 +100,7 @@ export const red = {
 } as const;
 
 /* Pink */
-export const pink = {
+const pink = {
   0: '#fff0f6',
   1: '#ffdeeb',
   2: '#fcc2d7',
@@ -92,7 +114,7 @@ export const pink = {
 } as const;
 
 /* Bright Pink */
-export const brightPink = {
+const brightPink = {
   0: '#f0bbdd',
   1: '#ed9bcf',
   2: '#ec7cc3',
@@ -106,7 +128,7 @@ export const brightPink = {
 } as const;
 
 /* Grape */
-export const grape = {
+const grape = {
   0: '#f8f0fc',
   1: '#f3d9fa',
   2: '#eebefa',
@@ -120,7 +142,7 @@ export const grape = {
 } as const;
 
 /* Violet */
-export const violet = {
+const violet = {
   0: '#f3f0ff',
   1: '#e5dbff',
   2: '#d0bfff',
@@ -134,7 +156,7 @@ export const violet = {
 } as const;
 
 /* Indigo */
-export const indigo = {
+const indigo = {
   0: '#edf2ff',
   1: '#dbe4ff',
   2: '#bac8ff',
@@ -148,7 +170,7 @@ export const indigo = {
 } as const;
 
 /* Blue */
-export const blue = {
+const blue = {
   0: '#e7f5ff',
   1: '#d0ebff',
   2: '#a5d8ff',
@@ -162,7 +184,7 @@ export const blue = {
 } as const;
 
 /* Blue Bright */
-export const blueBright = {
+const blueBright = {
   0: '#e5f3ff',
   1: '#cde2ff',
   2: '#9ac2ff',
@@ -176,7 +198,7 @@ export const blueBright = {
 } as const;
 
 /* Cyan */
-export const cyan = {
+const cyan = {
   0: '#e3fafc',
   1: '#c5f6fa',
   2: '#99e9f2',
@@ -190,7 +212,7 @@ export const cyan = {
 } as const;
 
 /* Teal */
-export const teal = {
+const teal = {
   0: '#e6fcf5',
   1: '#c3fae8',
   2: '#96f2d7',
@@ -204,7 +226,7 @@ export const teal = {
 } as const;
 
 /* Green */
-export const green = {
+const green = {
   0: '#ebfbee',
   1: '#d3f9d8',
   2: '#b2f2bb',
@@ -218,7 +240,7 @@ export const green = {
 } as const;
 
 /* Lime */
-export const lime = {
+const lime = {
   0: '#f4fce3',
   1: '#e9fac8',
   2: '#d8f5a2',
@@ -232,7 +254,7 @@ export const lime = {
 } as const;
 
 /* Yellow */
-export const yellow = {
+const yellow = {
   0: '#fff9db',
   1: '#fff3bf',
   2: '#ffec99',
@@ -246,7 +268,7 @@ export const yellow = {
 } as const;
 
 /* Orange */
-export const orange = {
+const orange = {
   0: '#fff4e6',
   1: '#ffe8cc',
   2: '#ffd8a8',
