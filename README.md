@@ -1,10 +1,10 @@
 # 🌻 GUIHO Suraia
 
-**npm package:** `@guiho/suraira`
+**npm package:** `@guiho/suraia`
 
-suraira is an AI-first UI blueprint library.
+suraia is an AI-first UI blueprint library.
 
-It is not primarily a React component library, a Remix component library, an ArrowJS component library, or a Web Components library. Instead, suraira is designed to store neutral UI component knowledge that can be translated into multiple environments by humans, AI coding agents, or future code generators.
+It is not primarily a React component library, a Remix component library, an ArrowJS component library, or a Web Components library. Instead, suraia is designed to store neutral UI component knowledge that can be translated into multiple environments by humans, AI coding agents, or future code generators.
 
 The source of truth for each component should be its:
 
@@ -22,7 +22,7 @@ Framework-specific components are outputs, not the foundation.
 
 ## Vision
 
-suraira should make it possible to define a component once and use that knowledge across:
+suraia should make it possible to define a component once and use that knowledge across:
 
 - Vanilla HTML, CSS, and JavaScript
 - ArrowJS
@@ -45,7 +45,7 @@ ButtonArrow.ts
 ButtonWebComponent.ts
 ```
 
-suraira starts with a neutral blueprint:
+suraia starts with a neutral blueprint:
 
 ```txt
 button/
@@ -98,13 +98,13 @@ The core principle is:
 Project name:
 
 ```txt
-suraira
+suraia
 ```
 
 npm package:
 
 ```txt
-@guiho/suraira
+@guiho/suraia
 ```
 
 Recommended CSS prefix:
@@ -153,7 +153,7 @@ Create base tokens and visual profiles:
 
 ```txt
 tokens.css
-profiles/suraira-default/tokens.css
+profiles/suraia-default/tokens.css
 profiles/material-like/tokens.css
 profiles/apple-like/tokens.css
 ```
