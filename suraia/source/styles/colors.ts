@@ -7,28 +7,33 @@ export const white = '#ffffff' as const;
 export const black = '#000000' as const;
 
 /* Glass Light */
-export const glassLight0 = 'rgba(255, 255, 255, 0.05)' as const;
-export const glassLight1 = 'rgba(255, 255, 255, 0.10)' as const;
-export const glassLight2 = 'rgba(255, 255, 255, 0.15)' as const;
-export const glassLight3 = 'rgba(255, 255, 255, 0.20)' as const;
-export const glassLight4 = 'rgba(255, 255, 255, 0.25)' as const;
-export const glassLight5 = 'rgba(255, 255, 255, 0.30)' as const;
-export const glassLight6 = 'rgba(255, 255, 255, 0.35)' as const;
-export const glassLight7 = 'rgba(255, 255, 255, 0.40)' as const;
-export const glassLight8 = 'rgba(255, 255, 255, 0.45)' as const;
-export const glassLight9 = 'rgba(255, 255, 255, 0.50)' as const;
+export const glassLight = {
+  0: 'rgba(255, 255, 255, 0.05)',
+  1: 'rgba(255, 255, 255, 0.10)',
+  2: 'rgba(255, 255, 255, 0.15)',
+  3: 'rgba(255, 255, 255, 0.20)',
+  4: 'rgba(255, 255, 255, 0.25)',
+  5: 'rgba(255, 255, 255, 0.30)',
+  6: 'rgba(255, 255, 255, 0.35)',
+  7: 'rgba(255, 255, 255, 0.40)',
+  8: 'rgba(255, 255, 255, 0.45)',
+  9: 'rgba(255, 255, 255, 0.50)',
+} as const;
 
 /* Glass Dark */
-export const glassDark0 = 'rgba(0, 0, 0, 0.05)' as const;
-export const glassDark1 = 'rgba(0, 0, 0, 0.10)' as const;
-export const glassDark2 = 'rgba(0, 0, 0, 0.15)' as const;
-export const glassDark3 = 'rgba(0, 0, 0, 0.20)' as const;
-export const glassDark4 = 'rgba(0, 0, 0, 0.25)' as const;
-export const glassDark5 = 'rgba(0, 0, 0, 0.30)' as const;
-export const glassDark6 = 'rgba(0, 0, 0, 0.35)' as const;
-export const glassDark7 = 'rgba(0, 0, 0, 0.40)' as const;
-export const glassDark8 = 'rgba(0, 0, 0, 0.45)' as const;
-export const glassDark9 = 'rgba(0, 0, 0, 0.50)' as const;
+export const glassDark = {
+  0: 'rgba(0, 0, 0, 0.05)',
+  1: 'rgba(0, 0, 0, 0.10)',
+  2: 'rgba(0, 0, 0, 0.15)',
+  3: 'rgba(0, 0, 0, 0.20)',
+  4: 'rgba(0, 0, 0, 0.25)',
+  5: 'rgba(0, 0, 0, 0.30)',
+  6: 'rgba(0, 0, 0, 0.35)',
+  7: 'rgba(0, 0, 0, 0.40)',
+  8: 'rgba(0, 0, 0, 0.45)',
+  9: 'rgba(0, 0, 0, 0.50)',
+} as const;
+
 
 /* Gray */
 export const gray = {
