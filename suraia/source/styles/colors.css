@@ -31,6 +31,42 @@
   --suraia-color-glass-dark-8: rgba(0, 0, 0, 0.45);
   --suraia-color-glass-dark-9: rgba(0, 0, 0, 0.5);
 
+  /* Light */
+  --suraia-color-light-0: #ffffff;
+  --suraia-color-light-1: #fafaff;
+  --suraia-color-light-2: #f6f6f8;
+  --suraia-color-light-3: #f0f0f2;
+  --suraia-color-light-4: #eeeeef;
+  --suraia-color-light-5: #e8e8ea;
+  --suraia-color-light-6: #dededf;
+  --suraia-color-light-7: #c4c4c6;
+  --suraia-color-light-8: #bebebf;
+  --suraia-color-light-9: #aeaeaf;
+
+  /* Dark */
+  --suraia-color-dark-0: #6a6a6b;
+  --suraia-color-dark-1: #505256;
+  --suraia-color-dark-2: #4c4f56;
+  --suraia-color-dark-3: #373a40;
+  --suraia-color-dark-4: #2c2e33;
+  --suraia-color-dark-5: #25262b;
+  --suraia-color-dark-6: #1a1b1e;
+  --suraia-color-dark-7: #141517;
+  --suraia-color-dark-8: #101113;
+  --suraia-color-dark-9: #000000;
+
+  /* Brown */
+  --suraia-color-brown-0: #f7f3f2;
+  --suraia-color-brown-1: #e8e6e5;
+  --suraia-color-brown-2: #d2c9c6;
+  --suraia-color-brown-3: #bdaaa4;
+  --suraia-color-brown-4: #ab9087;
+  --suraia-color-brown-5: #a17f74;
+  --suraia-color-brown-6: #9d766a;
+  --suraia-color-brown-7: #896459;
+  --suraia-color-brown-8: #7b594e;
+  --suraia-color-brown-9: #5d4037;
+
   /* Gray */
   --suraia-color-gray-0: #f8f9fa;
   --suraia-color-gray-1: #f1f3f5;
