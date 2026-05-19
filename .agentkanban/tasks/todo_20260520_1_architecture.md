@@ -8,7 +8,7 @@ description: Checklist for writing the full library architecture specification, 
 
 # Iteration 1
 
-- [ ] Design structural tokens format and base JSON representation
+- [x] Design structural tokens format and base JSON representation
 - [ ] Define the component blueprint schema (JSON structure)
 - [ ] Establish design profile mapping (Apple, Material, Custom)
 - [ ] Detail framework-agnostic behavior controllers runtime design

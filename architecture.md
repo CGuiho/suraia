@@ -1,7 +1,7 @@
 # 🌻 suraia — Architecture Specification (AI-First UI Blueprint)
 
 **npm package:** `@guiho/suraia`  
-**CSS Prefix:** `sui-`
+**CSS Prefix:** `x40-sui-`
 
 ---
 
