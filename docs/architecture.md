@@ -1,8 +1,8 @@
-# suraira
+# suraia
 
-**npm package:** `@guiho/suraira`
+**npm package:** `@guiho/suraia`
 
-suraira is intended to be an AI-first UI blueprint library. It is not primarily a React component library, a Remix component library, an ArrowJS component library, or a Web Components library. Instead, suraira stores the neutral knowledge required to describe UI components in a way that humans and AI coding agents can translate into multiple environments.
+suraia is intended to be an AI-first UI blueprint library. It is not primarily a React component library, a Remix component library, an ArrowJS component library, or a Web Components library. Instead, suraia stores the neutral knowledge required to describe UI components in a way that humans and AI coding agents can translate into multiple environments.
 
 The core idea is simple:
 
@@ -12,7 +12,7 @@ The core idea is simple:
 
 ## 1. Vision
 
-suraira should allow a developer or AI assistant to use the same component knowledge in different environments:
+suraia should allow a developer or AI assistant to use the same component knowledge in different environments:
 
 - Vanilla HTML, CSS, and JavaScript
 - ArrowJS
@@ -37,7 +37,7 @@ The goal is not to create finished functional components immediately. The first 
 
 ## 2. Core philosophy
 
-suraira should be blueprint-first, not framework-first.
+suraia should be blueprint-first, not framework-first.
 
 Most UI libraries start with components such as:
 
@@ -47,7 +47,7 @@ ButtonVue.vue
 ButtonWebComponent.ts
 ```
 
-suraira should start with neutral component blueprints instead:
+suraia should start with neutral component blueprints instead:
 
 ```txt
 button/
@@ -69,7 +69,7 @@ Vanilla HTML example
 Web Component adapter
 ```
 
-This makes suraira portable, stable, and suitable for AI-assisted development.
+This makes suraia portable, stable, and suitable for AI-assisted development.
 
 ---
 
@@ -102,7 +102,7 @@ Remix 3 should be supported through platform-first code:
 - progressive enhancement
 - optional Remix-specific exports later
 
-Because Remix 3 is still evolving, suraira should avoid depending too strongly on unstable Remix internals at the beginning. The safest Remix target is a framework-compatible component shape built from regular markup, CSS imports, and standard JavaScript.
+Because Remix 3 is still evolving, suraia should avoid depending too strongly on unstable Remix internals at the beginning. The safest Remix target is a framework-compatible component shape built from regular markup, CSS imports, and standard JavaScript.
 
 ### 3.4 React
 
@@ -126,7 +126,7 @@ But it hides the internal structure from React, Remix, ArrowJS, and AI agents. S
 
 ## 4. System layers
 
-suraira should be organized into five main layers:
+suraia should be organized into five main layers:
 
 ```txt
 1. Design Profiles
@@ -148,7 +148,7 @@ profiles/
   apple-like/
   brutalist/
   enterprise/
-  suraira-default/
+  suraia-default/
 ```
 
 A profile is not a component. It is a design language.
@@ -417,8 +417,8 @@ AI guides should explain how to perform these translations reliably.
 ### 5.1 Vanilla usage
 
 ```html
-<link rel="stylesheet" href="/suraira/tokens.css" />
-<link rel="stylesheet" href="/suraira/button.css" />
+<link rel="stylesheet" href="/suraia/tokens.css" />
+<link rel="stylesheet" href="/suraia/button.css" />
 
 <button
   class="sui-button"
@@ -431,7 +431,7 @@ AI guides should explain how to perform these translations reliably.
 </button>
 
 <script type="module">
-  import { enhanceButton } from "/suraira/button.js";
+  import { enhanceButton } from "/suraia/button.js";
 
   document.querySelectorAll(".sui-button").forEach(button => {
     enhanceButton(button, {
@@ -447,8 +447,8 @@ AI guides should explain how to perform these translations reliably.
 
 ```tsx
 import { useEffect, useRef } from "react";
-import { enhanceButton } from "@guiho/suraira/button";
-import "@guiho/suraira/css/button.css";
+import { enhanceButton } from "@guiho/suraia/button";
+import "@guiho/suraia/css/button.css";
 
 export function Button({ children, onClick, variant = "filled" }) {
   const ref = useRef<HTMLButtonElement>(null);
@@ -482,7 +482,7 @@ export function Button({ children, onClick, variant = "filled" }) {
 
 ```ts
 import { html, component, onCleanup } from "@arrow-js/core";
-import { enhanceButton } from "@guiho/suraira/button";
+import { enhanceButton } from "@guiho/suraia/button";
 
 export const Button = component((props: {
   label: string;
@@ -522,7 +522,7 @@ The exact DOM reference pattern can be adjusted based on ArrowJS conventions. Th
 The first Remix target should stay conservative and platform-first:
 
 ```tsx
-import "@guiho/suraira/css/button.css";
+import "@guiho/suraia/css/button.css";
 
 export function Button({ children }) {
   return (
@@ -539,7 +539,7 @@ export function Button({ children }) {
 }
 ```
 
-Later, suraira can provide Remix-specific conventions once Remix 3 stabilizes.
+Later, suraia can provide Remix-specific conventions once Remix 3 stabilizes.
 
 ---
 
@@ -548,7 +548,7 @@ Later, suraira can provide Remix-specific conventions once Remix 3 stabilizes.
 Initial long-term structure:
 
 ```txt
-suraira/
+suraia/
   packages/
     core/
       src/
@@ -583,7 +583,7 @@ suraira/
             button.css
             profile.ai.md
 
-          suraira-default/
+          suraia-default/
             tokens.css
             button.css
             profile.ai.md
@@ -635,7 +635,7 @@ suraira/
 At the start, the repository can be much simpler:
 
 ```txt
-suraira/
+suraia/
   docs/
     architecture.md
   packages/
@@ -654,13 +654,13 @@ suraira/
 Project name:
 
 ```txt
-suraira
+suraia
 ```
 
 npm package:
 
 ```txt
-@guiho/suraira
+@guiho/suraia
 ```
 
 Recommended CSS prefix:
@@ -713,7 +713,7 @@ Create:
 
 ```txt
 tokens.css
-profiles/suraira-default/tokens.css
+profiles/suraia-default/tokens.css
 profiles/material-like/tokens.css
 profiles/apple-like/tokens.css
 ```
@@ -721,7 +721,7 @@ profiles/apple-like/tokens.css
 The goal is to support:
 
 ```html
-<body data-sui-profile="suraira-default">
+<body data-sui-profile="suraia-default">
 ```
 
 or:
@@ -764,13 +764,13 @@ Create:
 llms.txt
 llms-full.txt
 components/button.ai.md
-profiles/suraira-default/profile.ai.md
+profiles/suraia-default/profile.ai.md
 ```
 
 Then test with AI tools by asking:
 
 ```txt
-Using suraira, create a React Button component from the Button blueprint.
+Using suraia, create a React Button component from the Button blueprint.
 ```
 
 The expected output should be consistent, accessible, and aligned with the blueprint.
@@ -792,7 +792,7 @@ The generator should consume the component blueprint and produce target-specific
 
 ## 10. AI-first documentation plan
 
-suraira should include AI-readable documentation from the beginning.
+suraia should include AI-readable documentation from the beginning.
 
 Recommended docs:
 
@@ -809,9 +809,9 @@ Recommended docs:
 Initial `llms.txt` concept:
 
 ```md
-# suraira
+# suraia
 
-suraira is a component blueprint library, not a framework-specific component library.
+suraia is a component blueprint library, not a framework-specific component library.
 
 The source of truth for each component is:
 
@@ -891,7 +891,7 @@ Data attributes are easier for AI to understand, easier for CSS to target, and e
 
 ## 13. Initial conclusion
 
-suraira should be an AI-readable UI blueprint system.
+suraia should be an AI-readable UI blueprint system.
 
 The source of truth should be:
 
