@@ -2,7 +2,7 @@
  * @copyright Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO. All Rights Reserved.
  */
 
-export { fluid, rem }
+export { fluid, rem, alpha }
 
 /**
  * Converts pixels to responsive rem based on a standard 16px baseline.
@@ -33,3 +33,44 @@ function fluid(
   const yIntersection = minSize - slope * minWidth;
   return `clamp(${minSize}px, ${yIntersection}px + ${slope * 100}vw, ${maxSize}px)`;
 }
+
+/**
+ * Adjusts the alpha channel of an HSL or HSLA color string.
+ * 
+ * @param hslString The input HSL/HSLA color string (e.g. "hsl(210, 100%, 50%)")
+ * @param alphaValue The alpha opacity value to set (0 to 1)
+ * @returns The updated HSLA color string
+ */
+function alpha(hslString: string, alphaValue: number): string {
+  if (alphaValue < 0 || alphaValue > 1 || isNaN(alphaValue)) {
+    throw new Error(`Invalid alpha value: ${alphaValue}. Must be between 0 and 1.`);
+  }
+
+  const normalized = hslString.trim().toLowerCase();
+  
+  if (!normalized.startsWith('hsl')) {
+    throw new Error(`Color must be in HSL/HSLA format: "${hslString}"`);
+  }
+
+  const startIdx = normalized.indexOf('(');
+  const endIdx = normalized.lastIndexOf(')');
+  
+  if (startIdx === -1 || endIdx === -1 || endIdx <= startIdx) {
+    throw new Error(`Invalid HSL/HSLA syntax: "${hslString}"`);
+  }
+
+  const content = normalized.slice(startIdx + 1, endIdx);
+  const sanitized = content.replace(/[,/]/g, ' ');
+  const components = sanitized.split(/\s+/).filter(Boolean);
+  
+  if (components.length < 3 || components.length > 4) {
+    throw new Error(`Invalid number of HSL components: "${hslString}"`);
+  }
+
+  const h = components[0];
+  const s = components[1];
+  const l = components[2];
+
+  return `hsla(${h}, ${s}, ${l}, ${alphaValue})`;
+}
+
