@@ -1,0 +1,26 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+:root {
+  --suraia-font-google-sans-flex: 'Google Sans Flex', sans-serif;
+
+  --suraia-font-fira-sans: 'Fira Sans', sans-serif;
+  --suraia-font-fira-sans-condensed: 'Fira Sans Condensed', sans-serif;
+  --suraia-font-fira-sans-extra-condensed: 'Fira Sans Extra Condensed', sans-serif;
+
+  --suraia-font-jetbrains-mono: 'JetBrains Mono', monospace;
+
+  --suraia-font-cookie: 'Cookie', cursive;
+
+  --suraia-font-logo: var(--suraia-font-google-sans-flex);
+
+  --suraia-font-sans: var(--suraia-font-fira-sans);
+  --suraia-font-sans-condensed: var(--suraia-font-fira-sans-condensed);
+  --suraia-font-sans-extra-condensed: var(--suraia-font-fira-sans-extra-condensed);
+
+  --suraia-font-mono: var(--suraia-font-jetbrains-mono);
+
+  --suraia-font-cursive: var(--suraia-font-cookie);
+}
