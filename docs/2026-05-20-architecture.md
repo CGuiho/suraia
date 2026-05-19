@@ -1,4 +1,4 @@
-# 🌻 GUIHO Suraira — Architecture Specification (AI-First UI Blueprint)
+# 🌻 GUIHO Suraia — Architecture Specification (AI-First UI Blueprint)
 
 **Date:** 2026-05-20  
 **Status:** Approved  
@@ -7,9 +7,9 @@
 
 ## 1. Vision & Core Philosophy
 
-**GUIHO Suraira** (`@guiho/suraira`) is an AI-first UI blueprint library. It is designed to store neutral component structures, behavior logic, style tokens, and translation instructions that AI coding assistants use to generate custom components directly inside a target application.
+**GUIHO Suraia** (`@guiho/suraira`) is an AI-first UI blueprint library. It is designed to store neutral component structures, behavior logic, style tokens, and translation instructions that AI coding assistants use to generate custom components directly inside a target application.
 
-Instead of distributing pre-built framework components (e.g., React, Vue, or Svelte libraries), Suraira provides a universal baseline of component specifications, accessibility contracts, and interaction controllers.
+Instead of distributing pre-built framework components (e.g., React, Vue, or Svelte libraries), Suraia provides a universal baseline of component specifications, accessibility contracts, and interaction controllers.
 
 > **Key Rule:** Build the component knowledge once. Let AI compile/generate it everywhere.
 
@@ -18,11 +18,11 @@ Instead of distributing pre-built framework components (e.g., React, Vue, or Sve
 ## 2. Consumption Model (How it is Used)
 
 ### 2.1 Developer-Facing Lifecycle
-Suraira is designed specifically for **AI-augmented development workflows**:
+Suraia is designed specifically for **AI-augmented development workflows**:
 
 ```txt
 ┌────────────────────────────────────────────────────────┐
-│                   GUIHO Suraira                        │
+│                   GUIHO Suraia                        │
 │   (devDependency in target project's package.json)    │
 └──────────────────────────┬─────────────────────────────┘
                            │
@@ -47,7 +47,7 @@ Suraira is designed specifically for **AI-augmented development workflows**:
 
 ## 3. System Layers
 
-Suraira is split into four primary layers:
+Suraia is split into four primary layers:
 
 ```txt
 ┌────────────────────────────────────────────────────────┐
