@@ -100,6 +100,12 @@ suraia/
         apple-like.css     # Apple design override
         material-like.css  # Material design override
         suraia-default.css # Default visual system skin
+    styles/
+      colors.css / .ts     # General-purpose visual color palette
+      fonts.css / .ts      # Google Sans & Fira Sans typography configurations
+      vars.css / .ts       # Global layout units & base dimensions
+      reset.css            # Standard global HTML reset styles
+      general.css          # Core container settings & scrollbar rules
     components/
       button/
         button.json        # Button anatomy spec
