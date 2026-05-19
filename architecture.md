@@ -1,7 +1,7 @@
 # 🌻 suraia — Architecture Specification (AI-First UI Blueprint)
 
 **npm package:** `@guiho/suraia`  
-**CSS Prefix:** `x40-sui-`
+**CSS Prefix:** `x40-suraia-`
 
 ---
 
@@ -53,16 +53,16 @@ suraia is organized into four main layers:
 
 ### 3.1 Design Tokens & Themes
 * **Design Tokens (`tokens.json`):** Hierarchical tokens organized using the Design Tokens Community Group (DTCG) specification (defining colors, spacing, radius, fonts, shadows, transitions). This registry is the machine-readable truth of the styling system.
-* **Base Styles (`base-tokens.css`):** Maps the token registry to standard CSS custom properties under `:root` (e.g. `--sui-color-brand-primary`, `--sui-space-4`).
+* **Base Styles (`base-tokens.css`):** Maps the token registry to standard CSS custom properties under `:root` (e.g. `--suraia-color-brand-primary`, `--suraia-space-4`).
 * **Visual Profiles (`profiles/`):** Scoped sheets overriding base tokens to change the visual identity (e.g. Apple-like subtle borders, Material-like pill-shaped controls).
   ```html
-  <body data-sui-profile="apple-like">
+  <body data-suraia-profile="apple-like">
   ```
 
 ### 3.2 Component Blueprints (`source/components/`)
 Each component is represented by a folder containing:
 * **`[name].json` (Specification):** Machine-readable JSON describing structural slots, variants, states, attributes, and accessibility configurations.
-* **`[name].structure.html` (Markup Anatomy):** Fully semantic HTML skeleton showing standard classes and `data-sui-*` properties.
+* **`[name].structure.html` (Markup Anatomy):** Fully semantic HTML skeleton showing standard classes and `data-suraia-*` properties.
 * **`[name].css` (Layout Styles):** Theme-agnostic layout, flex/grid rules, and interactive transitions using CSS custom variables.
 
 ### 3.3 Behavior Controllers
@@ -115,9 +115,9 @@ suraia/
 
 * **Project Name:** `suraia`
 * **NPM Package:** `@guiho/suraia`
-* **CSS Variable Prefix:** `--sui-`
-* **CSS Classname Prefix:** `.sui-`
-* **HTML Component Attributes:** `data-sui-component`, `data-sui-variant`, `data-sui-tone`, `data-sui-size`, `data-sui-state`
+* **CSS Variable Prefix:** `--suraia-`
+* **CSS Classname Prefix:** `.suraia-`
+* **HTML Component Attributes:** `data-suraia-component`, `data-suraia-variant`, `data-suraia-tone`, `data-suraia-size`, `data-suraia-state`
 
 ---
 
