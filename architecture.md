@@ -22,6 +22,15 @@ suraia is designed specifically for **AI-augmented development workflows**:
 1. **Install as devDependency:** The package `@guiho/suraia` is added to a project's `devDependencies`. It is never bundled into production code.
 2. **Zero Production Runtime Footprint:** No runtime code from suraia is imported in the production application bundle.
 3. **Local Code Generation:** An AI assistant (or compiler tool) reads the blueprints, styling specs, behavior scripts, and translation prompts from the `@guiho/suraia` package. It compiles, generates, and places the final components (e.g., React JSX files, Svelte files, Vue SFCs) and custom stylesheet files directly into the target project's codebase. The developer has full local ownership and customization of the generated components.
+### 2.2 Styling Paradigms (CSS, JS/TS, and Hybrid)
+suraia supports three main styling approaches:
+
+1. **Full CSS Styling (Recommended):** The generated components reference standard CSS classes (e.g., `.suraia-button`) and CSS custom properties (e.g., `var(--suraia-color-primary)`). This is highly performant and allows instant theme/profile switching in the browser.
+2. **Full JavaScript/TypeScript Styling:** Tokens and layouts are imported and applied entirely as JS/TS objects (e.g., for inline styles, CSS-in-JS, or build-time styles). To support this, everything defined in suraia's CSS stylesheets is also exported as structured TypeScript constants.
+3. **Hybrid Styling:** A mix where structural layout is declared in static CSS sheets, while dynamic styles or layout behaviors are computed in JS/TS.
+
+> [!NOTE]
+> Base styles (like global resets, token custom variable fallbacks) remain CSS files that users import directly.
 
 ---
 
