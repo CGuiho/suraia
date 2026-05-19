@@ -1,0 +1,27 @@
+/*!
+* Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+* All Rights Reserved.
+*/
+
+:root,
+#guiho {
+  --google-sans-flex: 'Google Sans Flex', sans-serif;
+
+  --fira-sans: 'Fira Sans', sans-serif;
+  --fira-sans-condensed: 'Fira Sans Condensed', sans-serif;
+  --fira-sans-extra-condensed: 'Fira Sans Extra Condensed', sans-serif;
+
+  --jetbrains-mono: 'JetBrains Mono', monospace;
+
+  --cookie: 'Cookie', cursive;
+
+  --font-logo: var(--google-sans-flex);
+
+  --font-sans: var(--fira-sans);
+  --font-sans-condensed: var(--fira-sans-condensed);
+  --font-sans-extra-condensed: var(--fira-sans-extra-condensed);
+
+  --font-mono: var(--jetbrains-mono);
+
+  --font-cursive: var(--cookie);
+}
