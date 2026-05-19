@@ -50,34 +50,35 @@ function alpha(colorString: string, alphaValue: number): string {
 
   // 1. Handle Hex format
   if (normalized.startsWith('#')) {
-    const hex = normalized;
+    let hex = normalized;
     const alphaHex = Math.round(alphaValue * 255)
       .toString(16)
       .padStart(2, '0');
 
     if (hex.length === 4) {
-      // #rgb
+      // #rgb -> #rrggbb
       const r = hex[1];
       const g = hex[2];
       const b = hex[3];
-      return `#${r}${r}${g}${g}${b}${b}${alphaHex}`;
-    }
-    if (hex.length === 5) {
-      // #rgba
+      hex = `#${r}${r}${g}${g}${b}${b}`;
+    } else if (hex.length === 5) {
+      // #rgba -> #rrggbbaa
       const r = hex[1];
       const g = hex[2];
       const b = hex[3];
-      return `#${r}${r}${g}${g}${b}${b}${alphaHex}`;
+      const a = hex[4];
+      hex = `#${r}${r}${g}${g}${b}${b}${a}${a}`;
     }
+
     if (hex.length === 7) {
-      // #rrggbb
+      // #rrggbb -> #rrggbbaa
       return `${hex}${alphaHex}`;
     }
     if (hex.length === 9) {
-      // #rrggbbaa
+      // #rrggbbaa -> override alpha
       return `${hex.slice(0, 7)}${alphaHex}`;
     }
-    throw new Error(`Invalid HEX color length: "${colorString}"`);
+    throw new Error(`Invalid HEX color format: "${colorString}"`);
   }
 
   // 2. Handle RGB/RGBA formats
