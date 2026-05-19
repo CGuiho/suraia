@@ -1,27 +1,7 @@
 :root {
   /* Colors */
-  --sui-color-brand-primary: #2563eb;
-  --sui-color-brand-secondary: #475569;
-
-  --sui-color-feedback-danger: #dc2626;
-  --sui-color-feedback-success: #16a34a;
-  --sui-color-feedback-warning: #ea580c;
-  --sui-color-feedback-info: #0284c7;
-
-  --sui-color-neutral-white: #ffffff;
-  --sui-color-neutral-black: #000000;
-  --sui-color-neutral-transparent: transparent;
-
-  --sui-color-neutral-gray-50: #f8fafc;
-  --sui-color-neutral-gray-100: #f1f5f9;
-  --sui-color-neutral-gray-200: #e2e8f0;
-  --sui-color-neutral-gray-300: #cbd5e1;
-  --sui-color-neutral-gray-400: #94a3b8;
-  --sui-color-neutral-gray-500: #64748b;
-  --sui-color-neutral-gray-600: #475569;
-  --sui-color-neutral-gray-700: #334155;
-  --sui-color-neutral-gray-800: #1e293b;
-  --sui-color-neutral-gray-900: #0f172a;
+  --sui-color-primary: #2563eb;
+  --sui-color-secondary: #475569;
 
   /* Spacing */
   --sui-space-0: 0px;
@@ -47,8 +27,10 @@
 
   /* Typography */
   --sui-font-family-sans: system-ui, -apple-system, sans-serif;
+  --sui-font-family-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
   --sui-font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
+  --sui-font-size-xxs: 10px;
   --sui-font-size-xs: 12px;
   --sui-font-size-sm: 14px;
   --sui-font-size-md: 16px;
