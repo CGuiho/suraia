@@ -1,9 +1,0 @@
-/*!
- * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
- * All Rights Reserved.
- */
-
-:root {
-  /* Helper variable representing 1px as a rem unit for responsive scaling */
-  --suraia-px-to-rem: 0.0625rem;
-}
