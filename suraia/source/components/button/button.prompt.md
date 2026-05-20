@@ -3,11 +3,10 @@
 You are an expert front-end compiler agent. Your task is to translate the Suraia framework-agnostic **Button** blueprint specs into a production-grade, accessible framework component.
 
 ## 1. Input Specifications
-Before writing any code, review the following blueprint source files:
-- **Anatomy & Metadata:** [button.json](file:///c:/GUIHO/suraira/suraia/source/components/button/button.json)
-- **HTML Layout Skeleton:** [button.structure.html](file:///c:/GUIHO/suraira/suraia/source/components/button/button.structure.html)
-- **CSS Styles:** [button.css](file:///c:/GUIHO/suraira/suraia/source/components/button/button.css)
-- **Behavior Controller:** [button.ts](file:///c:/GUIHO/suraira/suraia/source/components/button/button.ts)
+- **Anatomy & Metadata:** [button.json](./button.json)
+- **HTML Layout Skeleton:** [button.structure.html](./button.structure.html)
+- **CSS Styles:** [button.css](./button.css)
+- **Behavior Controller:** [button.ts](./button.ts)
 
 ## 2. Component Contract
 The framework component (e.g. React, Svelte, Vue, or Web Component) must strictly fulfill these criteria:
