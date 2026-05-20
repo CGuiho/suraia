@@ -1,37 +1,66 @@
-# 🌻 Suraia Button Component Translation Guide
+# 🌻 Suraia Button Component
 
-You are an expert front-end compiler agent. Your task is to translate the Suraia framework-agnostic **Button** blueprint specs into a production-grade, accessible framework component.
+The **Button** component is an interactive element used to trigger actions, submit forms, or open overlays. This document serves as the single source of truth describing when to use, what is expected from framework adapters, and how the blueprint files are structured.
 
-## 1. Input Specifications
-- **Anatomy & Metadata:** [button.json](./button.json)
-- **HTML Layout Skeleton:** [button.structure.html](./button.structure.html)
-- **CSS Styles:** [button.css](./button.css)
-- **Behavior Controller:** [button.ts](./button.ts)
+## 1. Overview & Usage Guidelines
 
-## 2. Component Contract
-The framework component (e.g. React, Svelte, Vue, or Web Component) must strictly fulfill these criteria:
+### When to Use
+- **Trigger Actions:** Initiating a process (e.g., "Save", "Delete", "Send").
+- **Form Submission:** Submitting forms using `type="submit"`.
+- **Dismissal/Confirmation:** Primary action triggers in dialogs and modals.
 
-### 2.1 Markup & Hierarchy
-- The component must mount a native `<button>` element with the CSS class `.suraia-button`.
-- Maps parameters directly to HTML data attributes:
-  - `variant` -> `data-suraia-variant` (one of `"filled"`, `"outlined"`, `"ghost"`)
-  - `size` -> `data-suraia-size` (one of `"sm"`, `"md"`, `"lg"`)
-  - `tone` -> `data-suraia-tone` (one of `"primary"`, `"secondary"`)
-- The active states must map to `data-suraia-state`:
-  - When `loading` is true, `data-suraia-state` should include `"loading"`.
-  - When `disabled` is true, `data-suraia-state` should include `"disabled"`.
-- Support the following child slots matching the structure in `button.structure.html`:
-  - `startIcon`: Rendered inside `.suraia-button-icon-start`. Only render this wrapper if the icon is provided.
-  - `default`: Rendered inside `.suraia-button-label`.
-  - `endIcon`: Rendered inside `.suraia-button-icon-end`. Only render this wrapper if the icon is provided.
+### When NOT to Use
+- **Navigation to Pages:** If clicking the element navigates the user to another page/URL, generate an anchor `<a>` element styled as a button instead of a `<button>`.
+- **Inline Text Links:** Use standard link text anchors within body text.
 
-### 2.2 Behavior & Accessibility
-- The component should utilize the `ButtonController` logic under the hood to manage interaction and disabled/loading guard checks.
-- When `disabled` is true:
-  - Set the native `disabled` attribute on the `<button>`.
-  - Add `aria-disabled="true"` to the element.
-- When `loading` is true:
-  - Set the native `disabled` attribute (or prevent event propagation).
-  - Add `aria-busy="true"` to the element.
-  - Render the `.suraia-button-spinner` element inside the button.
-- Ensure proper forwarding of native attributes (e.g., `type`, `form`, `tabIndex`, and standard mouse/keyboard event listeners).
+---
+
+## 2. Component Architecture Blueprint
+
+The Button component is defined by the following core files in this directory:
+- [button.json](./button.json): Machine-readable metadata spec listing variants, states, slots, attributes, and accessibility contracts.
+- [button.structure.html](./button.structure.html): Reference HTML layout structure defining slot positions and class names.
+- [button.css](./button.css): Base layout styles (flex alignment, padding, focus state overrides, and state-based styling).
+- [button.ts](./button.ts): Framework-agnostic interaction state behavior controller (`ButtonController`).
+
+---
+
+## 3. Visual Attributes & Variants
+
+Every framework implementation must support these visual properties mapping directly to DOM attributes:
+
+### 3.1 Variants (data-suraia-variant)
+- **`filled` (Default):** High emphasis action. Uses full color background.
+- **`outlined`:** Medium emphasis action. Uses borders and transparent backgrounds.
+- **`ghost`:** Low emphasis action. Transparent background and borders, only showing backgrounds on hover.
+
+### 3.2 Sizes (data-suraia-size)
+- **`sm`:** Small height (32px / 2rem), compact padding and typography.
+- **`md` (Default):** Medium height (40px / 2.5rem).
+- **`lg`:** Large height (48px / 3rem), spacious layout for primary CTAs.
+
+### 3.3 Tones (data-suraia-tone)
+- **`primary` (Default):** Brand primary visual style.
+- **`secondary`:** Brand secondary/neutral visual style.
+
+---
+
+## 4. Behavior, Accessibility, & States
+
+To ensure accessible and consistent execution across frameworks, adapters must enforce the following behavior contract:
+
+### 4.1 Disabled State
+- **CSS Trigger:** Element gets `data-suraia-state="disabled"` or the native `disabled` attribute.
+- **DOM Attribute:** Apply the native `disabled` attribute and `aria-disabled="true"`.
+- **Interaction:** Disable all hover effects and mouse/keyboard event triggering.
+
+### 4.2 Loading State
+- **CSS Trigger:** Element gets `data-suraia-state="loading"`.
+- **Visuals:** Displays the `.suraia-button-spinner` element inside the button.
+- **DOM Attribute:** Apply `aria-busy="true"` and the native `disabled` attribute to prevent user inputs during execution.
+- **Interaction:** Disable mouse and keyboard event propagation.
+
+### 4.3 Accessibility Contract
+- **Semantic Tag:** Render a native `<button>` element (unless rendering an anchor-based link variant).
+- **Keyboard Activation:** Must support trigger activation via `Enter` and `Space` keys (inherent to native buttons, must be manually handled if custom/polyfilled elements are utilized).
+- **Controller Logic:** Framework adapter logic should delegate interaction checking to `ButtonController` in `button.ts`.
