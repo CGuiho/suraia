@@ -1,0 +1,48 @@
+{
+  "name": "Button",
+  "description": "An interactive button component supporting variants, sizes, tones, icons, loading state, and accessibility support.",
+  "variants": {
+    "variant": {
+      "options": ["filled", "outlined", "ghost"],
+      "default": "filled"
+    },
+    "size": {
+      "options": ["sm", "md", "lg"],
+      "default": "md"
+    },
+    "tone": {
+      "options": ["primary", "secondary"],
+      "default": "primary"
+    }
+  },
+  "states": ["disabled", "loading"],
+  "slots": {
+    "default": "The label content of the button.",
+    "startIcon": "An optional icon rendered before the label.",
+    "endIcon": "An optional icon rendered after the label."
+  },
+  "attributes": {
+    "type": {
+      "type": "string",
+      "enum": ["button", "submit", "reset"],
+      "default": "button"
+    }
+  },
+  "accessibility": {
+    "role": "button",
+    "keyboardNavigation": [
+      {
+        "key": "Enter",
+        "description": "Triggers the click event."
+      },
+      {
+        "key": "Space",
+        "description": "Triggers the click event."
+      }
+    ],
+    "aria": {
+      "aria-disabled": "Reflects the disabled state when true.",
+      "aria-busy": "Reflects the loading state when true."
+    }
+  }
+}
