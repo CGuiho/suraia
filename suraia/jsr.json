@@ -1,7 +1,7 @@
 {
-  "name": "@guiho/mirror",
-  "version": "3.0.0",
-  "exports": "./source/guiho-mirror.ts",
+  "name": "@guiho/suraia",
+  "version": "0.0.0",
+  "exports": "./source/guiho-suraia.ts",
   "publish": {
     "include": [
       "source/**/*.ts",
