@@ -1,0 +1,164 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-input-container {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--suraia-space-1);
+  font-family: var(--suraia-font-family-sans);
+  position: relative;
+  width: 100%;
+}
+
+.suraia-input-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-style: solid;
+  border-width: var(--suraia-border-none);
+  transition: border-color var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out),
+              box-shadow var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-input-field {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font: inherit;
+  color: inherit;
+  width: 100%;
+}
+
+.suraia-input-label {
+  position: absolute;
+  left: 0;
+  pointer-events: none;
+  transition: transform var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out),
+              font-size var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out),
+              color var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+/* Sizing variations */
+.suraia-input-container[data-suraia-size="sm"] {
+  --suraia-input-height: calc(32 * var(--suraia-px-to-rem));
+  --suraia-input-padding: var(--suraia-space-2);
+  --suraia-input-font-size: var(--suraia-font-size-xs);
+  --suraia-input-radius: var(--suraia-radius-sm);
+}
+
+.suraia-input-container[data-suraia-size="md"] {
+  --suraia-input-height: calc(40 * var(--suraia-px-to-rem));
+  --suraia-input-padding: var(--suraia-space-3);
+  --suraia-input-font-size: var(--suraia-font-size-sm);
+  --suraia-input-radius: var(--suraia-radius-md);
+}
+
+.suraia-input-container[data-suraia-size="lg"] {
+  --suraia-input-height: calc(48 * var(--suraia-px-to-rem));
+  --suraia-input-padding: var(--suraia-space-4);
+  --suraia-input-font-size: var(--suraia-font-size-md);
+  --suraia-input-radius: var(--suraia-radius-lg);
+}
+
+/* Apply sizes to wrapper & field */
+.suraia-input-wrapper {
+  height: var(--suraia-input-height);
+  border-radius: var(--suraia-input-radius);
+  font-size: var(--suraia-input-font-size);
+}
+
+.suraia-input-field {
+  padding: 0 var(--suraia-input-padding);
+  height: 100%;
+}
+
+/* Label placement */
+.suraia-input-label {
+  margin-left: var(--suraia-input-padding);
+  font-size: var(--suraia-input-font-size);
+  color: var(--suraia-color-secondary);
+}
+
+/* Start/End icon padding adjustment */
+.suraia-input-icon-start {
+  padding-left: var(--suraia-input-padding);
+  display: flex;
+  align-items: center;
+}
+.suraia-input-icon-start + .suraia-input-field {
+  padding-left: var(--suraia-space-2);
+}
+.suraia-input-icon-start ~ .suraia-input-label {
+  margin-left: calc(var(--suraia-input-padding) + var(--suraia-space-6));
+}
+
+.suraia-input-icon-end {
+  padding-right: var(--suraia-input-padding);
+  display: flex;
+  align-items: center;
+}
+
+/* Outlined Variant */
+.suraia-input-container[data-suraia-variant="outlined"] .suraia-input-wrapper {
+  border-width: var(--suraia-border-sm);
+  border-color: var(--suraia-color-secondary);
+  background-color: transparent;
+}
+
+/* Filled Variant */
+.suraia-input-container[data-suraia-variant="filled"] .suraia-input-wrapper {
+  background-color: color-mix(in srgb, var(--suraia-color-secondary) var(--suraia-alpha-5), transparent);
+  border-bottom: var(--suraia-border-sm) solid var(--suraia-color-secondary);
+}
+
+/* Flushed Variant */
+.suraia-input-container[data-suraia-variant="flushed"] .suraia-input-wrapper {
+  border-bottom: var(--suraia-border-sm) solid var(--suraia-color-secondary);
+  border-radius: 0;
+}
+
+/* Floating Label Logic */
+.suraia-input-field:focus ~ .suraia-input-label,
+.suraia-input-field:not(:placeholder-shown) ~ .suraia-input-label {
+  transform: translateY(-55%) scale(0.85);
+  transform-origin: left top;
+  color: var(--suraia-color-primary);
+  background-color: var(--suraia-color-on-primary);
+  padding: 0 var(--suraia-space-1);
+}
+
+/* Focus States */
+.suraia-input-container:focus-within .suraia-input-wrapper {
+  border-color: var(--suraia-color-primary);
+  box-shadow: 0 0 0 calc(1 * var(--suraia-px-to-rem)) var(--suraia-color-primary);
+}
+
+/* Invalid State */
+.suraia-input-container[data-suraia-state~="invalid"] .suraia-input-wrapper {
+  border-color: #ef4444;
+}
+.suraia-input-container[data-suraia-state~="invalid"] .suraia-input-label {
+  color: #ef4444;
+}
+.suraia-input-container[data-suraia-state~="invalid"] .suraia-input-helper {
+  color: #ef4444;
+}
+
+/* Disabled State */
+.suraia-input-container[data-suraia-state~="disabled"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.suraia-input-container[data-suraia-state~="disabled"] .suraia-input-field {
+  pointer-events: none;
+}
+
+/* Helper Text */
+.suraia-input-helper {
+  font-size: var(--suraia-font-size-xxs);
+  color: var(--suraia-color-secondary);
+  padding: 0 var(--suraia-space-1);
+}
