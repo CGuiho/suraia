@@ -1,0 +1,38 @@
+<!-- Suraia Input Component Blueprint -->
+<div
+  class="suraia-input-container"
+  data-suraia-component="Input"
+  data-suraia-variant="outlined"
+  data-suraia-size="md"
+  data-suraia-state=""
+>
+  <!-- Input Wrapper containing icons, input element, and label -->
+  <div class="suraia-input-wrapper">
+    <!-- Start Icon slot -->
+    <span class="suraia-input-icon-start">
+      <slot name="startIcon"></slot>
+    </span>
+
+    <!-- Native input element -->
+    <input
+      type="text"
+      class="suraia-input-field"
+      placeholder=" "
+    />
+
+    <!-- Label slot (can be styled as floating label using CSS peer selectors) -->
+    <label class="suraia-input-label">
+      <slot name="label"></slot>
+    </label>
+
+    <!-- End Icon slot -->
+    <span class="suraia-input-icon-end">
+      <slot name="endIcon"></slot>
+    </span>
+  </div>
+
+  <!-- Helper Text slot -->
+  <div class="suraia-input-helper">
+    <slot name="helperText"></slot>
+  </div>
+</div>
