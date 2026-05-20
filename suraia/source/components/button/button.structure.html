@@ -1,0 +1,28 @@
+<!-- Suraia Button Component Blueprint -->
+<button
+  type="button"
+  class="suraia-button"
+  data-suraia-component="Button"
+  data-suraia-variant="filled"
+  data-suraia-tone="primary"
+  data-suraia-size="md"
+  data-suraia-state=""
+>
+  <!-- Loading spinner (only displayed when data-suraia-state contains "loading") -->
+  <span class="suraia-button-spinner" aria-hidden="true"></span>
+
+  <!-- Start Icon slot -->
+  <span class="suraia-button-icon-start">
+    <slot name="startIcon"></slot>
+  </span>
+
+  <!-- Default Label slot -->
+  <span class="suraia-button-label">
+    <slot></slot>
+  </span>
+
+  <!-- End Icon slot -->
+  <span class="suraia-button-icon-end">
+    <slot name="endIcon"></slot>
+  </span>
+</button>
