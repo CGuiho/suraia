@@ -1,0 +1,38 @@
+{
+  "name": "Input",
+  "description": "An interactive text input component supporting sizes, visual variants, floating labels, validation states, and disabled states.",
+  "variants": {
+    "variant": {
+      "options": ["filled", "outlined", "flushed"],
+      "default": "outlined"
+    },
+    "size": {
+      "options": ["sm", "md", "lg"],
+      "default": "md"
+    }
+  },
+  "states": ["disabled", "invalid", "required", "focused"],
+  "slots": {
+    "label": "The label describing the input value.",
+    "startIcon": "An optional icon rendered before the input field.",
+    "endIcon": "An optional icon rendered after the input field.",
+    "helperText": "Additional description or error message below the input field."
+  },
+  "attributes": {
+    "type": {
+      "type": "string",
+      "enum": ["text", "email", "password", "number", "tel", "url"],
+      "default": "text"
+    },
+    "placeholder": {
+      "type": "string"
+    }
+  },
+  "accessibility": {
+    "role": "textbox",
+    "aria": {
+      "aria-invalid": "Reflects the invalid state when true.",
+      "aria-describedby": "Links the input to the helperText/error block."
+    }
+  }
+}
