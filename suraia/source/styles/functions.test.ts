@@ -1,5 +1,5 @@
 import { expect, test, describe } from "bun:test";
-import { alpha, rem, fluid } from "./functions.ts";
+import { alpha, rem, fluid } from "./functions";
 
 describe("functions.ts", () => {
   describe("alpha", () => {
