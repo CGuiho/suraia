@@ -1,0 +1,144 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--suraia-space-2);
+  font-family: var(--suraia-font-family-sans);
+  font-weight: 500;
+  border-style: solid;
+  border-width: var(--suraia-border-none);
+  border-color: transparent;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  position: relative;
+  transition: background-color var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out),
+              border-color var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out),
+              opacity var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out),
+              box-shadow var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+/* Sizing variants */
+.suraia-button[data-suraia-size="sm"] {
+  height: calc(32 * var(--suraia-px-to-rem));
+  padding-left: var(--suraia-space-3);
+  padding-right: var(--suraia-space-3);
+  font-size: var(--suraia-font-size-xs);
+  border-radius: var(--suraia-radius-sm);
+}
+
+.suraia-button[data-suraia-size="md"] {
+  height: calc(40 * var(--suraia-px-to-rem));
+  padding-left: var(--suraia-space-4);
+  padding-right: var(--suraia-space-4);
+  font-size: var(--suraia-font-size-sm);
+  border-radius: var(--suraia-radius-md);
+}
+
+.suraia-button[data-suraia-size="lg"] {
+  height: calc(48 * var(--suraia-px-to-rem));
+  padding-left: var(--suraia-space-6);
+  padding-right: var(--suraia-space-6);
+  font-size: var(--suraia-font-size-md);
+  border-radius: var(--suraia-radius-lg);
+}
+
+/* Filled Variant */
+.suraia-button[data-suraia-variant="filled"][data-suraia-tone="primary"] {
+  background-color: var(--suraia-color-primary);
+  color: var(--suraia-color-on-primary);
+}
+.suraia-button[data-suraia-variant="filled"][data-suraia-tone="primary"]:hover:not([disabled]) {
+  background-color: color-mix(in srgb, var(--suraia-color-primary) 85%, black);
+}
+.suraia-button[data-suraia-variant="filled"][data-suraia-tone="secondary"] {
+  background-color: var(--suraia-color-secondary);
+  color: var(--suraia-color-on-secondary);
+}
+.suraia-button[data-suraia-variant="filled"][data-suraia-tone="secondary"]:hover:not([disabled]) {
+  background-color: color-mix(in srgb, var(--suraia-color-secondary) 85%, black);
+}
+
+/* Outlined Variant */
+.suraia-button[data-suraia-variant="outlined"] {
+  background-color: transparent;
+  border-width: var(--suraia-border-sm);
+}
+.suraia-button[data-suraia-variant="outlined"][data-suraia-tone="primary"] {
+  border-color: var(--suraia-color-primary);
+  color: var(--suraia-color-primary);
+}
+.suraia-button[data-suraia-variant="outlined"][data-suraia-tone="primary"]:hover:not([disabled]) {
+  background-color: color-mix(in srgb, var(--suraia-color-primary) var(--suraia-alpha-10), transparent);
+}
+.suraia-button[data-suraia-variant="outlined"][data-suraia-tone="secondary"] {
+  border-color: var(--suraia-color-secondary);
+  color: var(--suraia-color-secondary);
+}
+.suraia-button[data-suraia-variant="outlined"][data-suraia-tone="secondary"]:hover:not([disabled]) {
+  background-color: color-mix(in srgb, var(--suraia-color-secondary) var(--suraia-alpha-10), transparent);
+}
+
+/* Ghost Variant */
+.suraia-button[data-suraia-variant="ghost"] {
+  background-color: transparent;
+}
+.suraia-button[data-suraia-variant="ghost"][data-suraia-tone="primary"] {
+  color: var(--suraia-color-primary);
+}
+.suraia-button[data-suraia-variant="ghost"][data-suraia-tone="primary"]:hover:not([disabled]) {
+  background-color: color-mix(in srgb, var(--suraia-color-primary) var(--suraia-alpha-10), transparent);
+}
+.suraia-button[data-suraia-variant="ghost"][data-suraia-tone="secondary"] {
+  color: var(--suraia-color-secondary);
+}
+.suraia-button[data-suraia-variant="ghost"][data-suraia-tone="secondary"]:hover:not([disabled]) {
+  background-color: color-mix(in srgb, var(--suraia-color-secondary) var(--suraia-alpha-10), transparent);
+}
+
+/* Focus Indicator */
+.suraia-button:focus-visible {
+  outline: calc(2 * var(--suraia-px-to-rem)) solid var(--suraia-color-primary);
+  outline-offset: calc(2 * var(--suraia-px-to-rem));
+}
+
+/* Disabled State */
+.suraia-button[disabled],
+.suraia-button[data-suraia-state~="disabled"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Loading State & Spinner */
+.suraia-button[data-suraia-state~="loading"] {
+  cursor: default;
+  pointer-events: none;
+}
+
+.suraia-button-spinner {
+  display: none;
+  width: 1em;
+  height: 1em;
+  border: calc(2 * var(--suraia-px-to-rem)) solid currentColor;
+  border-right-color: transparent;
+  border-radius: var(--suraia-radius-full);
+  animation: suraia-spin 0.75s linear infinite;
+}
+
+.suraia-button[data-suraia-state~="loading"] .suraia-button-spinner {
+  display: inline-block;
+}
+
+@keyframes suraia-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
