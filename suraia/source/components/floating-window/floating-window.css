@@ -1,0 +1,61 @@
+/*! Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO. All Rights Reserved. */
+
+.suraia-root .suraia-floating-window {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  width: var(--suraia-floating-window-width, 360px);
+  height: var(--suraia-floating-window-height, 240px);
+  border: 1px solid var(--suraia-color-border);
+  border-radius: var(--suraia-radius-lg);
+  background: var(--suraia-color-surface);
+  box-shadow: var(--suraia-shadow-xl);
+  transform: translate(var(--suraia-floating-window-x, 0), var(--suraia-floating-window-y, 0));
+  overflow: hidden;
+  z-index: var(--suraia-z-index-popover);
+}
+
+.suraia-root .suraia-floating-window[data-suraia-opened="false"] {
+  display: none;
+}
+
+.suraia-root .suraia-floating-window-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--suraia-space-3);
+  padding: var(--suraia-space-3);
+  border-block-end: 1px solid var(--suraia-color-border);
+  cursor: move;
+}
+
+.suraia-root .suraia-floating-window-title {
+  margin: 0;
+  font-size: var(--suraia-font-size-md);
+}
+
+.suraia-root .suraia-floating-window-close {
+  border: 0;
+  background: transparent;
+  color: var(--suraia-color-text-muted);
+  cursor: pointer;
+}
+
+.suraia-root .suraia-floating-window-body {
+  min-height: 0;
+  overflow: auto;
+  padding: var(--suraia-space-4);
+}
+
+.suraia-root .suraia-floating-window-resize {
+  position: absolute;
+  inset-inline-end: 0;
+  inset-block-end: 0;
+  width: 1rem;
+  height: 1rem;
+  border: 0;
+  background: linear-gradient(135deg, transparent 50%, var(--suraia-color-border) 50%);
+  cursor: nwse-resize;
+}
