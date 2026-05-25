@@ -65,12 +65,29 @@ Build artifacts (`library/`, `bundle/`, `bin/`) are gitignored.
 - `reset.css` is scoped to `.suraia-root` — not global.
 - See `docs/llm-instructions.md` for color opacity guidelines.
 
+
+## Document Writing
+
+- Create every new project document inside `docs/` unless the user explicitly asks for a different path.
+- Prefix every new document filename with the current ISO date: `YYYY-MM-DD`.
+- Use lowercase filenames with words separated by hyphens.
+- Use this naming pattern: `docs/YYYY-MM-DD-document-name.md`.
+- Example: `docs/2026-05-25-website-creation-process.md`.
+- Do not create new root-level Markdown documents for project docs; root Markdown is reserved for established repository files such as `AGENTS.md`, `README.md`, `COMPANY.md`, `BUSINESS_MODEL.md`, `MEMORY.md`, and `NOTES.md`.
+
 ## Memory
 
 - `MEMORY.md` is the persistent memory file for this repository. Agents must read it at the start of every session and update it at the end of every session.
 - Use `MEMORY.md` to record decisions, preferences, ongoing work, client context, project state, and any information that should survive between sessions.
 - Do not rely on conversation history alone for context; always persist important facts to `MEMORY.md`.
 - When updating, append new entries with a timestamp and keep the file organized by topic sections. Do not delete prior entries unless explicitly asked.
+
+## Notes
+
+- `NOTES.md` is the repository note file. When the user asks to note something, retrieve a note, check notes, or review notes, use `NOTES.md`.
+- Notes should include metadata such as creation date, last updated date, review deadline, status, topic, source/context, and related URLs when available.
+- Keep notes concise and easy to scan; tables are acceptable for review queues and URL lists.
+- Do not store long-term project decisions only in `NOTES.md`; persist durable decisions in `MEMORY.md` too.
 
 ## Project Management with ClickUp
 
