@@ -1,0 +1,61 @@
+{
+  "name": "Indicator",
+  "description": "Renders a small status badge or dot on the corner of another element.",
+  "tier": 1,
+  "dependencies": [],
+  "variants": {
+    "position": {
+      "options": ["top-start", "top-end", "bottom-start", "bottom-end", "top-center", "bottom-center", "middle-start", "middle-end"],
+      "default": "top-end"
+    },
+    "size": {
+      "options": ["xs", "sm", "md", "lg", "xl"],
+      "default": "md"
+    }
+  },
+  "states": [
+    "disabled",
+    "processing"
+  ],
+  "slots": {
+    "default": "The target element to be decorated by the indicator.",
+    "label": "Optional label (e.g. number) to render inside the indicator dot."
+  },
+  "attributes": {
+    "color": {
+      "type": "string",
+      "default": "primary",
+      "description": "Background color of the indicator dot."
+    },
+    "radius": {
+      "type": "string",
+      "default": "full",
+      "description": "Border radius key."
+    },
+    "disabled": {
+      "type": "boolean",
+      "default": false,
+      "description": "Hides the indicator when true."
+    },
+    "processing": {
+      "type": "boolean",
+      "default": false,
+      "description": "Adds a pulse animation to the indicator."
+    },
+    "inline": {
+      "type": "boolean",
+      "default": true,
+      "description": "Wraps the content in a relative container."
+    },
+    "withBorder": {
+      "type": "boolean",
+      "default": false,
+      "description": "Renders a border around indicator to contrast with target background."
+    }
+  },
+  "accessibility": {
+    "role": "status",
+    "keyboardNavigation": [],
+    "aria": {}
+  }
+}
