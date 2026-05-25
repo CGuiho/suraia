@@ -1,0 +1,143 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-tabs {
+  font-family: var(--suraia-font-family-sans);
+}
+
+.suraia-tabs[data-suraia-orientation="vertical"] {
+  display: flex;
+}
+
+/* Tab list */
+.suraia-tabs-list {
+  display: flex;
+  gap: 0;
+}
+
+.suraia-tabs[data-suraia-orientation="horizontal"] .suraia-tabs-list {
+  flex-direction: row;
+}
+
+.suraia-tabs[data-suraia-orientation="vertical"] .suraia-tabs-list {
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+/* Tab trigger */
+.suraia-tabs-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--suraia-space-2);
+  padding: var(--suraia-space-2) var(--suraia-space-3);
+  font-family: var(--suraia-font-family-sans);
+  font-size: var(--suraia-font-size-sm);
+  font-weight: var(--suraia-font-weight-medium);
+  color: var(--suraia-surface-foreground-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out),
+              background-color var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-tabs-tab:hover {
+  color: var(--suraia-surface-foreground);
+}
+
+/* Default variant — underline */
+.suraia-tabs[data-suraia-variant="default"] .suraia-tabs-list {
+  border-bottom: 2px solid var(--suraia-surface-border);
+}
+
+.suraia-tabs[data-suraia-variant="default"][data-suraia-orientation="vertical"] .suraia-tabs-list {
+  border-bottom: none;
+  border-right: 2px solid var(--suraia-surface-border);
+}
+
+.suraia-tabs[data-suraia-variant="default"] .suraia-tabs-tab {
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+}
+
+.suraia-tabs[data-suraia-variant="default"] .suraia-tabs-tab[aria-selected="true"] {
+  color: var(--suraia-color-primary);
+  border-bottom-color: var(--suraia-color-primary);
+}
+
+.suraia-tabs[data-suraia-variant="default"][data-suraia-orientation="vertical"] .suraia-tabs-tab {
+  border-bottom: none;
+  border-right: 2px solid transparent;
+  margin-right: -2px;
+  margin-bottom: 0;
+}
+
+.suraia-tabs[data-suraia-variant="default"][data-suraia-orientation="vertical"] .suraia-tabs-tab[aria-selected="true"] {
+  border-right-color: var(--suraia-color-primary);
+}
+
+/* Outline variant */
+.suraia-tabs[data-suraia-variant="outline"] .suraia-tabs-list {
+  border-bottom: 1px solid var(--suraia-surface-border);
+}
+
+.suraia-tabs[data-suraia-variant="outline"] .suraia-tabs-tab {
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: var(--suraia-radius-sm) var(--suraia-radius-sm) 0 0;
+  margin-bottom: -1px;
+}
+
+.suraia-tabs[data-suraia-variant="outline"] .suraia-tabs-tab[aria-selected="true"] {
+  color: var(--suraia-surface-foreground);
+  background-color: var(--suraia-surface-0);
+  border-color: var(--suraia-surface-border);
+  border-bottom-color: var(--suraia-surface-0);
+}
+
+/* Pills variant */
+.suraia-tabs[data-suraia-variant="pills"] .suraia-tabs-tab {
+  border-radius: var(--suraia-radius-md);
+}
+
+.suraia-tabs[data-suraia-variant="pills"] .suraia-tabs-tab[aria-selected="true"] {
+  color: var(--suraia-color-on-primary);
+  background-color: var(--suraia-color-primary);
+}
+
+.suraia-tabs[data-suraia-variant="pills"] .suraia-tabs-tab:hover:not([aria-selected="true"]) {
+  background-color: var(--suraia-surface-hover);
+}
+
+/* Focus */
+.suraia-tabs-tab:focus-visible {
+  outline: var(--suraia-focus-ring-width) solid var(--suraia-focus-ring-color);
+  outline-offset: var(--suraia-focus-ring-offset);
+}
+
+/* Disabled */
+.suraia-tabs-tab[disabled] {
+  opacity: var(--suraia-opacity-disabled);
+  cursor: var(--suraia-cursor-disabled);
+}
+
+/* Panels */
+.suraia-tabs-panel {
+  padding: var(--suraia-space-3) 0;
+  font-size: var(--suraia-font-size-sm);
+  color: var(--suraia-surface-foreground);
+  line-height: var(--suraia-line-height-md);
+}
+
+.suraia-tabs[data-suraia-orientation="vertical"] .suraia-tabs-panel {
+  flex: 1;
+  padding: 0 var(--suraia-space-3);
+}
+
+.suraia-tabs-panel[hidden] {
+  display: none;
+}
