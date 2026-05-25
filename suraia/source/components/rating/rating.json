@@ -1,0 +1,38 @@
+{
+  "name": "Rating",
+  "description": "A rating component to display and gather user rating feedback.",
+  "tier": 2,
+  "dependencies": [],
+  "variants": {
+    "size": {
+      "options": ["xs", "sm", "md", "lg", "xl"],
+      "default": "md"
+    }
+  },
+  "states": ["disabled", "read-only"],
+  "slots": {
+    "symbol": "Custom rating symbol (defaults to Star)."
+  },
+  "attributes": {
+    "value": { "type": "number", "default": 0 },
+    "count": { "type": "number", "default": 5 },
+    "fractions": { "type": "number", "default": 1 },
+    "color": { "type": "string", "default": "yellow" },
+    "readOnly": { "type": "boolean", "default": false },
+    "highlightSelectedOnly": { "type": "boolean", "default": false }
+  },
+  "accessibility": {
+    "role": "radiogroup",
+    "keyboardNavigation": [
+      { "key": "ArrowRight/ArrowUp", "description": "Increases value by fraction." },
+      { "key": "ArrowLeft/ArrowDown", "description": "Decreases value by fraction." },
+      { "key": "Home", "description": "Sets value to 0." },
+      { "key": "End", "description": "Sets value to maximum count." }
+    ],
+    "aria": {
+      "aria-valuenow": "Current rating value.",
+      "aria-valuemin": "0",
+      "aria-valuemax": "Rating count."
+    }
+  }
+}
