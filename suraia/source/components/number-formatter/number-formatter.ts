@@ -98,6 +98,8 @@ class NumberFormatterController {
     }
     if (this.maximumFractionDigits !== undefined) {
       options.maximumFractionDigits = this.maximumFractionDigits;
+    } else if (this.type === 'percent') {
+      options.maximumFractionDigits = 20;
     }
 
     const formatted = new Intl.NumberFormat(this.locale, options).format(this.value);
