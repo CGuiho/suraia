@@ -1,0 +1,34 @@
+<!-- Suraia Combobox Component Blueprint -->
+<div class="suraia-input-wrapper" data-suraia-component="Combobox" data-suraia-size="sm" data-suraia-variant="default">
+  <label class="suraia-input-label" for="combobox-input">Label</label>
+  <p class="suraia-input-description">Description text.</p>
+
+  <div class="suraia-combobox-wrapper">
+    <div class="suraia-input-container">
+      <input
+        type="text"
+        class="suraia-input suraia-combobox-input"
+        id="combobox-input"
+        role="combobox"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        aria-controls="combobox-listbox"
+        aria-autocomplete="list"
+        placeholder="Search or select..."
+      />
+      <div class="suraia-input-section" data-position="right">
+        <span class="suraia-combobox-chevron" aria-hidden="true"></span>
+      </div>
+    </div>
+
+    <!-- Dropdown -->
+    <div class="suraia-combobox-dropdown" id="combobox-listbox" role="listbox" hidden>
+      <div class="suraia-combobox-option" role="option" data-suraia-selected aria-selected="true">Option 1</div>
+      <div class="suraia-combobox-option" role="option">Option 2</div>
+      <div class="suraia-combobox-option" role="option" data-suraia-disabled aria-disabled="true">Option 3 (disabled)</div>
+      <div class="suraia-combobox-nothing">Nothing found</div>
+    </div>
+  </div>
+
+  <p class="suraia-input-error">Error message.</p>
+</div>
