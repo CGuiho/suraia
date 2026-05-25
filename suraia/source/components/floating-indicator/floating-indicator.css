@@ -1,0 +1,29 @@
+/*! Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO. All Rights Reserved. */
+
+.suraia-root .suraia-floating-indicator-root {
+  position: relative;
+  display: inline-flex;
+  gap: var(--suraia-space-1);
+}
+
+.suraia-root .suraia-floating-indicator-target {
+  position: relative;
+  z-index: 1;
+}
+
+.suraia-root .suraia-floating-indicator {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  width: var(--suraia-floating-indicator-width, 0);
+  height: var(--suraia-floating-indicator-height, 0);
+  border-radius: var(--suraia-radius-md);
+  background: color-mix(in srgb, var(--suraia-color-primary) var(--suraia-alpha-15), transparent);
+  opacity: var(--suraia-floating-indicator-opacity, 0);
+  transform: translate(var(--suraia-floating-indicator-x, 0), var(--suraia-floating-indicator-y, 0));
+  transition:
+    transform var(--suraia-floating-indicator-duration, 150ms) var(--suraia-transition-ease),
+    width var(--suraia-floating-indicator-duration, 150ms) var(--suraia-transition-ease),
+    height var(--suraia-floating-indicator-duration, 150ms) var(--suraia-transition-ease),
+    opacity var(--suraia-floating-indicator-duration, 150ms) var(--suraia-transition-ease);
+}
