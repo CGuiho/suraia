@@ -1,0 +1,101 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-timeline {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.suraia-timeline-item {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  padding-bottom: var(--suraia-space-6, 24px);
+}
+
+.suraia-timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.suraia-timeline-item::before {
+  content: "";
+  position: absolute;
+  top: var(--suraia-timeline-bullet-size, 20px);
+  bottom: 0;
+  width: 2px;
+  background-color: var(--suraia-surface-border, #dee2e6);
+  z-index: 1;
+}
+
+.suraia-timeline[data-suraia-align="left"] .suraia-timeline-item::before {
+  left: calc(var(--suraia-timeline-bullet-size, 20px) / 2 - 1px);
+}
+
+.suraia-timeline[data-suraia-align="right"] .suraia-timeline-item::before {
+  right: calc(var(--suraia-timeline-bullet-size, 20px) / 2 - 1px);
+}
+
+.suraia-timeline-item:last-child::before {
+  display: none;
+}
+
+.suraia-timeline-item[data-suraia-line-active="true"]::before {
+  background-color: var(--suraia-color-primary, #7950f2);
+}
+
+.suraia-timeline-bullet {
+  width: var(--suraia-timeline-bullet-size, 20px);
+  height: var(--suraia-timeline-bullet-size, 20px);
+  border-radius: 50%;
+  background-color: var(--suraia-color-bg-card, #ffffff);
+  border: 2px solid var(--suraia-surface-border, #dee2e6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--suraia-font-size-xs, 0.75rem);
+  color: var(--suraia-color-text-secondary, #868e96);
+  z-index: 2;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.suraia-timeline-item[data-suraia-active="true"] .suraia-timeline-bullet {
+  border-color: var(--suraia-color-primary, #7950f2);
+  color: var(--suraia-color-primary, #7950f2);
+}
+
+.suraia-timeline-content {
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+
+.suraia-timeline[data-suraia-align="left"] .suraia-timeline-content {
+  padding-left: var(--suraia-space-4, 16px);
+  text-align: left;
+}
+
+.suraia-timeline[data-suraia-align="right"] {
+  flex-direction: row-reverse;
+}
+
+.suraia-timeline[data-suraia-align="right"] .suraia-timeline-content {
+  padding-right: var(--suraia-space-4, 16px);
+  text-align: right;
+}
+
+.suraia-timeline-title {
+  font-family: inherit;
+  font-size: var(--suraia-font-size-sm, 0.875rem);
+  font-weight: var(--suraia-font-weight-bold, 700);
+  color: var(--suraia-color-text-primary, #212529);
+  margin-bottom: var(--suraia-space-1, 4px);
+}
+
+.suraia-timeline-body {
+  font-family: inherit;
+  font-size: var(--suraia-font-size-sm, 0.875rem);
+  color: var(--suraia-color-text-secondary, #495057);
+}
