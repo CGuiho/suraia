@@ -1,0 +1,73 @@
+/*! Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO. All Rights Reserved. */
+
+.suraia-root .suraia-stepper {
+  display: grid;
+  gap: var(--suraia-space-5);
+}
+
+.suraia-root .suraia-stepper-steps {
+  display: flex;
+  align-items: stretch;
+}
+
+.suraia-root .suraia-stepper[data-suraia-orientation="vertical"] .suraia-stepper-steps {
+  flex-direction: column;
+}
+
+.suraia-root .suraia-stepper-step {
+  display: flex;
+  align-items: center;
+  gap: var(--suraia-space-3);
+  border: 0;
+  background: transparent;
+  color: var(--suraia-color-text-muted);
+  text-align: start;
+  cursor: pointer;
+}
+
+.suraia-root .suraia-stepper-step-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--suraia-radius-full);
+  border: 1px solid var(--suraia-color-border);
+  background: var(--suraia-color-surface);
+  color: inherit;
+  font-weight: var(--suraia-font-weight-semibold);
+}
+
+.suraia-root .suraia-stepper-step[data-suraia-state="active"] {
+  color: var(--suraia-color-primary);
+}
+
+.suraia-root .suraia-stepper-step[data-suraia-state="completed"] .suraia-stepper-step-icon {
+  background: var(--suraia-color-primary);
+  border-color: var(--suraia-color-primary);
+  color: var(--suraia-color-white);
+}
+
+.suraia-root .suraia-stepper-step-label {
+  display: block;
+  font-weight: var(--suraia-font-weight-medium);
+}
+
+.suraia-root .suraia-stepper-step-description {
+  display: block;
+  font-size: var(--suraia-font-size-xs);
+  color: var(--suraia-color-text-muted);
+}
+
+.suraia-root .suraia-stepper-separator {
+  flex: 1;
+  align-self: center;
+  min-width: 2rem;
+  height: 1px;
+  background: var(--suraia-color-border);
+}
+
+.suraia-root .suraia-stepper-content {
+  padding: var(--suraia-space-4);
+  border: 1px solid var(--suraia-color-border);
+  border-radius: var(--suraia-radius-md);
+}
