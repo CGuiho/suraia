@@ -34,7 +34,7 @@ describe("TypographyController", () => {
     expect(attrs["data-suraia-variant"]).toBe("h3");
     expect(attrs["data-suraia-weight"]).toBe("bold");
     expect(attrs["data-suraia-align"]).toBe("center");
-    expect(ctrl.getStyle().color).toBe("#ff0000");
+    expect(ctrl.getStyle()["color"]).toBe("#ff0000");
   });
 
   test("setters updates correctly", () => {
