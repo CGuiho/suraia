@@ -73,7 +73,7 @@ Build artifacts (`library/`, `bundle/`, `bin/`) are gitignored.
 - Use lowercase filenames with words separated by hyphens.
 - Use this naming pattern: `docs/YYYY-MM-DD-document-name.md`.
 - Example: `docs/2026-05-25-website-creation-process.md`.
-- Do not create new root-level Markdown documents for project docs; root Markdown is reserved for established repository files such as `AGENTS.md`, `README.md`, `COMPANY.md`, `BUSINESS_MODEL.md`, `MEMORY.md`, and `NOTES.md`.
+- Do not create new root-level Markdown documents for project docs; root Markdown is reserved for established repository files such as `AGENTS.md`, `README.md`, `MEMORY.md`, `NOTES.md`, etc.
 
 ## Memory
 
