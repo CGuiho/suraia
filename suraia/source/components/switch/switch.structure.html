@@ -1,0 +1,17 @@
+<!-- Suraia Switch Component Blueprint -->
+<div
+  class="suraia-switch-wrapper"
+  data-suraia-component="Switch"
+  data-suraia-size="sm"
+>
+  <input type="checkbox" class="suraia-switch-input" id="switch-id" role="switch" />
+  <label class="suraia-switch-track" for="switch-id">
+    <span class="suraia-switch-thumb">
+      <slot name="thumbIcon"></slot>
+    </span>
+  </label>
+  <div class="suraia-switch-body">
+    <label class="suraia-switch-label" for="switch-id">Switch label</label>
+    <p class="suraia-switch-description">Optional description</p>
+  </div>
+</div>
