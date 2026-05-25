@@ -1,0 +1,42 @@
+{
+  "name": "Scroller",
+  "description": "A controlled horizontal or vertical scrolling frame with previous and next controls.",
+  "tier": 2,
+  "dependencies": ["ActionIcon"],
+  "variants": {
+    "orientation": {
+      "options": ["horizontal", "vertical"],
+      "default": "horizontal"
+    }
+  },
+  "states": ["can-scroll-forward", "can-scroll-backward", "disabled"],
+  "slots": {
+    "controls": "Previous and next scroll buttons.",
+    "viewport": "Clipped scrollable region.",
+    "track": "Content track translated by the controller."
+  },
+  "attributes": {
+    "itemCount": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of items in the track."
+    },
+    "visibleCount": {
+      "type": "number",
+      "default": 1,
+      "description": "Number of items visible at once."
+    },
+    "loop": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether controls wrap at boundaries."
+    }
+  },
+  "accessibility": {
+    "role": "group",
+    "keyboardNavigation": ["Previous and next controls are standard buttons"],
+    "aria": {
+      "aria-label": "Provide a label describing the scrolled content."
+    }
+  }
+}
