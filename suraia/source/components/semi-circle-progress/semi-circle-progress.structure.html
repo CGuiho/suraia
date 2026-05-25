@@ -1,0 +1,37 @@
+<!-- Suraia SemiCircleProgress Component Blueprint -->
+<div
+  class="suraia-semi-circle-progress"
+  data-suraia-component="SemiCircleProgress"
+  role="progressbar"
+  aria-valuenow="40"
+  aria-valuemin="0"
+  aria-valuemax="100"
+  style="width: 200px; height: 108px;"
+>
+  <svg class="suraia-semi-circle-progress-svg" width="200" height="108" viewBox="0 0 200 108">
+    <!-- Background track path -->
+    <path
+      class="suraia-semi-circle-progress-track"
+      d="M 8 192 A 92 92 0 0 1 192 192"
+      stroke-width="16"
+      fill="none"
+    />
+
+    <!-- Animated value path -->
+    <path
+      class="suraia-semi-circle-progress-bar"
+      data-suraia-color="primary"
+      d="M 8 192 A 92 92 0 0 1 192 192"
+      stroke-width="16"
+      stroke-dasharray="289.027 289.027"
+      stroke-dashoffset="173.416"
+      stroke-linecap="round"
+      fill="none"
+    />
+  </svg>
+
+  <!-- Central label slot positioned at the bottom center -->
+  <div class="suraia-semi-circle-progress-label">
+    40%
+  </div>
+</div>
