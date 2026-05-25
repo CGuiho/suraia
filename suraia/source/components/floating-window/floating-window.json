@@ -1,0 +1,39 @@
+{
+  "name": "FloatingWindow",
+  "description": "A movable and resizable floating panel for detached utility surfaces.",
+  "tier": 2,
+  "dependencies": ["Paper", "CloseButton"],
+  "variants": {},
+  "states": ["opened", "closed", "dragging", "resizing"],
+  "slots": {
+    "header": "Drag handle and optional title.",
+    "close": "Close action.",
+    "body": "Window content.",
+    "resizeHandle": "Optional resize affordance."
+  },
+  "attributes": {
+    "opened": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the floating window is visible."
+    },
+    "position": {
+      "type": "object",
+      "default": { "x": 0, "y": 0 },
+      "description": "Window offset from its containing block."
+    },
+    "size": {
+      "type": "object",
+      "default": { "width": 360, "height": 240 },
+      "description": "Window dimensions in pixels."
+    }
+  },
+  "accessibility": {
+    "role": "dialog",
+    "keyboardNavigation": ["Escape closes the window when configured", "Tab moves through focusable window content"],
+    "aria": {
+      "aria-modal": "Use false unless the floating window blocks background interaction.",
+      "aria-labelledby": "Connect to title when present."
+    }
+  }
+}
