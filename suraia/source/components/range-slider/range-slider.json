@@ -1,0 +1,44 @@
+{
+  "name": "RangeSlider",
+  "description": "A range slider input for selecting a numeric range between min and max values.",
+  "tier": 2,
+  "dependencies": [],
+  "variants": {
+    "size": {
+      "options": ["xs", "sm", "md", "lg", "xl"],
+      "default": "md"
+    }
+  },
+  "states": ["disabled"],
+  "slots": {
+    "thumb": "Custom thumb content.",
+    "label": "Tooltip label above the thumbs.",
+    "mark": "Scale mark labels."
+  },
+  "attributes": {
+    "min": { "type": "number", "default": 0 },
+    "max": { "type": "number", "default": 100 },
+    "step": { "type": "number", "default": 1 },
+    "value": { "type": "array", "default": [20, 80] },
+    "color": { "type": "string", "default": "primary" },
+    "radius": { "type": "string", "default": "full" },
+    "showLabelOnHover": { "type": "boolean", "default": true },
+    "labelAlwaysOn": { "type": "boolean", "default": false },
+    "marks": { "type": "array", "description": "Array of {value, label} for scale marks." }
+  },
+  "accessibility": {
+    "role": "group",
+    "keyboardNavigation": [
+      { "key": "ArrowRight/ArrowUp", "description": "Increases active thumb value by step." },
+      { "key": "ArrowLeft/ArrowDown", "description": "Decreases active thumb value by step." },
+      { "key": "Home", "description": "Sets active thumb to minimum allowable value." },
+      { "key": "End", "description": "Sets active thumb to maximum allowable value." }
+    ],
+    "aria": {
+      "aria-valuenow": "Current value of the focused thumb.",
+      "aria-valuemin": "Minimum value of the focused thumb.",
+      "aria-valuemax": "Maximum value of the focused thumb.",
+      "aria-orientation": "horizontal"
+    }
+  }
+}
