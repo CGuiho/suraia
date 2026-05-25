@@ -1,0 +1,39 @@
+{
+  "name": "Stepper",
+  "description": "A multi-step progress and navigation component for workflows.",
+  "tier": 2,
+  "dependencies": ["Button"],
+  "variants": {
+    "orientation": {
+      "options": ["horizontal", "vertical"],
+      "default": "horizontal"
+    }
+  },
+  "states": ["inactive", "active", "completed", "disabled"],
+  "slots": {
+    "step": "Individual step trigger with icon, label, and description.",
+    "separator": "Connector line between steps.",
+    "content": "Panel content for the active step.",
+    "completed": "Optional completed-state content."
+  },
+  "attributes": {
+    "active": {
+      "type": "number",
+      "default": 0,
+      "description": "Active step index."
+    },
+    "allowStepSelect": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether users can activate steps directly."
+    }
+  },
+  "accessibility": {
+    "role": "tablist",
+    "keyboardNavigation": ["Arrow keys move between step triggers", "Home moves to first step", "End moves to last step"],
+    "aria": {
+      "aria-selected": "Set on active step trigger.",
+      "aria-controls": "Connect each trigger to its panel."
+    }
+  }
+}
