@@ -1,0 +1,121 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-accordion {
+  font-family: var(--suraia-font-family-sans);
+}
+
+/* Default variant — underlined items */
+.suraia-accordion[data-suraia-variant="default"] .suraia-accordion-item {
+  border-bottom: 1px solid var(--suraia-surface-border);
+}
+
+/* Contained variant — bordered container */
+.suraia-accordion[data-suraia-variant="contained"] {
+  border: 1px solid var(--suraia-surface-border);
+  border-radius: var(--suraia-radius-md);
+  overflow: hidden;
+}
+
+.suraia-accordion[data-suraia-variant="contained"] .suraia-accordion-item + .suraia-accordion-item {
+  border-top: 1px solid var(--suraia-surface-border);
+}
+
+/* Filled variant — active item has background */
+.suraia-accordion[data-suraia-variant="filled"] .suraia-accordion-item[data-suraia-active] {
+  background-color: var(--suraia-surface-1);
+  border-radius: var(--suraia-radius-md);
+}
+
+/* Separated variant — items spaced apart with individual borders */
+.suraia-accordion[data-suraia-variant="separated"] .suraia-accordion-item {
+  border: 1px solid var(--suraia-surface-border);
+  border-radius: var(--suraia-radius-md);
+  margin-bottom: var(--suraia-space-2);
+  overflow: hidden;
+}
+
+.suraia-accordion[data-suraia-variant="separated"] .suraia-accordion-item[data-suraia-active] {
+  background-color: var(--suraia-surface-1);
+}
+
+/* Control (trigger button) */
+.suraia-accordion-control {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: var(--suraia-space-3) var(--suraia-space-4);
+  font-family: var(--suraia-font-family-sans);
+  font-size: var(--suraia-font-size-sm);
+  font-weight: var(--suraia-font-weight-medium);
+  color: var(--suraia-surface-foreground);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-accordion-control:hover {
+  background-color: var(--suraia-surface-hover);
+}
+
+/* Chevron */
+.suraia-accordion-chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  margin-left: auto;
+  transition: transform var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-accordion-chevron::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  margin-top: -3px;
+}
+
+.suraia-accordion-item[data-suraia-active] .suraia-accordion-chevron {
+  transform: rotate(180deg);
+}
+
+/* Chevron left position */
+.suraia-accordion[data-suraia-chevron-position="left"] .suraia-accordion-control {
+  flex-direction: row-reverse;
+}
+
+.suraia-accordion[data-suraia-chevron-position="left"] .suraia-accordion-chevron {
+  margin-left: 0;
+  margin-right: var(--suraia-space-3);
+}
+
+.suraia-accordion-label {
+  flex: 1;
+}
+
+/* Panel */
+.suraia-accordion-panel[hidden] {
+  display: none;
+}
+
+.suraia-accordion-content {
+  padding: 0 var(--suraia-space-4) var(--suraia-space-4);
+  font-size: var(--suraia-font-size-sm);
+  color: var(--suraia-surface-foreground);
+  line-height: var(--suraia-line-height-md);
+}
+
+/* Focus */
+.suraia-accordion-control:focus-visible {
+  outline: var(--suraia-focus-ring-width) solid var(--suraia-focus-ring-color);
+  outline-offset: var(--suraia-focus-ring-offset);
+  z-index: 1;
+}
