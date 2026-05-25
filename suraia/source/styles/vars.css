@@ -1,0 +1,54 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+:root {
+  /* Content Width */
+  --suraia-content-width-xs: 540px;
+  --suraia-content-width-sm: 720px;
+  --suraia-content-width-md: 960px;
+  --suraia-content-width-lg: 1140px;
+  --suraia-content-width-xl: 1320px;
+
+  /* Container Padding */
+  --suraia-container-padding-xs: 16px;
+  --suraia-container-padding-sm: 16px;
+  --suraia-container-padding-md: 24px;
+  --suraia-container-padding-lg: 32px;
+  --suraia-container-padding-xl: 32px;
+
+  /* Layout Gutter */
+  --suraia-gutter: 16px;
+
+  /* Sidebar */
+  --suraia-sidebar-width: 260px;
+  --suraia-sidebar-width-collapsed: 60px;
+
+  /* Header */
+  --suraia-header-height: 60px;
+
+  /* Footer */
+  --suraia-footer-height: 60px;
+
+  /* Scrollbar */
+  --suraia-scrollbar-width: 6px;
+  --suraia-scrollbar-color: rgba(0, 0, 0, 0.15);
+  --suraia-scrollbar-hover-color: rgba(0, 0, 0, 0.25);
+
+  /* Overlay */
+  --suraia-overlay-color: rgba(0, 0, 0, 0.6);
+
+  /* Focus Ring */
+  --suraia-focus-ring-width: 2px;
+  --suraia-focus-ring-color: #228be6;
+  --suraia-focus-ring-offset: 2px;
+
+  /* Cursor */
+  --suraia-cursor-disabled: not-allowed;
+  --suraia-cursor-pointer: pointer;
+
+  /* Opacity */
+  --suraia-opacity-disabled: 0.6;
+  --suraia-opacity-hover: 0.9;
+}
