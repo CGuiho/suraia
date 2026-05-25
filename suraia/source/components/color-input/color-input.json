@@ -1,0 +1,38 @@
+{
+  "name": "ColorInput",
+  "description": "A text input for color values with preview swatch, validation, and optional picker disclosure.",
+  "tier": 2,
+  "dependencies": ["Input", "Popover", "ColorPicker", "ColorSwatch"],
+  "variants": {
+    "format": {
+      "options": ["hex", "rgb", "rgba", "hsl", "hsla"],
+      "default": "hex"
+    }
+  },
+  "states": ["disabled", "invalid", "focused"],
+  "slots": {
+    "label": "Optional text label.",
+    "input": "Editable color text field.",
+    "preview": "Visual swatch showing the parsed color value.",
+    "picker": "Optional color picker dropdown content."
+  },
+  "attributes": {
+    "value": {
+      "type": "string",
+      "default": "#7950f2",
+      "description": "Current color string."
+    },
+    "format": {
+      "type": "string",
+      "default": "hex",
+      "description": "Preferred output format for generated implementations."
+    }
+  },
+  "accessibility": {
+    "role": "group",
+    "keyboardNavigation": ["Tab moves between input and picker trigger", "Escape closes picker"],
+    "aria": {
+      "aria-invalid": "Set when current value cannot be parsed as a supported color."
+    }
+  }
+}
