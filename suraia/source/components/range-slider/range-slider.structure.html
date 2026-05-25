@@ -1,0 +1,52 @@
+<!-- Suraia RangeSlider Component Blueprint -->
+<div
+  class="suraia-range-slider"
+  data-suraia-component="RangeSlider"
+  data-suraia-size="md"
+  role="group"
+  aria-label="Range Selector"
+  tabindex="-1"
+>
+  <div class="suraia-range-slider-track">
+    <div class="suraia-range-slider-bar" style="left: 20%; width: 60%;"></div>
+
+    <!-- Optional marks -->
+    <div class="suraia-range-slider-mark" style="left: 20%;" data-suraia-filled>
+      <span class="suraia-range-slider-mark-label">20</span>
+    </div>
+    <div class="suraia-range-slider-mark" style="left: 50%;" data-suraia-filled>
+      <span class="suraia-range-slider-mark-label">50</span>
+    </div>
+    <div class="suraia-range-slider-mark" style="left: 80%;">
+      <span class="suraia-range-slider-mark-label">80</span>
+    </div>
+  </div>
+
+  <div
+    class="suraia-range-slider-thumb"
+    data-suraia-thumb="first"
+    style="left: 20%;"
+    role="slider"
+    aria-valuenow="20"
+    aria-valuemin="0"
+    aria-valuemax="80"
+    aria-orientation="horizontal"
+    tabindex="0"
+  >
+    <div class="suraia-range-slider-label">20</div>
+  </div>
+
+  <div
+    class="suraia-range-slider-thumb"
+    data-suraia-thumb="second"
+    style="left: 80%;"
+    role="slider"
+    aria-valuenow="80"
+    aria-valuemin="20"
+    aria-valuemax="100"
+    aria-orientation="horizontal"
+    tabindex="0"
+  >
+    <div class="suraia-range-slider-label">80</div>
+  </div>
+</div>
