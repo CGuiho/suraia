@@ -1,0 +1,1 @@
+{"name":"Box","description":"The base component that provides framework-agnostic wrapper styling and support for polymorphic tags.","tier":1,"dependencies":[],"variants":{},"states":[],"slots":{"default":"Content of the box."},"attributes":{},"accessibility":{"role":null,"keyboardNavigation":[],"aria":{}}}
