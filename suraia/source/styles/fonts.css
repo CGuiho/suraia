@@ -1,0 +1,30 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+:root {
+  /* Font Display */
+  --suraia-font-display: swap;
+
+  /* Letter Spacing */
+  --suraia-letter-spacing-tight: -0.025em;
+  --suraia-letter-spacing-normal: 0em;
+  --suraia-letter-spacing-wide: 0.025em;
+  --suraia-letter-spacing-wider: 0.05em;
+  --suraia-letter-spacing-widest: 0.1em;
+
+  /* Text Decoration Thickness */
+  --suraia-text-decoration-thickness: 1px;
+
+  /* Font Smoothing — applied via class, not custom property */
+
+  /* Font Feature Settings */
+  --suraia-font-feature-default: "kern" 1, "liga" 1, "calt" 1;
+  --suraia-font-feature-tabular: "tnum" 1;
+  --suraia-font-feature-ordinal: "ordn" 1;
+  --suraia-font-feature-fractions: "frac" 1;
+
+  /* Paragraph Spacing */
+  --suraia-paragraph-spacing: 1em;
+}
