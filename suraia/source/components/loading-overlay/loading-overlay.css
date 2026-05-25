@@ -1,0 +1,33 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-loading-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: var(--suraia-loading-overlay-z-index, 400);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-loading-overlay[data-suraia-visible] {
+  display: flex;
+  opacity: 1;
+}
+
+.suraia-loading-overlay-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: var(--suraia-loading-overlay-bg, rgba(255, 255, 255, 0.6));
+  backdrop-filter: blur(var(--suraia-loading-overlay-blur, 0px));
+  -webkit-backdrop-filter: blur(var(--suraia-loading-overlay-blur, 0px));
+}
+
+.suraia-loading-overlay-content {
+  position: relative;
+  z-index: 1;
+}
