@@ -1,0 +1,35 @@
+{
+  "name": "Marquee",
+  "description": "Smooth, infinitely scrolling layout wrapper.",
+  "tier": 1,
+  "dependencies": [],
+  "variants": {
+    "direction": {
+      "options": ["left", "right", "up", "down"],
+      "default": "left"
+    }
+  },
+  "states": [
+    "pauseOnHover"
+  ],
+  "slots": {
+    "default": "Content items to repeat and scroll."
+  },
+  "attributes": {
+    "speed": {
+      "type": "number",
+      "default": 50,
+      "description": "Scroll speed in pixels per second or duration multiplier."
+    },
+    "pauseOnHover": {
+      "type": "boolean",
+      "default": false,
+      "description": "Pause scrolling on cursor hover."
+    }
+  },
+  "accessibility": {
+    "role": "marquee",
+    "keyboardNavigation": [],
+    "aria": {}
+  }
+}
