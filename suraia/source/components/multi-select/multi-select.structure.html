@@ -1,0 +1,54 @@
+<!-- Suraia MultiSelect Component Blueprint -->
+<div class="suraia-input-wrapper" data-suraia-component="MultiSelect" data-suraia-size="sm" data-suraia-variant="default">
+  <label class="suraia-input-label" for="multi-select-input">Label</label>
+  <p class="suraia-input-description">Description text.</p>
+
+  <div class="suraia-multi-select-wrapper">
+    <div class="suraia-input-container">
+      <div class="suraia-multi-select-values">
+        <!-- Selected Pills -->
+        <div class="suraia-pill" data-suraia-size="xs">
+          <span class="suraia-pill-label">React</span>
+          <button type="button" class="suraia-pill-remove" aria-label="Remove React">×</button>
+        </div>
+        <div class="suraia-pill" data-suraia-size="xs">
+          <span class="suraia-pill-label">Vue</span>
+          <button type="button" class="suraia-pill-remove" aria-label="Remove Vue">×</button>
+        </div>
+
+        <input
+          type="text"
+          class="suraia-input suraia-multi-select-input"
+          id="multi-select-input"
+          role="combobox"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-controls="multi-select-listbox"
+          placeholder="Pick values"
+        />
+      </div>
+      <div class="suraia-input-section" data-position="right">
+        <span class="suraia-multi-select-chevron" aria-hidden="true"></span>
+      </div>
+    </div>
+
+    <!-- Dropdown -->
+    <div class="suraia-multi-select-dropdown" id="multi-select-listbox" role="listbox" hidden>
+      <div class="suraia-multi-select-option" role="option" data-suraia-selected aria-selected="true">
+        <span class="suraia-multi-select-option-checkbox" aria-hidden="true">✓</span>
+        React
+      </div>
+      <div class="suraia-multi-select-option" role="option" data-suraia-selected aria-selected="true">
+        <span class="suraia-multi-select-option-checkbox" aria-hidden="true">✓</span>
+        Vue
+      </div>
+      <div class="suraia-multi-select-option" role="option">
+        <span class="suraia-multi-select-option-checkbox" aria-hidden="true"></span>
+        Angular
+      </div>
+      <div class="suraia-multi-select-nothing">Nothing found</div>
+    </div>
+  </div>
+
+  <p class="suraia-input-error">Error message.</p>
+</div>
