@@ -1,0 +1,77 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-hue-slider {
+  --suraia-hue-slider-height: 12px;
+  --suraia-hue-slider-thumb-size: 20px;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: calc(var(--suraia-hue-slider-thumb-size) + 8px);
+  cursor: pointer;
+  touch-action: none;
+  outline: none;
+  user-select: none;
+}
+
+.suraia-hue-slider[data-suraia-size="xs"] { --suraia-hue-slider-height: 6px; --suraia-hue-slider-thumb-size: 12px; }
+.suraia-hue-slider[data-suraia-size="sm"] { --suraia-hue-slider-height: 8px; --suraia-hue-slider-thumb-size: 16px; }
+.suraia-hue-slider[data-suraia-size="md"] { --suraia-hue-slider-height: 12px; --suraia-hue-slider-thumb-size: 20px; }
+.suraia-hue-slider[data-suraia-size="lg"] { --suraia-hue-slider-height: 16px; --suraia-hue-slider-thumb-size: 24px; }
+.suraia-hue-slider[data-suraia-size="xl"] { --suraia-hue-slider-height: 20px; --suraia-hue-slider-thumb-size: 28px; }
+
+.suraia-hue-slider-track {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: var(--suraia-hue-slider-height);
+  transform: translateY(-50%);
+  border-radius: var(--suraia-radius-full);
+  background-image: linear-gradient(
+    to right,
+    hsl(0, 100%, 50%),
+    hsl(60, 100%, 50%),
+    hsl(120, 100%, 50%),
+    hsl(180, 100%, 50%),
+    hsl(240, 100%, 50%),
+    hsl(300, 100%, 50%),
+    hsl(360, 100%, 50%)
+  );
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--suraia-surface-foreground) 12%, transparent);
+}
+
+.suraia-hue-slider-thumb {
+  position: absolute;
+  top: 50%;
+  width: var(--suraia-hue-slider-thumb-size);
+  height: var(--suraia-hue-slider-thumb-size);
+  transform: translate(-50%, -50%);
+  background-color: var(--suraia-surface-0);
+  border: 2px solid var(--suraia-surface-0);
+  box-shadow: var(--suraia-shadow-sm), 0 0 0 1px color-mix(in srgb, var(--suraia-surface-foreground) 25%, transparent);
+  border-radius: var(--suraia-radius-full);
+  cursor: grab;
+  z-index: 1;
+}
+
+.suraia-hue-slider-thumb:active {
+  cursor: grabbing;
+}
+
+/* Disabled */
+.suraia-hue-slider[data-suraia-disabled] {
+  opacity: var(--suraia-opacity-disabled);
+  cursor: var(--suraia-cursor-disabled);
+  pointer-events: none;
+}
+
+/* Focus */
+.suraia-hue-slider:focus-visible .suraia-hue-slider-thumb {
+  outline: var(--suraia-focus-ring-width) solid var(--suraia-focus-ring-color);
+  outline-offset: var(--suraia-focus-ring-offset);
+}
