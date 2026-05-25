@@ -1,0 +1,95 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-dialog-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--suraia-z-index-modal, 200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--suraia-transition-duration-normal, 150ms) ease,
+              visibility var(--suraia-transition-duration-normal, 150ms) ease;
+}
+
+.suraia-dialog-container[data-suraia-opened="true"] {
+  pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+}
+
+.suraia-dialog-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--suraia-color-overlay, rgba(0, 0, 0, 0.4));
+}
+
+.suraia-dialog {
+  position: relative;
+  z-index: 1;
+  background-color: var(--suraia-color-bg-card, #ffffff);
+  border: 1px solid var(--suraia-surface-border, #dee2e6);
+  border-radius: var(--suraia-radius-md, 8px);
+  box-shadow: var(--suraia-shadow-lg);
+  max-width: var(--suraia-dialog-max-width, 400px);
+  width: calc(100% - var(--suraia-space-6, 24px));
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(10px);
+  transition: transform var(--suraia-transition-duration-normal, 150ms) ease;
+}
+
+.suraia-dialog-container[data-suraia-opened="true"] .suraia-dialog {
+  transform: translateY(0);
+}
+
+.suraia-dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--suraia-space-3, 12px) var(--suraia-space-4, 16px);
+  border-bottom: 1px solid var(--suraia-surface-border, #dee2e6);
+  box-sizing: border-box;
+}
+
+.suraia-dialog-title {
+  margin: 0;
+  font-family: inherit;
+  font-size: var(--suraia-font-size-md, 1rem);
+  font-weight: var(--suraia-font-weight-bold, 700);
+  color: var(--suraia-color-text-primary, #212529);
+}
+
+.suraia-dialog-close {
+  background: none;
+  border: none;
+  font-size: var(--suraia-font-size-lg, 1.125rem);
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  color: var(--suraia-color-text-secondary, #868e96);
+}
+
+.suraia-dialog-close:hover {
+  color: var(--suraia-color-text-primary, #212529);
+}
+
+.suraia-dialog-body {
+  padding: var(--suraia-space-4, 16px);
+  font-size: var(--suraia-font-size-sm, 0.875rem);
+  color: var(--suraia-color-text-secondary, #495057);
+  box-sizing: border-box;
+}
+```,Description:
