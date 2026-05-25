@@ -1,0 +1,25 @@
+{
+  "name": "Blockquote",
+  "description": "A styled quote block, with optional icon, author citation, and colored left border indicator.",
+  "tier": 1,
+  "dependencies": [],
+  "variants": {},
+  "states": [],
+  "slots": {
+    "default": "The blockquote body content.",
+    "cite": "Citation text or link representing the source or author of the quote.",
+    "icon": "Optional icon rendered at the top-left of the blockquote."
+  },
+  "attributes": {
+    "color": {
+      "type": "string",
+      "default": "primary",
+      "description": "Left border and icon highlight color."
+    }
+  },
+  "accessibility": {
+    "role": "blockquote",
+    "keyboardNavigation": [],
+    "aria": {}
+  }
+}
