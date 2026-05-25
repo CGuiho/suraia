@@ -1,0 +1,38 @@
+{
+  "name": "List",
+  "description": "A semantic ordered or unordered list with spacing, padding, and optional icon alignment rules.",
+  "tier": 1,
+  "dependencies": [],
+  "variants": {
+    "type": {
+      "options": ["ordered", "unordered"],
+      "default": "unordered"
+    },
+    "spacing": {
+      "options": ["xs", "sm", "md", "lg", "xl"],
+      "default": "sm"
+    }
+  },
+  "states": [],
+  "slots": {
+    "item": "List item content.",
+    "icon": "Optional per-item icon or marker replacement."
+  },
+  "attributes": {
+    "withPadding": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether list has marker indentation."
+    },
+    "center": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether item icons and content are vertically centered."
+    }
+  },
+  "accessibility": {
+    "role": "list",
+    "keyboardNavigation": [],
+    "aria": {}
+  }
+}
