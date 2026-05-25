@@ -21,9 +21,9 @@ export {
 }
 
 const color = {
-  primary: '#2563eb',
+  primary: '#7950f2',
   onPrimary: '#ffffff',
-  secondary: '#475569',
+  secondary: '#4a5167',
   onSecondary: '#ffffff',
   error: '#fa5252',
   onError: '#ffffff',
