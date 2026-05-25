@@ -6,14 +6,14 @@ The complete inventory of components that must exist in the library. Each compon
 
 ### Layout
 
-- [ ] AppShell
+- [x] AppShell
 - [x] AspectRatio
 - [x] Center
 - [x] Container
 - [x] Flex
 - [x] Grid
 - [x] Group
-- [ ] SimpleGrid
+- [x] SimpleGrid
 - [x] Space
 - [x] Stack
 
@@ -22,19 +22,19 @@ The complete inventory of components that must exist in the library. Each compon
 - [ ] AlphaSlider
 - [ ] AngleSlider
 - [x] Checkbox
-- [ ] Chip
+- [x] Chip
 - [ ] ColorInput
 - [ ] ColorPicker
-- [ ] Fieldset
-- [ ] FileInput
+- [x] Fieldset
+- [x] FileInput
 - [ ] HueSlider
 - [x] Input
 - [ ] JsonInput
 - [ ] MaskInput
-- [ ] NativeSelect
+- [x] NativeSelect
 - [x] NumberInput
 - [x] PasswordInput
-- [ ] PinInput
+- [x] PinInput
 - [x] Radio
 - [ ] RangeSlider
 - [ ] Rating
@@ -60,8 +60,8 @@ The complete inventory of components that must exist in the library. Each compon
 - [x] ActionIcon
 - [x] Button
 - [x] CloseButton
-- [ ] CopyButton
-- [ ] FileButton
+- [x] CopyButton
+- [x] FileButton
 - [x] UnstyledButton
 
 ### Navigation
