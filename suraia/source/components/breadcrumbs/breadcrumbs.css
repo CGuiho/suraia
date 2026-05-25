@@ -1,0 +1,36 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--suraia-space-1);
+  font-family: var(--suraia-font-family-sans);
+  font-size: var(--suraia-font-size-sm);
+  line-height: var(--suraia-line-height-sm);
+}
+
+.suraia-breadcrumbs-item {
+  color: var(--suraia-surface-foreground-muted);
+  text-decoration: none;
+  transition: color var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+a.suraia-breadcrumbs-item:hover {
+  color: var(--suraia-color-primary);
+  text-decoration: underline;
+}
+
+.suraia-breadcrumbs-item[aria-current="page"] {
+  color: var(--suraia-surface-foreground);
+  font-weight: var(--suraia-font-weight-medium);
+}
+
+.suraia-breadcrumbs-separator {
+  color: var(--suraia-surface-foreground-muted);
+  font-size: var(--suraia-font-size-xs);
+  user-select: none;
+}
