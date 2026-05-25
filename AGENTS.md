@@ -9,7 +9,7 @@
 ## Key Documents
 
 - **`ARCHITECTURE.md`** — Full technical architecture specification: system layers, component blueprint structure, design token system, naming conventions, and directory layout.
-- **`suraia/docs/2026-05-25-philosophy.md`** — Library philosophy and vision: why Suraia exists, the blueprint-not-component model, AI-as-compiler consumption, dependency resolution contract, component complexity tiers (Primitives → Composites → Patterns → Pages), and the long-term roadmap.
+- **`PHILOSOPHY.md`** — Library philosophy and vision: why Suraia exists, the blueprint-not-component model, AI-as-compiler consumption, dependency resolution contract, component complexity tiers (Primitives → Composites → Patterns → Pages), and the long-term roadmap.
 
 Read both documents before making architectural decisions or working on component blueprints.
 
