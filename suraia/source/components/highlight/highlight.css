@@ -1,0 +1,15 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-highlight {
+  box-sizing: border-box;
+}
+
+.suraia-highlight-mark {
+  background-color: var(--suraia-color-highlight-bg, var(--suraia-color-mark-bg, #ffe066));
+  color: var(--suraia-color-highlight-text, var(--suraia-color-mark-text, #212529));
+  padding: 0 2px;
+  border-radius: var(--suraia-radius-xs, 2px);
+}
