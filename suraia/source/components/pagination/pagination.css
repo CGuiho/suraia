@@ -1,0 +1,72 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-pagination {
+  --suraia-pagination-size: var(--suraia-component-size-md);
+
+  display: flex;
+  align-items: center;
+  gap: var(--suraia-space-1);
+  font-family: var(--suraia-font-family-sans);
+}
+
+.suraia-pagination[data-suraia-size="xs"] { --suraia-pagination-size: var(--suraia-component-size-xs); }
+.suraia-pagination[data-suraia-size="sm"] { --suraia-pagination-size: var(--suraia-component-size-sm); }
+.suraia-pagination[data-suraia-size="md"] { --suraia-pagination-size: var(--suraia-component-size-md); }
+.suraia-pagination[data-suraia-size="lg"] { --suraia-pagination-size: var(--suraia-component-size-lg); }
+.suraia-pagination[data-suraia-size="xl"] { --suraia-pagination-size: var(--suraia-component-size-xl); }
+
+.suraia-pagination-item,
+.suraia-pagination-control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--suraia-pagination-size);
+  height: var(--suraia-pagination-size);
+  padding: 0 var(--suraia-space-1);
+  font-family: var(--suraia-font-family-sans);
+  font-size: var(--suraia-font-size-sm);
+  color: var(--suraia-surface-foreground);
+  background: transparent;
+  border: none;
+  border-radius: var(--suraia-radius-md);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-pagination-item:hover:not([data-suraia-active]):not([disabled]),
+.suraia-pagination-control:hover:not([disabled]) {
+  background-color: var(--suraia-surface-hover);
+}
+
+.suraia-pagination-item[data-suraia-active] {
+  background-color: var(--suraia-color-primary);
+  color: var(--suraia-color-on-primary);
+}
+
+.suraia-pagination-item[disabled],
+.suraia-pagination-control[disabled] {
+  opacity: var(--suraia-opacity-disabled);
+  cursor: var(--suraia-cursor-disabled);
+}
+
+.suraia-pagination-dots {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--suraia-pagination-size);
+  height: var(--suraia-pagination-size);
+  color: var(--suraia-surface-foreground-muted);
+  font-size: var(--suraia-font-size-sm);
+  user-select: none;
+}
+
+/* Focus */
+.suraia-pagination-item:focus-visible,
+.suraia-pagination-control:focus-visible {
+  outline: var(--suraia-focus-ring-width) solid var(--suraia-focus-ring-color);
+  outline-offset: var(--suraia-focus-ring-offset);
+}
