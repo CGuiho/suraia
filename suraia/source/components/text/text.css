@@ -1,0 +1,81 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-text {
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  font-family: var(--suraia-font-family-sans);
+  font-weight: var(--suraia-font-weight-regular);
+  color: var(--suraia-surface-foreground);
+  margin: 0;
+  padding: 0;
+}
+
+/* Size variants */
+.suraia-text[data-suraia-size="xs"] {
+  font-size: var(--suraia-font-size-xs);
+  line-height: var(--suraia-line-height-xs);
+}
+
+.suraia-text[data-suraia-size="sm"] {
+  font-size: var(--suraia-font-size-sm);
+  line-height: var(--suraia-line-height-sm);
+}
+
+.suraia-text[data-suraia-size="md"] {
+  font-size: var(--suraia-font-size-md);
+  line-height: var(--suraia-line-height-md);
+}
+
+.suraia-text[data-suraia-size="lg"] {
+  font-size: var(--suraia-font-size-lg);
+  line-height: var(--suraia-line-height-lg);
+}
+
+.suraia-text[data-suraia-size="xl"] {
+  font-size: var(--suraia-font-size-xl);
+  line-height: var(--suraia-line-height-xl);
+}
+
+/* Truncation */
+.suraia-text[data-suraia-truncate] {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.suraia-text[data-suraia-truncate="start"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Line clamp */
+.suraia-text[data-suraia-line-clamp] {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: var(--suraia-text-line-clamp);
+  -webkit-box-orient: vertical;
+}
+
+/* Gradient variant */
+.suraia-text[data-suraia-variant="gradient"] {
+  background-image: var(--suraia-text-gradient, linear-gradient(45deg, var(--suraia-color-primary), var(--suraia-color-info)));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Inline mode */
+.suraia-text[data-suraia-inline] {
+  line-height: 1;
+}
+
+/* Inherit mode */
+.suraia-text[data-suraia-inherit] {
+  line-height: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+}
