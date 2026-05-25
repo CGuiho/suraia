@@ -3,7 +3,6 @@
 **npm package:** `@guiho/suraia`  
 **CSS Prefix:** `x40-suraia-`
 
----
 
 ## 1. Vision & Core Philosophy
 
@@ -12,7 +11,6 @@
 The core principle is:
 > A component should have one source of truth: its structural anatomy, styling constraints, interactive behavior logic, and accessibility contract. Framework-specific implementation is an output generated locally, not a foundation we distribute.
 
----
 
 ## 2. Consumption Model (How it is Used)
 
