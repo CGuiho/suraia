@@ -1,0 +1,28 @@
+{
+  "name": "BackgroundImage",
+  "description": "A container that displays an image as its background with custom border radius.",
+  "tier": 1,
+  "dependencies": [],
+  "variants": {},
+  "states": [],
+  "slots": {
+    "default": "Content overlay rendered on top of the background image."
+  },
+  "attributes": {
+    "src": {
+      "type": "string",
+      "required": true,
+      "description": "Image source URL."
+    },
+    "radius": {
+      "type": "string",
+      "default": "none",
+      "description": "Border radius key."
+    }
+  },
+  "accessibility": {
+    "role": "img",
+    "keyboardNavigation": [],
+    "aria": {}
+  }
+}
