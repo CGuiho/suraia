@@ -1,0 +1,84 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-alpha-slider {
+  --suraia-alpha-slider-height: 12px;
+  --suraia-alpha-slider-thumb-size: 20px;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: calc(var(--suraia-alpha-slider-thumb-size) + 8px);
+  cursor: pointer;
+  touch-action: none;
+  outline: none;
+  user-select: none;
+}
+
+.suraia-alpha-slider[data-suraia-size="xs"] { --suraia-alpha-slider-height: 6px; --suraia-alpha-slider-thumb-size: 12px; }
+.suraia-alpha-slider[data-suraia-size="sm"] { --suraia-alpha-slider-height: 8px; --suraia-alpha-slider-thumb-size: 16px; }
+.suraia-alpha-slider[data-suraia-size="md"] { --suraia-alpha-slider-height: 12px; --suraia-alpha-slider-thumb-size: 20px; }
+.suraia-alpha-slider[data-suraia-size="lg"] { --suraia-alpha-slider-height: 16px; --suraia-alpha-slider-thumb-size: 24px; }
+.suraia-alpha-slider[data-suraia-size="xl"] { --suraia-alpha-slider-height: 20px; --suraia-alpha-slider-thumb-size: 28px; }
+
+.suraia-alpha-slider-checkers {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: var(--suraia-alpha-slider-height);
+  transform: translateY(-50%);
+  border-radius: var(--suraia-radius-full);
+  background-color: var(--suraia-surface-0);
+  background-image: linear-gradient(45deg, color-mix(in srgb, var(--suraia-surface-foreground) 10%, transparent) 25%, transparent 25%),
+                    linear-gradient(-45deg, color-mix(in srgb, var(--suraia-surface-foreground) 10%, transparent) 25%, transparent 25%),
+                    linear-gradient(45deg, transparent 75%, color-mix(in srgb, var(--suraia-surface-foreground) 10%, transparent) 75%),
+                    linear-gradient(-45deg, transparent 75%, color-mix(in srgb, var(--suraia-surface-foreground) 10%, transparent) 75%);
+  background-size: 8px 8px;
+  background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
+}
+
+.suraia-alpha-slider-gradient {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: var(--suraia-alpha-slider-height);
+  transform: translateY(-50%);
+  border-radius: var(--suraia-radius-full);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--suraia-surface-foreground) 12%, transparent);
+}
+
+.suraia-alpha-slider-thumb {
+  position: absolute;
+  top: 50%;
+  width: var(--suraia-alpha-slider-thumb-size);
+  height: var(--suraia-alpha-slider-thumb-size);
+  transform: translate(-50%, -50%);
+  background-color: var(--suraia-surface-0);
+  border: 2px solid var(--suraia-surface-0);
+  box-shadow: var(--suraia-shadow-sm), 0 0 0 1px color-mix(in srgb, var(--suraia-surface-foreground) 25%, transparent);
+  border-radius: var(--suraia-radius-full);
+  cursor: grab;
+  z-index: 1;
+}
+
+.suraia-alpha-slider-thumb:active {
+  cursor: grabbing;
+}
+
+/* Disabled */
+.suraia-alpha-slider[data-suraia-disabled] {
+  opacity: var(--suraia-opacity-disabled);
+  cursor: var(--suraia-cursor-disabled);
+  pointer-events: none;
+}
+
+/* Focus */
+.suraia-alpha-slider:focus-visible .suraia-alpha-slider-thumb {
+  outline: var(--suraia-focus-ring-width) solid var(--suraia-focus-ring-color);
+  outline-offset: var(--suraia-focus-ring-offset);
+}
