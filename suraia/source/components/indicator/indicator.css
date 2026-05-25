@@ -1,0 +1,141 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-indicator-root {
+  position: relative;
+  display: inline-block;
+}
+
+.suraia-indicator-root:not([data-suraia-inline]) {
+  display: block;
+}
+
+.suraia-indicator {
+  --suraia-indicator-size: 10px;
+  --suraia-indicator-bg: var(--suraia-color-primary, #228be6);
+  --suraia-indicator-border-color: var(--suraia-surface-0, #ffffff);
+
+  position: absolute;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-family: var(--suraia-font-family-sans, sans-serif);
+  font-size: 9px;
+  font-weight: var(--suraia-font-weight-bold, 700);
+  line-height: 1;
+  color: var(--suraia-color-on-primary, #ffffff);
+  background-color: var(--suraia-indicator-bg);
+  min-width: var(--suraia-indicator-size);
+  height: var(--suraia-indicator-size);
+  padding: 0 4px;
+}
+
+/* Disabled */
+.suraia-indicator[data-suraia-disabled] {
+  display: none;
+}
+
+/* Border */
+.suraia-indicator[data-suraia-border] {
+  border: 2px solid var(--suraia-indicator-border-color);
+}
+
+/* Sizes */
+.suraia-indicator[data-suraia-size="xs"] {
+  --suraia-indicator-size: 6px;
+  padding: 0;
+}
+.suraia-indicator[data-suraia-size="sm"] {
+  --suraia-indicator-size: 8px;
+  padding: 0;
+}
+.suraia-indicator[data-suraia-size="md"] {
+  --suraia-indicator-size: 12px;
+}
+.suraia-indicator[data-suraia-size="lg"] {
+  --suraia-indicator-size: 16px;
+  font-size: 10px;
+}
+.suraia-indicator[data-suraia-size="xl"] {
+  --suraia-indicator-size: 20px;
+  font-size: 12px;
+}
+
+/* Radius */
+.suraia-indicator[data-suraia-radius="none"] { border-radius: var(--suraia-radius-none, 0); }
+.suraia-indicator[data-suraia-radius="xs"] { border-radius: var(--suraia-radius-xs, 2px); }
+.suraia-indicator[data-suraia-radius="sm"] { border-radius: var(--suraia-radius-sm, 4px); }
+.suraia-indicator[data-suraia-radius="md"] { border-radius: var(--suraia-radius-md, 8px); }
+.suraia-indicator[data-suraia-radius="lg"] { border-radius: var(--suraia-radius-lg, 16px); }
+.suraia-indicator[data-suraia-radius="xl"] { border-radius: var(--suraia-radius-xl, 32px); }
+.suraia-indicator[data-suraia-radius="full"] { border-radius: var(--suraia-radius-full, 9999px); }
+
+/* Positions */
+.suraia-indicator[data-suraia-position="top-start"] {
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+.suraia-indicator[data-suraia-position="top-end"] {
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+.suraia-indicator[data-suraia-position="bottom-start"] {
+  bottom: 0;
+  left: 0;
+  transform: translate(-50%, 50%);
+}
+.suraia-indicator[data-suraia-position="bottom-end"] {
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 50%);
+}
+.suraia-indicator[data-suraia-position="top-center"] {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.suraia-indicator[data-suraia-position="bottom-center"] {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+.suraia-indicator[data-suraia-position="middle-start"] {
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+.suraia-indicator[data-suraia-position="middle-end"] {
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+/* Processing animation (pulse) */
+.suraia-indicator[data-suraia-processing]::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  box-shadow: 0 0 0 2px var(--suraia-indicator-bg);
+  animation: suraia-indicator-pulse 1.2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
+
+@keyframes suraia-indicator-pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.2);
+  }
+}
