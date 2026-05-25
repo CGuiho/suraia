@@ -1,7 +1,7 @@
 # 🌻 GUIHO Suraia — Architecture Specification (AI-First UI Blueprint)
 
 **npm package:** `@guiho/suraia`  
-**CSS Prefix:** `x40-suraia-`
+**CSS Prefix:** `suraia-`
 
 
 ## 1. Vision & Core Philosophy
