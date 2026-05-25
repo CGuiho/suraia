@@ -1,0 +1,55 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-close-button {
+  --suraia-cb-size: var(--suraia-component-size-md);
+  --suraia-cb-icon-size: 70%;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--suraia-cb-size);
+  height: var(--suraia-cb-size);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  border-radius: var(--suraia-radius-sm);
+  color: var(--suraia-surface-foreground-muted);
+  transition: background-color var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out),
+              color var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-close-button[data-suraia-size="xs"] { --suraia-cb-size: var(--suraia-component-size-xs); }
+.suraia-close-button[data-suraia-size="sm"] { --suraia-cb-size: var(--suraia-component-size-sm); }
+.suraia-close-button[data-suraia-size="md"] { --suraia-cb-size: var(--suraia-component-size-md); }
+.suraia-close-button[data-suraia-size="lg"] { --suraia-cb-size: var(--suraia-component-size-lg); }
+.suraia-close-button[data-suraia-size="xl"] { --suraia-cb-size: var(--suraia-component-size-xl); }
+
+/* Subtle variant */
+.suraia-close-button[data-suraia-variant="subtle"]:hover {
+  background-color: var(--suraia-surface-hover);
+  color: var(--suraia-surface-foreground);
+}
+
+/* Transparent variant */
+.suraia-close-button[data-suraia-variant="transparent"]:hover {
+  color: var(--suraia-surface-foreground);
+}
+
+.suraia-close-button-icon {
+  width: var(--suraia-cb-icon-size);
+  height: var(--suraia-cb-icon-size);
+}
+
+.suraia-close-button:disabled {
+  opacity: var(--suraia-opacity-disabled);
+  cursor: var(--suraia-cursor-disabled);
+}
+
+.suraia-close-button:focus-visible {
+  outline: var(--suraia-focus-ring-width) solid var(--suraia-focus-ring-color);
+  outline-offset: var(--suraia-focus-ring-offset);
+}
