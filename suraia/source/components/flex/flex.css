@@ -1,0 +1,13 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-flex {
+  display: flex;
+  flex-direction: var(--suraia-flex-direction, row);
+  flex-wrap: var(--suraia-flex-wrap, nowrap);
+  justify-content: var(--suraia-flex-justify, flex-start);
+  align-items: var(--suraia-flex-align, stretch);
+  gap: var(--suraia-flex-gap, var(--suraia-space-4));
+}
