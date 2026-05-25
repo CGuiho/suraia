@@ -6,6 +6,13 @@
 - Use Bun, not npm/pnpm/yarn. Install with `bun install` from within `suraia/`.
 - Place all file exports at the top of the file, immediately following any imports, so it is easy to see what is exported at a glance.
 
+## Key Documents
+
+- **`ARCHITECTURE.md`** — Full technical architecture specification: system layers, component blueprint structure, design token system, naming conventions, and directory layout.
+- **`docs/2026-05-25-philosophy.md`** — Library philosophy and vision: why Suraia exists, the blueprint-not-component model, AI-as-compiler consumption, dependency resolution contract, component complexity tiers (Primitives → Composites → Patterns → Pages), and the long-term roadmap.
+
+Read both documents before making architectural decisions or working on component blueprints.
+
 ## Commands
 
 Run all commands from the `suraia/` directory:
