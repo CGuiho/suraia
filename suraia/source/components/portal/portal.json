@@ -1,0 +1,1 @@
+{"name":"Portal","description":"Renders element or component outside of the default DOM hierarchy (e.g. at document.body).","tier":1,"dependencies":[],"variants":{},"states":[],"slots":{"default":"The content element to portal."},"attributes":{"target":{"type":"string","default":"body"}},"accessibility":{"role":"presentation","keyboardNavigation":[],"aria":{}}}
