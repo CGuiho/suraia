@@ -1,0 +1,36 @@
+{
+  "name": "Typography",
+  "description": "Typographic visual elements configured for semantic tagging, font properties, and standard alignments.",
+  "tier": 1,
+  "dependencies": [],
+  "variants": {
+    "variant": {
+      "options": ["h1", "h2", "h3", "h4", "h5", "h6", "p", "lead", "blockquote", "code"],
+      "default": "p"
+    },
+    "weight": {
+      "options": ["light", "normal", "medium", "semibold", "bold"],
+      "default": "normal"
+    },
+    "align": {
+      "options": ["left", "center", "right", "justify"],
+      "default": "left"
+    }
+  },
+  "states": [],
+  "slots": {
+    "default": "Text content to render."
+  },
+  "attributes": {
+    "color": {
+      "type": "string",
+      "default": "",
+      "description": "Visual text color override."
+    }
+  },
+  "accessibility": {
+    "role": "text",
+    "keyboardNavigation": [],
+    "aria": {}
+  }
+}
