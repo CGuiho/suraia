@@ -1,0 +1,43 @@
+{
+  "name": "ColorPicker",
+  "description": "An interactive color selection surface with saturation area, hue control, optional alpha control, and swatches.",
+  "tier": 2,
+  "dependencies": ["HueSlider", "AlphaSlider", "ColorSwatch"],
+  "variants": {
+    "format": {
+      "options": ["hex", "rgba", "hsla"],
+      "default": "hex"
+    }
+  },
+  "states": ["dragging", "focused"],
+  "slots": {
+    "saturation": "Two-dimensional area for saturation and value changes.",
+    "hue": "Hue slider control.",
+    "alpha": "Optional alpha slider control.",
+    "swatches": "Optional list of predefined color choices."
+  },
+  "attributes": {
+    "value": {
+      "type": "string",
+      "default": "#7950f2",
+      "description": "Current color value."
+    },
+    "alpha": {
+      "type": "number",
+      "default": 1,
+      "description": "Alpha channel from 0 to 1."
+    },
+    "withAlpha": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether alpha selection is exposed."
+    }
+  },
+  "accessibility": {
+    "role": "group",
+    "keyboardNavigation": ["Arrow keys adjust active slider or saturation handle", "Home and End move slider handles to bounds"],
+    "aria": {
+      "aria-label": "Provide labels for saturation, hue, alpha, and swatch controls."
+    }
+  }
+}
