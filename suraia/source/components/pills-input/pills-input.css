@@ -1,0 +1,91 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-pills-input-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 36px;
+  padding: var(--suraia-space-1) var(--suraia-space-3);
+  background-color: var(--suraia-surface-0);
+  border: 1px solid var(--suraia-surface-border);
+  border-radius: var(--suraia-radius-md);
+  box-sizing: border-box;
+  transition: border-color var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out),
+              box-shadow var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-pills-input-container:focus-within {
+  border-color: var(--suraia-color-primary);
+  box-shadow: 0 0 0 1px var(--suraia-color-primary);
+}
+
+.suraia-pills-input-field-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--suraia-space-1);
+  width: 100%;
+}
+
+.suraia-pills-input-field {
+  flex: 1;
+  min-width: 60px;
+  border: none !important;
+  outline: none !important;
+  padding: 0 !important;
+  background: transparent !important;
+  font-family: var(--suraia-font-family-sans);
+  font-size: var(--suraia-font-size-sm);
+  color: var(--suraia-surface-foreground);
+}
+
+.suraia-pills-input-field::placeholder {
+  color: var(--suraia-surface-foreground-muted);
+}
+
+/* Sizes */
+.suraia-input-wrapper[data-suraia-size="xs"] .suraia-pills-input-container {
+  min-height: 28px;
+  padding: 2px var(--suraia-space-2);
+}
+.suraia-input-wrapper[data-suraia-size="sm"] .suraia-pills-input-container {
+  min-height: 32px;
+  padding: var(--suraia-space-1) var(--suraia-space-2);
+}
+.suraia-input-wrapper[data-suraia-size="md"] .suraia-pills-input-container {
+  min-height: 36px;
+  padding: var(--suraia-space-1) var(--suraia-space-3);
+}
+.suraia-input-wrapper[data-suraia-size="lg"] .suraia-pills-input-container {
+  min-height: 42px;
+  padding: var(--suraia-space-2) var(--suraia-space-3);
+}
+.suraia-input-wrapper[data-suraia-size="xl"] .suraia-pills-input-container {
+  min-height: 50px;
+  padding: var(--suraia-space-2) var(--suraia-space-4);
+}
+
+/* Error state */
+.suraia-input-wrapper[data-suraia-error] .suraia-pills-input-container {
+  border-color: var(--suraia-color-red-6);
+}
+
+.suraia-input-wrapper[data-suraia-error] .suraia-pills-input-container:focus-within {
+  box-shadow: 0 0 0 1px var(--suraia-color-red-6);
+}
+
+/* Disabled state */
+.suraia-input-wrapper[data-suraia-disabled] .suraia-pills-input-container {
+  background-color: var(--suraia-surface-1);
+  border-color: var(--suraia-surface-border);
+  opacity: var(--suraia-opacity-disabled);
+  cursor: var(--suraia-cursor-disabled);
+}
+
+.suraia-input-wrapper[data-suraia-disabled] .suraia-pills-input-field {
+  cursor: var(--suraia-cursor-disabled);
+  pointer-events: none;
+}
