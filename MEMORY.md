@@ -31,3 +31,7 @@
 - **New concept explicitly documented:** Dependency resolution contract — complex components declare dependencies on simpler ones; AI must resolve and generate them in dependency order before generating the complex component.
 - **Component complexity tiers documented:** Tier 1 (Primitives) → Tier 2 (Composites) → Tier 3 (Patterns) → Tier 4 (Pages).
 - **Long-term vision documented:** Hero sections, app shells, full page blueprints, multi-platform expansion (React Native, Flutter, SwiftUI).
+## 2026-05-25 21:44 — Git Commit Cleanup
+- Committed every outstanding tracked file individually, one commit per file, as requested.
+- Final working tree state: clean on `main`.
+- Latest commit in this session: `c7394f1` (`update base-tokens.css`).
