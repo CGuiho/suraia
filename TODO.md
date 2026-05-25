@@ -2,9 +2,9 @@
 
 ## Components
 
-- Explore: https://github.com/tusen-ai/naive-ui.git
-- Add utilities
-- Work on CLI
+- [ ] Explore: https://github.com/tusen-ai/naive-ui.git
+- [ ] Add utilities
+- [ ] Work on CLI
 
 ## Components
 
