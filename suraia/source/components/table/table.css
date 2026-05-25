@@ -1,0 +1,83 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-table-container {
+  overflow-x: auto;
+}
+
+.suraia-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--suraia-font-family-sans);
+  font-size: var(--suraia-font-size-sm);
+  color: var(--suraia-surface-foreground);
+}
+
+/* Table border */
+.suraia-table[data-suraia-with-table-border] {
+  border: 1px solid var(--suraia-surface-border);
+  border-radius: var(--suraia-radius-md);
+  overflow: hidden;
+}
+
+.suraia-table-caption {
+  caption-side: bottom;
+  font-size: var(--suraia-font-size-xs);
+  color: var(--suraia-surface-foreground-muted);
+  padding: var(--suraia-space-2);
+  text-align: left;
+}
+
+/* Header */
+.suraia-table-th {
+  padding: var(--suraia-space-2) var(--suraia-space-3);
+  text-align: left;
+  font-weight: var(--suraia-font-weight-semibold);
+  font-size: var(--suraia-font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--suraia-surface-foreground-muted);
+  border-bottom: 2px solid var(--suraia-surface-border);
+  white-space: nowrap;
+}
+
+/* Sticky header */
+.suraia-table[data-suraia-sticky-header] .suraia-table-th {
+  position: sticky;
+  top: 0;
+  background-color: var(--suraia-surface-0);
+  z-index: 1;
+}
+
+/* Cells */
+.suraia-table-td {
+  padding: var(--suraia-space-2) var(--suraia-space-3);
+  line-height: var(--suraia-line-height-md);
+}
+
+/* Row borders */
+.suraia-table[data-suraia-with-row-borders] .suraia-table-tr {
+  border-bottom: 1px solid var(--suraia-surface-border);
+}
+
+.suraia-table[data-suraia-with-row-borders] .suraia-table-tr:last-child {
+  border-bottom: none;
+}
+
+/* Column borders */
+.suraia-table[data-suraia-with-column-borders] .suraia-table-th + .suraia-table-th,
+.suraia-table[data-suraia-with-column-borders] .suraia-table-td + .suraia-table-td {
+  border-left: 1px solid var(--suraia-surface-border);
+}
+
+/* Striped */
+.suraia-table[data-suraia-striped] .suraia-table-tbody .suraia-table-tr:nth-child(odd) {
+  background-color: var(--suraia-surface-1);
+}
+
+/* Hover highlight */
+.suraia-table[data-suraia-highlight-on-hover] .suraia-table-tbody .suraia-table-tr:hover {
+  background-color: var(--suraia-surface-hover);
+}
