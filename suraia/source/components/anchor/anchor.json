@@ -1,0 +1,1 @@
+{"name":"Anchor","description":"A styled link component extending Text with anchor-specific styling.","tier":1,"dependencies":["Text"],"variants":{},"states":[],"slots":{"default":"Link content."},"attributes":{"underline":{"type":"string","enum":["always","hover","never"],"default":"hover"}},"accessibility":{"role":null,"keyboardNavigation":[],"aria":{}}}
