@@ -1,0 +1,1 @@
+{"name":"VisuallyHidden","description":"Hides element visually while keeping it visible to screen readers.","tier":1,"dependencies":[],"variants":{},"states":[],"slots":{"default":"Accessible hidden content."},"attributes":{},"accessibility":{"role":null,"keyboardNavigation":[],"aria":{}}}
