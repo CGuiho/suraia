@@ -1,0 +1,125 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-range-slider {
+  --suraia-range-slider-track-size: 6px;
+  --suraia-range-slider-thumb-size: 16px;
+  --suraia-range-slider-color: var(--suraia-color-primary);
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: calc(var(--suraia-range-slider-thumb-size) + 12px);
+  padding: 0;
+  cursor: pointer;
+  touch-action: none;
+  outline: none;
+}
+
+.suraia-range-slider[data-suraia-size="xs"] { --suraia-range-slider-track-size: 3px; --suraia-range-slider-thumb-size: 10px; }
+.suraia-range-slider[data-suraia-size="sm"] { --suraia-range-slider-track-size: 4px; --suraia-range-slider-thumb-size: 14px; }
+.suraia-range-slider[data-suraia-size="md"] { --suraia-range-slider-track-size: 6px; --suraia-range-slider-thumb-size: 16px; }
+.suraia-range-slider[data-suraia-size="lg"] { --suraia-range-slider-track-size: 8px; --suraia-range-slider-thumb-size: 20px; }
+.suraia-range-slider[data-suraia-size="xl"] { --suraia-range-slider-track-size: 10px; --suraia-range-slider-thumb-size: 24px; }
+
+.suraia-range-slider-track {
+  position: relative;
+  width: 100%;
+  height: var(--suraia-range-slider-track-size);
+  background-color: color-mix(in srgb, var(--suraia-surface-foreground) 12%, transparent);
+  border-radius: var(--suraia-radius-full);
+}
+
+.suraia-range-slider-bar {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background-color: var(--suraia-range-slider-color);
+  border-radius: var(--suraia-radius-full);
+}
+
+.suraia-range-slider-thumb {
+  position: absolute;
+  top: 50%;
+  width: var(--suraia-range-slider-thumb-size);
+  height: var(--suraia-range-slider-thumb-size);
+  transform: translate(-50%, -50%);
+  background-color: var(--suraia-surface-0);
+  border: 3px solid var(--suraia-range-slider-color);
+  border-radius: var(--suraia-radius-full);
+  cursor: grab;
+  z-index: 1;
+  box-shadow: var(--suraia-shadow-xs);
+  transition: box-shadow var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-range-slider-thumb:active {
+  cursor: grabbing;
+  box-shadow: var(--suraia-shadow-md);
+}
+
+.suraia-range-slider-label {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--suraia-surface-foreground);
+  color: var(--suraia-surface-0);
+  padding: 2px 8px;
+  border-radius: var(--suraia-radius-sm);
+  font-family: var(--suraia-font-family-sans);
+  font-size: var(--suraia-font-size-xs);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-range-slider:hover .suraia-range-slider-label,
+.suraia-range-slider[data-suraia-label-always-on] .suraia-range-slider-label {
+  opacity: 1;
+}
+
+/* Marks */
+.suraia-range-slider-mark {
+  position: absolute;
+  top: 50%;
+  width: var(--suraia-range-slider-track-size);
+  height: var(--suraia-range-slider-track-size);
+  transform: translate(-50%, -50%);
+  background-color: var(--suraia-surface-0);
+  border: 2px solid color-mix(in srgb, var(--suraia-surface-foreground) 20%, transparent);
+  border-radius: var(--suraia-radius-full);
+  z-index: 0;
+}
+
+.suraia-range-slider-mark[data-suraia-filled] {
+  border-color: var(--suraia-range-slider-color);
+}
+
+.suraia-range-slider-mark-label {
+  position: absolute;
+  top: calc(var(--suraia-range-slider-track-size) + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--suraia-font-family-sans);
+  font-size: var(--suraia-font-size-xs);
+  color: var(--suraia-surface-foreground-muted);
+  white-space: nowrap;
+}
+
+/* Disabled */
+.suraia-range-slider[data-suraia-disabled] {
+  opacity: var(--suraia-opacity-disabled);
+  cursor: var(--suraia-cursor-disabled);
+  pointer-events: none;
+}
+
+/* Focus */
+.suraia-range-slider-thumb:focus-visible {
+  outline: var(--suraia-focus-ring-width) solid var(--suraia-focus-ring-color);
+  outline-offset: var(--suraia-focus-ring-offset);
+}
