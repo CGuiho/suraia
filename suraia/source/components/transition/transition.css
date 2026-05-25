@@ -1,0 +1,14 @@
+/*! Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO. All Rights Reserved. */
+
+.suraia-root .suraia-transition {
+  opacity: var(--suraia-transition-opacity, 1);
+  transform: var(--suraia-transition-transform, none);
+  transition:
+    opacity var(--suraia-transition-duration, 150ms) var(--suraia-transition-timing-function, ease),
+    transform var(--suraia-transition-duration, 150ms) var(--suraia-transition-timing-function, ease);
+  will-change: opacity, transform;
+}
+
+.suraia-root .suraia-transition[data-suraia-mounted="false"] {
+  display: none;
+}
