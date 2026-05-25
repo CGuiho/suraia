@@ -1,0 +1,49 @@
+{
+  "name": "Badge",
+  "description": "A small status descriptor for UI elements. Supports multiple visual variants, sizes, optional sections, and a dot indicator.",
+  "tier": 1,
+  "dependencies": [],
+  "variants": {
+    "variant": {
+      "options": ["filled", "light", "outline", "dot", "transparent", "default", "gradient"],
+      "default": "filled"
+    },
+    "size": {
+      "options": ["xs", "sm", "md", "lg", "xl"],
+      "default": "md"
+    }
+  },
+  "states": [],
+  "slots": {
+    "default": "The badge label text.",
+    "leftSection": "Content rendered to the left of the label.",
+    "rightSection": "Content rendered to the right of the label."
+  },
+  "attributes": {
+    "color": {
+      "type": "string",
+      "default": "primary",
+      "description": "The color key or CSS color value for the badge."
+    },
+    "radius": {
+      "type": "string",
+      "default": "full",
+      "description": "Border radius key."
+    },
+    "fullWidth": {
+      "type": "boolean",
+      "default": false,
+      "description": "Makes badge take 100% width."
+    },
+    "circle": {
+      "type": "boolean",
+      "default": false,
+      "description": "Makes badge a circle with equal width and height."
+    }
+  },
+  "accessibility": {
+    "role": "status",
+    "keyboardNavigation": [],
+    "aria": {}
+  }
+}
