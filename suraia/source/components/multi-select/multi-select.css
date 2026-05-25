@@ -1,0 +1,127 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-multi-select-wrapper {
+  position: relative;
+}
+
+.suraia-multi-select-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--suraia-space-1);
+  align-items: center;
+  width: 100%;
+}
+
+.suraia-multi-select-input {
+  flex: 1;
+  min-width: 80px;
+  border: none !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.suraia-multi-select-chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  color: var(--suraia-surface-foreground-muted);
+  pointer-events: none;
+  transition: transform var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-multi-select-chevron::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  margin-top: -3px;
+}
+
+.suraia-multi-select-wrapper[data-suraia-opened] .suraia-multi-select-chevron {
+  transform: rotate(180deg);
+}
+
+/* Dropdown */
+.suraia-multi-select-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: var(--suraia-z-index-dropdown);
+  max-height: 220px;
+  overflow-y: auto;
+  background-color: var(--suraia-surface-0);
+  border: 1px solid var(--suraia-surface-border);
+  border-radius: var(--suraia-radius-md);
+  box-shadow: var(--suraia-shadow-md);
+  padding: var(--suraia-space-1);
+  margin-top: var(--suraia-space-1);
+}
+
+.suraia-multi-select-dropdown[hidden] {
+  display: none;
+}
+
+.suraia-multi-select-option {
+  display: flex;
+  align-items: center;
+  gap: var(--suraia-space-2);
+  padding: var(--suraia-space-2) var(--suraia-space-3);
+  font-family: var(--suraia-font-family-sans);
+  font-size: var(--suraia-font-size-sm);
+  color: var(--suraia-surface-foreground);
+  border-radius: var(--suraia-radius-sm);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-multi-select-option:hover:not([data-suraia-disabled]),
+.suraia-multi-select-option[data-suraia-hovered] {
+  background-color: var(--suraia-surface-hover);
+}
+
+.suraia-multi-select-option[data-suraia-selected] {
+  background-color: color-mix(in srgb, var(--suraia-color-primary) var(--suraia-alpha-10), transparent);
+  color: var(--suraia-color-primary);
+  font-weight: var(--suraia-font-weight-medium);
+}
+
+.suraia-multi-select-option-checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--suraia-surface-border);
+  border-radius: var(--suraia-radius-xs);
+  font-size: 10px;
+  color: transparent;
+}
+
+.suraia-multi-select-option[data-suraia-selected] .suraia-multi-select-option-checkbox {
+  background-color: var(--suraia-color-primary);
+  border-color: var(--suraia-color-primary);
+  color: var(--suraia-color-primary-foreground);
+}
+
+.suraia-multi-select-option[data-suraia-disabled] {
+  opacity: var(--suraia-opacity-disabled);
+  cursor: var(--suraia-cursor-disabled);
+}
+
+.suraia-multi-select-nothing {
+  padding: var(--suraia-space-3);
+  font-family: var(--suraia-font-family-sans);
+  font-size: var(--suraia-font-size-sm);
+  color: var(--suraia-surface-foreground-muted);
+  text-align: center;
+}
