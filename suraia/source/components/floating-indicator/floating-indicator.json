@@ -1,0 +1,30 @@
+{
+  "name": "FloatingIndicator",
+  "description": "A positioned visual indicator that follows an active target inside a shared root.",
+  "tier": 1,
+  "dependencies": [],
+  "variants": {},
+  "states": ["visible", "hidden"],
+  "slots": {
+    "indicator": "Absolute element rendered below or above active target content."
+  },
+  "attributes": {
+    "targetRect": {
+      "type": "object",
+      "default": null,
+      "description": "Measured rectangle for the active target."
+    },
+    "transitionDuration": {
+      "type": "number",
+      "default": 150,
+      "description": "Movement transition duration in milliseconds."
+    }
+  },
+  "accessibility": {
+    "role": "presentation",
+    "keyboardNavigation": [],
+    "aria": {
+      "aria-hidden": "Indicator is decorative and should be hidden from assistive technology."
+    }
+  }
+}
