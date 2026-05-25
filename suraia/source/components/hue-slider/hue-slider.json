@@ -1,0 +1,33 @@
+{
+  "name": "HueSlider",
+  "description": "A slider component designed to select a hue value (0-360) from the color spectrum.",
+  "tier": 2,
+  "dependencies": [],
+  "variants": {
+    "size": {
+      "options": ["xs", "sm", "md", "lg", "xl"],
+      "default": "md"
+    }
+  },
+  "states": ["disabled"],
+  "slots": {},
+  "attributes": {
+    "value": { "type": "number", "default": 0 },
+    "step": { "type": "number", "default": 1 }
+  },
+  "accessibility": {
+    "role": "slider",
+    "keyboardNavigation": [
+      { "key": "ArrowRight/ArrowUp", "description": "Increases hue value by step." },
+      { "key": "ArrowLeft/ArrowDown", "description": "Decreases hue value by step." },
+      { "key": "Home", "description": "Sets hue to 0." },
+      { "key": "End", "description": "Sets hue to 360." }
+    ],
+    "aria": {
+      "aria-valuenow": "Current hue value.",
+      "aria-valuemin": "0",
+      "aria-valuemax": "360",
+      "aria-orientation": "horizontal"
+    }
+  }
+}
