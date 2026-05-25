@@ -1,0 +1,48 @@
+/*! Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO. All Rights Reserved. */
+
+.suraia-root .suraia-scroller {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--suraia-space-2);
+}
+
+.suraia-root .suraia-scroller[data-suraia-orientation="vertical"] {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+
+.suraia-root .suraia-scroller-viewport {
+  overflow: hidden;
+}
+
+.suraia-root .suraia-scroller-track {
+  display: flex;
+  transform: translateX(var(--suraia-scroller-offset, 0));
+  transition: transform var(--suraia-transition-duration-md) var(--suraia-transition-ease);
+}
+
+.suraia-root .suraia-scroller[data-suraia-orientation="vertical"] .suraia-scroller-track {
+  flex-direction: column;
+  transform: translateY(var(--suraia-scroller-offset, 0));
+}
+
+.suraia-root .suraia-scroller-item {
+  flex: 0 0 auto;
+  padding: var(--suraia-space-3);
+}
+
+.suraia-root .suraia-scroller-control {
+  min-width: var(--suraia-control-height-sm);
+  min-height: var(--suraia-control-height-sm);
+  border: 1px solid var(--suraia-color-border);
+  border-radius: var(--suraia-radius-md);
+  background: var(--suraia-color-surface);
+  color: var(--suraia-color-text);
+  cursor: pointer;
+}
+
+.suraia-root .suraia-scroller-control:disabled {
+  opacity: var(--suraia-disabled-opacity);
+  cursor: var(--suraia-disabled-cursor);
+}
