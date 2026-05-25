@@ -1,0 +1,70 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+/* Textarea reuses .suraia-input-wrapper, .suraia-input-label, etc. from text-input */
+
+.suraia-textarea {
+  width: 100%;
+  min-height: calc(var(--suraia-component-size-sm) * 2);
+  padding: var(--suraia-space-2) var(--suraia-space-3);
+  font-family: var(--suraia-font-family-sans);
+  font-size: var(--suraia-font-size-sm);
+  color: var(--suraia-surface-foreground);
+  background-color: var(--suraia-surface-0);
+  border: 1px solid var(--suraia-surface-border);
+  border-radius: var(--suraia-radius-md);
+  outline: none;
+  resize: vertical;
+  line-height: var(--suraia-line-height-md);
+  transition: border-color var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-textarea::placeholder {
+  color: var(--suraia-surface-foreground-muted);
+}
+
+.suraia-textarea:focus {
+  border-color: var(--suraia-color-primary);
+}
+
+/* Size variants */
+.suraia-input-wrapper[data-suraia-size="xs"] .suraia-textarea { font-size: var(--suraia-font-size-xs); padding: var(--suraia-space-1) var(--suraia-space-2); }
+.suraia-input-wrapper[data-suraia-size="lg"] .suraia-textarea { font-size: var(--suraia-font-size-md); }
+.suraia-input-wrapper[data-suraia-size="xl"] .suraia-textarea { font-size: var(--suraia-font-size-lg); padding: var(--suraia-space-3) var(--suraia-space-4); }
+
+/* Filled variant */
+.suraia-input-wrapper[data-suraia-variant="filled"] .suraia-textarea {
+  background-color: var(--suraia-surface-1);
+  border-color: transparent;
+}
+.suraia-input-wrapper[data-suraia-variant="filled"] .suraia-textarea:focus {
+  border-color: var(--suraia-color-primary);
+}
+
+/* Unstyled variant */
+.suraia-input-wrapper[data-suraia-variant="unstyled"] .suraia-textarea {
+  background-color: transparent;
+  border-color: transparent;
+  padding: 0;
+  resize: none;
+}
+
+/* Error */
+.suraia-input-wrapper[data-suraia-error] .suraia-textarea {
+  border-color: var(--suraia-color-error);
+}
+
+/* Disabled */
+.suraia-textarea:disabled {
+  opacity: var(--suraia-opacity-disabled);
+  cursor: var(--suraia-cursor-disabled);
+  resize: none;
+}
+
+/* Autosize — no resize handle */
+.suraia-textarea[data-suraia-autosize] {
+  resize: none;
+  overflow: hidden;
+}
