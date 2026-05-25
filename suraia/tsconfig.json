@@ -5,6 +5,7 @@
   "compilerOptions": {
     // Environment setup & latest features
     "lib": ["esnext", "dom"],
+    "types": ["bun"],
     "target": "ESNext",
     "module": "ESNext",
     "moduleDetection": "force",
