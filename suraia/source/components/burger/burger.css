@@ -1,0 +1,70 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-burger {
+  --suraia-burger-size: 24px;
+  --suraia-burger-color: var(--suraia-surface-foreground);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--suraia-component-size-md);
+  height: var(--suraia-component-size-md);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  border-radius: var(--suraia-radius-sm);
+  transition: background-color var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-burger:hover {
+  background-color: var(--suraia-surface-hover);
+}
+
+.suraia-burger[data-suraia-size="xs"] { --suraia-burger-size: 14px; width: var(--suraia-component-size-xs); height: var(--suraia-component-size-xs); }
+.suraia-burger[data-suraia-size="sm"] { --suraia-burger-size: 18px; width: var(--suraia-component-size-sm); height: var(--suraia-component-size-sm); }
+.suraia-burger[data-suraia-size="md"] { --suraia-burger-size: 24px; }
+.suraia-burger[data-suraia-size="lg"] { --suraia-burger-size: 30px; width: var(--suraia-component-size-lg); height: var(--suraia-component-size-lg); }
+.suraia-burger[data-suraia-size="xl"] { --suraia-burger-size: 36px; width: var(--suraia-component-size-xl); height: var(--suraia-component-size-xl); }
+
+.suraia-burger-bars {
+  position: relative;
+  width: var(--suraia-burger-size);
+  height: calc(var(--suraia-burger-size) * 0.65);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.suraia-burger-bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--suraia-burger-color);
+  border-radius: var(--suraia-radius-full);
+  transition: transform var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out),
+              opacity var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+  transform-origin: center;
+}
+
+/* Opened state — X animation */
+.suraia-burger[data-suraia-opened] .suraia-burger-bar:nth-child(1) {
+  transform: translateY(calc(var(--suraia-burger-size) * 0.325 - 1px)) rotate(45deg);
+}
+
+.suraia-burger[data-suraia-opened] .suraia-burger-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.suraia-burger[data-suraia-opened] .suraia-burger-bar:nth-child(3) {
+  transform: translateY(calc(var(--suraia-burger-size) * -0.325 + 1px)) rotate(-45deg);
+}
+
+/* Focus */
+.suraia-burger:focus-visible {
+  outline: var(--suraia-focus-ring-width) solid var(--suraia-focus-ring-color);
+  outline-offset: var(--suraia-focus-ring-offset);
+}
