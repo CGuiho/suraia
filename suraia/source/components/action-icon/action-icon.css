@@ -1,0 +1,117 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-action-icon {
+  --suraia-ai-size: var(--suraia-component-size-md);
+  --suraia-ai-radius: var(--suraia-radius-md);
+  --suraia-ai-bg: transparent;
+  --suraia-ai-color: var(--suraia-color-primary);
+  --suraia-ai-bd: 1px solid transparent;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--suraia-ai-size);
+  height: var(--suraia-ai-size);
+  min-width: var(--suraia-ai-size);
+  min-height: var(--suraia-ai-size);
+  border-radius: var(--suraia-ai-radius);
+  background-color: var(--suraia-ai-bg);
+  color: var(--suraia-ai-color);
+  border: var(--suraia-ai-bd);
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--suraia-font-family-sans);
+  user-select: none;
+  transition: background-color var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out),
+              color var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+/* Size variants */
+.suraia-action-icon[data-suraia-size="xs"] { --suraia-ai-size: var(--suraia-component-size-xs); }
+.suraia-action-icon[data-suraia-size="sm"] { --suraia-ai-size: var(--suraia-component-size-sm); }
+.suraia-action-icon[data-suraia-size="md"] { --suraia-ai-size: var(--suraia-component-size-md); }
+.suraia-action-icon[data-suraia-size="lg"] { --suraia-ai-size: var(--suraia-component-size-lg); }
+.suraia-action-icon[data-suraia-size="xl"] { --suraia-ai-size: var(--suraia-component-size-xl); }
+
+/* Filled */
+.suraia-action-icon[data-suraia-variant="filled"] {
+  --suraia-ai-bg: var(--suraia-color-primary);
+  --suraia-ai-color: var(--suraia-color-on-primary);
+}
+.suraia-action-icon[data-suraia-variant="filled"]:hover:not([disabled]) {
+  --suraia-ai-bg: color-mix(in srgb, var(--suraia-color-primary) 85%, black);
+}
+
+/* Light */
+.suraia-action-icon[data-suraia-variant="light"] {
+  --suraia-ai-bg: color-mix(in srgb, var(--suraia-color-primary) 12%, transparent);
+  --suraia-ai-color: var(--suraia-color-primary);
+}
+.suraia-action-icon[data-suraia-variant="light"]:hover:not([disabled]) {
+  --suraia-ai-bg: color-mix(in srgb, var(--suraia-color-primary) 20%, transparent);
+}
+
+/* Outline */
+.suraia-action-icon[data-suraia-variant="outline"] {
+  --suraia-ai-bg: transparent;
+  --suraia-ai-color: var(--suraia-color-primary);
+  --suraia-ai-bd: 1px solid var(--suraia-color-primary);
+}
+.suraia-action-icon[data-suraia-variant="outline"]:hover:not([disabled]) {
+  --suraia-ai-bg: color-mix(in srgb, var(--suraia-color-primary) 8%, transparent);
+}
+
+/* Subtle */
+.suraia-action-icon[data-suraia-variant="subtle"] {
+  --suraia-ai-bg: transparent;
+  --suraia-ai-color: var(--suraia-color-primary);
+}
+.suraia-action-icon[data-suraia-variant="subtle"]:hover:not([disabled]) {
+  --suraia-ai-bg: color-mix(in srgb, var(--suraia-color-primary) 12%, transparent);
+}
+
+/* Transparent */
+.suraia-action-icon[data-suraia-variant="transparent"] {
+  --suraia-ai-bg: transparent;
+  --suraia-ai-color: var(--suraia-color-primary);
+}
+
+/* Default */
+.suraia-action-icon[data-suraia-variant="default"] {
+  --suraia-ai-bg: var(--suraia-surface-0);
+  --suraia-ai-color: var(--suraia-surface-foreground);
+  --suraia-ai-bd: 1px solid var(--suraia-surface-border);
+}
+.suraia-action-icon[data-suraia-variant="default"]:hover:not([disabled]) {
+  --suraia-ai-bg: var(--suraia-surface-hover);
+}
+
+/* Gradient */
+.suraia-action-icon[data-suraia-variant="gradient"] {
+  background-image: linear-gradient(45deg, var(--suraia-color-primary), var(--suraia-color-info));
+  --suraia-ai-color: var(--suraia-color-on-primary);
+  --suraia-ai-bd: 1px solid transparent;
+}
+
+/* Focus */
+.suraia-action-icon:focus-visible {
+  outline: var(--suraia-focus-ring-width) solid var(--suraia-focus-ring-color);
+  outline-offset: var(--suraia-focus-ring-offset);
+}
+
+/* Disabled */
+.suraia-action-icon[disabled],
+.suraia-action-icon[data-suraia-state~="disabled"] {
+  opacity: var(--suraia-opacity-disabled);
+  cursor: var(--suraia-cursor-disabled);
+  pointer-events: none;
+}
+
+/* Loading */
+.suraia-action-icon[data-suraia-state~="loading"] {
+  cursor: default;
+  pointer-events: none;
+}
