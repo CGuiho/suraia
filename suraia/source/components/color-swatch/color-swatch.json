@@ -1,0 +1,38 @@
+{
+  "name": "ColorSwatch",
+  "description": "Displays a color preview with customizable shape, size, shadow, and optional indicator slot.",
+  "tier": 1,
+  "dependencies": [],
+  "variants": {
+    "size": {
+      "options": ["xs", "sm", "md", "lg", "xl"],
+      "default": "md"
+    }
+  },
+  "states": [],
+  "slots": {
+    "default": "Content overlay rendered inside the swatch (e.g. a checkmark icon)."
+  },
+  "attributes": {
+    "color": {
+      "type": "string",
+      "default": "#000000",
+      "description": "CSS color value for the background of the swatch."
+    },
+    "radius": {
+      "type": "string",
+      "default": "full",
+      "description": "Border radius key."
+    },
+    "withShadow": {
+      "type": "boolean",
+      "default": true,
+      "description": "If set, adds a subtle border/shadow for visual separation."
+    }
+  },
+  "accessibility": {
+    "role": "img",
+    "keyboardNavigation": [],
+    "aria": {}
+  }
+}
