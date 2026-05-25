@@ -1,0 +1,68 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-divider {
+  --suraia-divider-size: 1px;
+  --suraia-divider-color: var(--suraia-surface-border);
+  --suraia-divider-border-style: solid;
+}
+
+/* Size variants */
+.suraia-divider[data-suraia-size="xs"] { --suraia-divider-size: 1px; }
+.suraia-divider[data-suraia-size="sm"] { --suraia-divider-size: 2px; }
+.suraia-divider[data-suraia-size="md"] { --suraia-divider-size: 3px; }
+.suraia-divider[data-suraia-size="lg"] { --suraia-divider-size: 4px; }
+.suraia-divider[data-suraia-size="xl"] { --suraia-divider-size: 5px; }
+
+/* Horizontal */
+.suraia-divider[data-suraia-orientation="horizontal"] {
+  border-top: var(--suraia-divider-size) var(--suraia-divider-border-style) var(--suraia-divider-color);
+}
+
+/* Vertical */
+.suraia-divider[data-suraia-orientation="vertical"] {
+  border-inline-start: var(--suraia-divider-size) var(--suraia-divider-border-style) var(--suraia-divider-color);
+  height: auto;
+  align-self: stretch;
+}
+
+/* With label — removes the border, uses pseudo-elements instead */
+.suraia-divider[data-suraia-with-label] {
+  border: 0;
+}
+
+.suraia-divider-label {
+  display: flex;
+  align-items: center;
+  font-family: var(--suraia-font-family-sans);
+  font-size: var(--suraia-font-size-xs);
+  color: var(--suraia-surface-foreground-muted);
+  white-space: nowrap;
+}
+
+.suraia-divider-label::before,
+.suraia-divider-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  border-top: var(--suraia-divider-size) var(--suraia-divider-border-style) var(--suraia-divider-color);
+}
+
+.suraia-divider-label::before {
+  margin-inline-end: var(--suraia-space-2);
+}
+
+.suraia-divider-label::after {
+  margin-inline-start: var(--suraia-space-2);
+}
+
+/* Label positions */
+.suraia-divider-label[data-position="left"]::before {
+  display: none;
+}
+
+.suraia-divider-label[data-position="right"]::after {
+  display: none;
+}
