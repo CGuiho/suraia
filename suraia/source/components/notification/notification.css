@@ -1,0 +1,116 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-notification {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--suraia-space-3);
+  padding: var(--suraia-space-3) var(--suraia-space-4);
+  padding-right: var(--suraia-space-8);
+  border-radius: var(--suraia-radius-md);
+  font-family: var(--suraia-font-family-sans);
+  box-shadow: var(--suraia-shadow-md);
+  overflow: hidden;
+}
+
+.suraia-notification[data-suraia-color="primary"] { --suraia-notif-color: var(--suraia-color-primary); }
+.suraia-notification[data-suraia-color="error"] { --suraia-notif-color: var(--suraia-color-error); }
+.suraia-notification[data-suraia-color="success"] { --suraia-notif-color: var(--suraia-color-success); }
+.suraia-notification[data-suraia-color="warning"] { --suraia-notif-color: var(--suraia-color-warning); }
+.suraia-notification[data-suraia-color="info"] { --suraia-notif-color: var(--suraia-color-info); }
+
+/* Light */
+.suraia-notification[data-suraia-variant="light"] {
+  background-color: var(--suraia-surface-0);
+  border-left: 4px solid var(--suraia-notif-color, var(--suraia-color-primary));
+}
+
+/* Filled */
+.suraia-notification[data-suraia-variant="filled"] {
+  background-color: var(--suraia-notif-color, var(--suraia-color-primary));
+  color: #fff;
+}
+
+/* Outline */
+.suraia-notification[data-suraia-variant="outline"] {
+  background-color: var(--suraia-surface-0);
+  border: 1px solid var(--suraia-notif-color, var(--suraia-color-primary));
+}
+
+/* Default */
+.suraia-notification[data-suraia-variant="default"] {
+  background-color: var(--suraia-surface-0);
+}
+
+/* With border */
+.suraia-notification[data-suraia-with-border] {
+  border: 1px solid var(--suraia-surface-border);
+}
+
+.suraia-notification-icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--suraia-notif-color, var(--suraia-color-primary));
+}
+
+.suraia-notification[data-suraia-variant="filled"] .suraia-notification-icon {
+  color: #fff;
+}
+
+.suraia-notification-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.suraia-notification-title {
+  font-size: var(--suraia-font-size-sm);
+  font-weight: var(--suraia-font-weight-semibold);
+  line-height: var(--suraia-line-height-sm);
+  margin-bottom: 2px;
+}
+
+.suraia-notification-title:empty {
+  display: none;
+}
+
+.suraia-notification-description {
+  font-size: var(--suraia-font-size-sm);
+  line-height: var(--suraia-line-height-md);
+  color: var(--suraia-surface-foreground-muted);
+}
+
+.suraia-notification[data-suraia-variant="filled"] .suraia-notification-description {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.suraia-notification-close {
+  position: absolute;
+  top: var(--suraia-space-2);
+  right: var(--suraia-space-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: var(--suraia-radius-sm);
+  color: inherit;
+  font-size: 18px;
+  line-height: 1;
+  opacity: 0.5;
+  padding: 0;
+  transition: opacity var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-notification-close:hover {
+  opacity: 1;
+}
