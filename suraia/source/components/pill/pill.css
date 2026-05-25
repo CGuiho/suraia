@@ -1,0 +1,104 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--suraia-space-1);
+  padding: 0 var(--suraia-space-2);
+  height: 24px;
+  font-family: var(--suraia-font-family-sans);
+  font-size: var(--suraia-font-size-xs);
+  font-weight: var(--suraia-font-weight-medium);
+  line-height: 1;
+  border-radius: var(--suraia-radius-xl);
+  user-select: none;
+  max-width: 100%;
+}
+
+/* Sizes */
+.suraia-pill[data-suraia-size="xs"] {
+  height: 18px;
+  font-size: 10px;
+  padding: 0 var(--suraia-space-1);
+}
+.suraia-pill[data-suraia-size="sm"] {
+  height: 22px;
+  font-size: var(--suraia-font-size-xs);
+}
+.suraia-pill[data-suraia-size="md"] {
+  height: 26px;
+  font-size: var(--suraia-font-size-sm);
+}
+.suraia-pill[data-suraia-size="lg"] {
+  height: 30px;
+  font-size: var(--suraia-font-size-sm);
+  padding: 0 var(--suraia-space-3);
+}
+.suraia-pill[data-suraia-size="xl"] {
+  height: 36px;
+  font-size: var(--suraia-font-size-md);
+  padding: 0 var(--suraia-space-4);
+}
+
+/* Variants */
+.suraia-pill[data-suraia-variant="default"] {
+  background-color: var(--suraia-surface-1);
+  border: 1px solid var(--suraia-surface-border);
+  color: var(--suraia-surface-foreground);
+}
+
+.suraia-pill[data-suraia-variant="filled"] {
+  background-color: var(--suraia-color-primary);
+  color: var(--suraia-color-primary-foreground);
+}
+
+.suraia-pill[data-suraia-variant="light"] {
+  background-color: color-mix(in srgb, var(--suraia-color-primary) var(--suraia-alpha-10), transparent);
+  color: var(--suraia-color-primary);
+}
+
+.suraia-pill[data-suraia-variant="outline"] {
+  background-color: transparent;
+  border: 1px solid var(--suraia-color-primary);
+  color: var(--suraia-color-primary);
+}
+
+.suraia-pill-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Remove button */
+.suraia-pill-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: var(--suraia-radius-full);
+  color: currentColor;
+  cursor: pointer;
+  opacity: var(--suraia-alpha-70);
+  font-size: 12px;
+  line-height: 1;
+  transition: opacity var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out),
+              background-color var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-pill-remove:hover {
+  opacity: 1;
+  background-color: color-mix(in srgb, currentColor var(--suraia-alpha-10), transparent);
+}
+
+.suraia-pill[data-suraia-disabled] {
+  opacity: var(--suraia-opacity-disabled);
+  pointer-events: none;
+}
