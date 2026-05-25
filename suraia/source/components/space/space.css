@@ -1,0 +1,9 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-space {
+  display: block;
+  flex-shrink: 0;
+}
