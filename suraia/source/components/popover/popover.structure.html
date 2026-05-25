@@ -1,0 +1,19 @@
+<!-- Suraia Popover Component Blueprint -->
+<div class="suraia-popover-wrapper" data-suraia-component="Popover">
+  <!-- Trigger element (target slot) -->
+  <button type="button" aria-haspopup="dialog" aria-expanded="false" class="suraia-popover-target">
+    Toggle Popover
+  </button>
+
+  <!-- Popover floating element (content slot) -->
+  <div
+    class="suraia-popover"
+    role="dialog"
+    data-suraia-position="bottom"
+  >
+    <div class="suraia-popover-arrow" data-suraia-with-arrow></div>
+    <div class="suraia-popover-inner">
+      Popover content goes here.
+    </div>
+  </div>
+</div>
