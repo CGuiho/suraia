@@ -75,12 +75,12 @@ Build artifacts (`library/`, `bundle/`, `bin/`) are gitignored.
 ## Project Management with ClickUp
 
 This repository is the G2008 GUIHO Web40 project. The ClickUp home for this repo is at:
-https://app.clickup.com/9015748215/v/b/6-901521338736-2
-This URL opens the **GUIHO Web40** list inside the **GUIHO Web40** space (space ID: `901510090571`).
+https://app.clickup.com/9015748215/v/b/li/901523550736
+This URL opens the **GUIHO Suraia** list inside the **GUIHO Engineering** space (space ID: `90152559592`).
 
 - This project is managed on ClickUp using the `cup` CLI tool. Load the `clickup` skill before working with tasks.
-- Create and track all tasks in the **GUIHO Web40** list (`901521338736`).
-- Use `cup tasks --list 901521338736` to see existing tasks. Use `cup create -l 901521338736` to create new ones.
+- Create and track all tasks in the **GUIHO Suraia** list (`901523550736`).
+- Use `cup tasks --list 901523550736` to see existing tasks. Use `cup create -l 901523550736` to create new ones.
 - Statuses available: `to do`, `on hold`, `scheduled`, `in progress`, `testing`, `complete`.
-- When asked what work is left, what is done, or what is on hold, use `cup tasks --list 901521338736 --status "<status>"` and answer from the results instead of guessing from chat history.
+- When asked what work is left, what is done, or what is on hold, use `cup tasks --list 901523550736 --status "<status>"` and answer from the results instead of guessing from chat history.
 - When asked what work is left, what is done, or what is on hold, inspect `.agentkanban/board.yaml` and `.agentkanban/tasks/**/*.md` and answer from those files instead of guessing from chat history.
