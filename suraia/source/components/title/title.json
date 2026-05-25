@@ -1,0 +1,39 @@
+{
+  "name": "Title",
+  "description": "A heading component that renders h1–h6 elements with configurable order and size. Uses heading design tokens for font size, line height, and font weight.",
+  "tier": 1,
+  "dependencies": [],
+  "variants": {
+    "order": {
+      "options": [1, 2, 3, 4, 5, 6],
+      "default": 1
+    },
+    "size": {
+      "options": ["h1", "h2", "h3", "h4", "h5", "h6"],
+      "default": null,
+      "description": "Overrides the visual size independently of the heading order."
+    }
+  },
+  "states": [],
+  "slots": {
+    "default": "The heading text content."
+  },
+  "attributes": {
+    "truncate": {
+      "type": "boolean",
+      "default": false,
+      "description": "Truncates heading with ellipsis on overflow."
+    },
+    "lineClamp": {
+      "type": "number",
+      "description": "Number of lines after which heading text is clamped."
+    }
+  },
+  "accessibility": {
+    "role": "heading",
+    "keyboardNavigation": [],
+    "aria": {
+      "aria-level": "Automatically set by the heading element (h1=1, h2=2, etc.)."
+    }
+  }
+}
