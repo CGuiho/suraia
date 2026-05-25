@@ -1,0 +1,20 @@
+<!-- Suraia Indicator Component Blueprint -->
+<div
+  class="suraia-indicator-root"
+  data-suraia-component="Indicator"
+  data-suraia-inline
+>
+  <!-- Target element -->
+  <slot></slot>
+
+  <!-- The indicator dot/badge -->
+  <span
+    class="suraia-indicator"
+    data-suraia-position="top-end"
+    data-suraia-size="md"
+    data-suraia-radius="full"
+  >
+    <!-- Label/Content slot inside indicator (e.g. number count) -->
+    <slot name="label"></slot>
+  </span>
+</div>
