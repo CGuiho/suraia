@@ -65,8 +65,8 @@ Each component has 6 files: `.json`, `.structure.html`, `.css`, `.ts`, `.md`, `.
 
 ### Quality Gates
 - **Typecheck:** Clean (0 errors) with `bun run typecheck`.
-- **Tests:** 95/95 passing across 19 test files.
-- **Remaining:** ~97 components left from TODO.md inventory (114 total).
+- **Tests:** 241/241 passing across 54 test files.
+- **Remaining:** 62 components left from TODO.md inventory (114 total, 52 implemented).
 
 ### Mantine Reference Architecture
 - Mantine source available at `.ignored/mantine/packages/@mantine/core/src/components/`.
@@ -78,4 +78,9 @@ Each component has 6 files: `.json`, `.structure.html`, `.css`, `.ts`, `.md`, `.
 - Radius, spacing: based on Mantine defaults.
 - **Directive:** "Implement as many components as you can without my help."
 - For complex components requiring non-obvious strategies, write a `/docs` document.
+
+## 2026-05-25 (Session 2) — Primitive Components Implementation Sprint
+- **Implemented Components:** Box, Center, AspectRatio, UnstyledButton, VisuallyHidden, Card, Kbd, Mark, Highlight (each with spec, anatomy structure, css, controller, test, and md guide).
+- **Bug Fix:** Fixed precision rounding issue in `NumberInputController` where standard floating-point representation boundaries led to failing tests for rounding up values like 1.005. Resolved using `Math.round` and `Number.EPSILON`.
+- **Progress:** Updated checklist to include all pre-existing files, reaching 52/114 components total (45%) with 241 passing tests.
 
