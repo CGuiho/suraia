@@ -1,0 +1,14 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.suraia-center[data-suraia-inline="true"] {
+  display: inline-flex;
+}
