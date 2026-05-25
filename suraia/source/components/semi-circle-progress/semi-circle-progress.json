@@ -1,0 +1,26 @@
+{
+  "name": "SemiCircleProgress",
+  "description": "A semi-circular progress/gauge indicator built with SVG.",
+  "tier": 2,
+  "dependencies": [],
+  "variants": {},
+  "states": [],
+  "slots": {
+    "label": "Content displayed in the center or bottom of the semi-circle (e.g. value percentage)."
+  },
+  "attributes": {
+    "value": { "type": "number", "default": 0 },
+    "size": { "type": "number", "default": 200 },
+    "thickness": { "type": "number", "default": 16 },
+    "color": { "type": "string", "default": "primary" }
+  },
+  "accessibility": {
+    "role": "progressbar",
+    "keyboardNavigation": [],
+    "aria": {
+      "aria-valuenow": "Current progress percentage (0-100).",
+      "aria-valuemin": "0",
+      "aria-valuemax": "100"
+    }
+  }
+}
