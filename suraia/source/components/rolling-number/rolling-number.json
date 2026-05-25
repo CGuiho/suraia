@@ -1,0 +1,31 @@
+{
+  "name": "RollingNumber",
+  "description": "Animate numbers rolling sequentially like a ticker/odometer.",
+  "tier": 1,
+  "dependencies": [],
+  "variants": {
+    "size": {
+      "options": ["xs", "sm", "md", "lg", "xl"],
+      "default": "md"
+    }
+  },
+  "states": [],
+  "slots": {},
+  "attributes": {
+    "value": {
+      "type": "number",
+      "default": 0,
+      "description": "The target number to display."
+    },
+    "duration": {
+      "type": "number",
+      "default": 1000,
+      "description": "The duration of the roll animation in milliseconds."
+    }
+  },
+  "accessibility": {
+    "role": "status",
+    "keyboardNavigation": [],
+    "aria": {}
+  }
+}
