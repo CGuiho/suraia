@@ -1,0 +1,43 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-blockquote {
+  --suraia-blockquote-bd-color: var(--suraia-color-primary, #228be6);
+  --suraia-blockquote-bg: var(--suraia-surface-0, #ffffff);
+
+  margin: 0;
+  padding: var(--suraia-space-4, 16px) var(--suraia-space-5, 20px);
+  background-color: var(--suraia-blockquote-bg);
+  border-inline-start: 4px solid var(--suraia-blockquote-bd-color);
+  font-family: var(--suraia-font-family-sans, sans-serif);
+  font-size: var(--suraia-font-size-md, 1rem);
+  line-height: var(--suraia-line-height-md, 1.55);
+}
+
+.suraia-blockquote-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--suraia-space-3, 12px);
+}
+
+.suraia-blockquote-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--suraia-blockquote-bd-color);
+  flex-shrink: 0;
+}
+
+.suraia-blockquote-body {
+  flex: 1;
+}
+
+.suraia-blockquote-cite {
+  display: block;
+  font-style: normal;
+  font-size: var(--suraia-font-size-sm, 0.875rem);
+  color: var(--suraia-surface-foreground-muted, #868e96);
+  margin-top: var(--suraia-space-2, 8px);
+}
