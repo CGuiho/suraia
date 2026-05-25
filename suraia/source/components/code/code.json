@@ -1,0 +1,28 @@
+{
+  "name": "Code",
+  "description": "Inline or block code wrapper with syntax highlighting readiness.",
+  "tier": 1,
+  "dependencies": [],
+  "variants": {},
+  "states": [],
+  "slots": {
+    "default": "The code text content."
+  },
+  "attributes": {
+    "block": {
+      "type": "boolean",
+      "default": false,
+      "description": "If set, code will be rendered in a pre block with scrollbars."
+    },
+    "color": {
+      "type": "string",
+      "default": "primary",
+      "description": "Custom code text/background tint color key."
+    }
+  },
+  "accessibility": {
+    "role": "code",
+    "keyboardNavigation": [],
+    "aria": {}
+  }
+}
