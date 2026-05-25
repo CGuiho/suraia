@@ -1,0 +1,62 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: var(--suraia-color-bg-card, var(--suraia-color-bg-paper, #ffffff));
+  border: 1px solid transparent;
+  overflow: hidden;
+}
+
+/* Borders */
+.suraia-card[data-suraia-with-border="true"] {
+  border-color: var(--suraia-surface-border, #e9ecef);
+}
+
+/* Padding scale */
+.suraia-card[data-suraia-padding="xs"] { --suraia-card-padding: var(--suraia-space-2, 8px); }
+.suraia-card[data-suraia-padding="sm"] { --suraia-card-padding: var(--suraia-space-3, 12px); }
+.suraia-card[data-suraia-padding="md"] { --suraia-card-padding: var(--suraia-space-4, 16px); }
+.suraia-card[data-suraia-padding="lg"] { --suraia-card-padding: var(--suraia-space-6, 24px); }
+.suraia-card[data-suraia-padding="xl"] { --suraia-card-padding: var(--suraia-space-8, 32px); }
+
+.suraia-card {
+  padding: var(--suraia-card-padding, var(--suraia-space-4, 16px));
+}
+
+/* Radius scale */
+.suraia-card[data-suraia-radius="xs"] { border-radius: var(--suraia-radius-xs, 2px); }
+.suraia-card[data-suraia-radius="sm"] { border-radius: var(--suraia-radius-sm, 4px); }
+.suraia-card[data-suraia-radius="md"] { border-radius: var(--suraia-radius-md, 8px); }
+.suraia-card[data-suraia-radius="lg"] { border-radius: var(--suraia-radius-lg, 16px); }
+.suraia-card[data-suraia-radius="xl"] { border-radius: var(--suraia-radius-xl, 32px); }
+
+/* Shadow scale */
+.suraia-card[data-suraia-shadow="xs"] { box-shadow: var(--suraia-shadow-xs); }
+.suraia-card[data-suraia-shadow="sm"] { box-shadow: var(--suraia-shadow-sm); }
+.suraia-card[data-suraia-shadow="md"] { box-shadow: var(--suraia-shadow-md); }
+.suraia-card[data-suraia-shadow="lg"] { box-shadow: var(--suraia-shadow-lg); }
+.suraia-card[data-suraia-shadow="xl"] { box-shadow: var(--suraia-shadow-xl); }
+
+/* Card Section support */
+.suraia-card-section {
+  margin-left: calc(-1 * var(--suraia-card-padding, 16px));
+  margin-right: calc(-1 * var(--suraia-card-padding, 16px));
+}
+
+.suraia-card-section:first-child {
+  margin-top: calc(-1 * var(--suraia-card-padding, 16px));
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.suraia-card-section:last-child {
+  margin-bottom: calc(-1 * var(--suraia-card-padding, 16px));
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
