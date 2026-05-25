@@ -1,0 +1,19 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-kbd {
+  font-family: var(--suraia-font-family-monospace, monospace);
+  font-size: var(--suraia-font-size-xs, 0.75rem);
+  font-weight: var(--suraia-font-weight-bold, 700);
+  background-color: var(--suraia-color-bg-paper, #f8f9fa);
+  color: var(--suraia-color-text-primary, #212529);
+  border: 1px solid var(--suraia-surface-border, #dee2e6);
+  border-bottom-width: 3px;
+  border-radius: var(--suraia-radius-sm, 4px);
+  padding: 3px 6px;
+  line-height: 1;
+  display: inline-block;
+  white-space: nowrap;
+}
