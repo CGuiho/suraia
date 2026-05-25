@@ -1,0 +1,24 @@
+<!-- Suraia PillsInput Component Blueprint -->
+<div class="suraia-input-wrapper" data-suraia-component="PillsInput" data-suraia-size="sm" data-suraia-variant="default">
+  <label class="suraia-input-label" for="pills-input-field">Label</label>
+  <p class="suraia-input-description">Description text.</p>
+
+  <div class="suraia-pills-input-container">
+    <div class="suraia-pills-input-field-wrapper">
+      <!-- Slot for pills -->
+      <div class="suraia-pill" data-suraia-size="xs">
+        <span class="suraia-pill-label">Pill 1</span>
+        <button type="button" class="suraia-pill-remove">×</button>
+      </div>
+
+      <input
+        type="text"
+        class="suraia-pills-input-field"
+        id="pills-input-field"
+        placeholder="Type here..."
+      />
+    </div>
+  </div>
+
+  <p class="suraia-input-error">Error message.</p>
+</div>
