@@ -1,0 +1,13 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-affix {
+  position: fixed;
+  z-index: var(--suraia-affix-z-index, 100);
+  top: var(--suraia-affix-top, auto);
+  bottom: var(--suraia-affix-bottom, auto);
+  left: var(--suraia-affix-left, auto);
+  right: var(--suraia-affix-right, auto);
+}
