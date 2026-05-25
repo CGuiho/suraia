@@ -1,0 +1,31 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-paper {
+  background-color: var(--suraia-surface-0);
+  color: var(--suraia-surface-foreground);
+  border-radius: var(--suraia-paper-radius, var(--suraia-radius-md));
+  outline: 0;
+}
+
+/* Shadow variants */
+.suraia-paper[data-suraia-shadow="xs"] { box-shadow: var(--suraia-shadow-xs); }
+.suraia-paper[data-suraia-shadow="sm"] { box-shadow: var(--suraia-shadow-sm); }
+.suraia-paper[data-suraia-shadow="md"] { box-shadow: var(--suraia-shadow-md); }
+.suraia-paper[data-suraia-shadow="lg"] { box-shadow: var(--suraia-shadow-lg); }
+.suraia-paper[data-suraia-shadow="xl"] { box-shadow: var(--suraia-shadow-xl); }
+
+/* Radius variants */
+.suraia-paper[data-suraia-radius="none"] { border-radius: var(--suraia-radius-none); }
+.suraia-paper[data-suraia-radius="xs"] { border-radius: var(--suraia-radius-xs); }
+.suraia-paper[data-suraia-radius="sm"] { border-radius: var(--suraia-radius-sm); }
+.suraia-paper[data-suraia-radius="md"] { border-radius: var(--suraia-radius-md); }
+.suraia-paper[data-suraia-radius="lg"] { border-radius: var(--suraia-radius-lg); }
+.suraia-paper[data-suraia-radius="xl"] { border-radius: var(--suraia-radius-xl); }
+
+/* With border */
+.suraia-paper[data-suraia-with-border] {
+  border: 1px solid var(--suraia-surface-border);
+}
