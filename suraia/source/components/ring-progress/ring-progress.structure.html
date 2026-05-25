@@ -1,0 +1,40 @@
+<!-- Suraia RingProgress Component Blueprint -->
+<div
+  class="suraia-ring-progress"
+  data-suraia-component="RingProgress"
+  role="progressbar"
+  aria-valuenow="60"
+  aria-valuemin="0"
+  aria-valuemax="100"
+  style="width: 120px; height: 120px;"
+>
+  <svg class="suraia-ring-progress-svg" width="120" height="120" viewBox="0 0 120 120">
+    <!-- Background track ring -->
+    <circle
+      class="suraia-ring-progress-track"
+      cx="60"
+      cy="60"
+      r="54"
+      stroke-width="12"
+    />
+
+    <!-- Value/Section rings -->
+    <circle
+      class="suraia-ring-progress-bar"
+      data-suraia-color="primary"
+      cx="60"
+      cy="60"
+      r="54"
+      stroke-width="12"
+      stroke-dasharray="339.292 339.292"
+      stroke-dashoffset="135.717"
+      transform="rotate(-90 60 60)"
+      stroke-linecap="round"
+    />
+  </svg>
+
+  <!-- Central Label slot -->
+  <div class="suraia-ring-progress-label">
+    60%
+  </div>
+</div>
