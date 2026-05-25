@@ -1,0 +1,33 @@
+<!-- Suraia Alert Component Blueprint -->
+<div
+  class="suraia-alert"
+  data-suraia-component="Alert"
+  data-suraia-variant="light"
+  data-suraia-color="info"
+  role="alert"
+>
+  <!-- Icon slot -->
+  <div class="suraia-alert-icon">
+    <slot name="icon"></slot>
+  </div>
+
+  <!-- Body -->
+  <div class="suraia-alert-body">
+    <!-- Title slot -->
+    <div class="suraia-alert-title">
+      <slot name="title">Alert Title</slot>
+    </div>
+
+    <!-- Content slot -->
+    <div class="suraia-alert-message">
+      <slot>Alert message content.</slot>
+    </div>
+  </div>
+
+  <!-- Close button (optional) -->
+  <button
+    class="suraia-alert-close"
+    aria-label="Close alert"
+    type="button"
+  >&times;</button>
+</div>
