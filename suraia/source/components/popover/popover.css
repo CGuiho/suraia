@@ -1,0 +1,118 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-popover-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.suraia-popover {
+  position: absolute;
+  z-index: var(--suraia-z-index-overlay);
+  background-color: var(--suraia-surface-0);
+  border: var(--suraia-border-sm) solid var(--suraia-surface-border);
+  border-radius: var(--suraia-radius-md);
+  box-shadow: var(--suraia-shadow-md);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out),
+              transform var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-popover-inner {
+  padding: var(--suraia-space-3);
+  font-family: var(--suraia-font-family-sans);
+  font-size: var(--suraia-font-size-sm);
+  color: var(--suraia-surface-foreground);
+}
+
+/* Opened State */
+.suraia-popover[data-suraia-opened],
+.suraia-popover-wrapper[data-suraia-opened] .suraia-popover {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Positions & offsets (using a default/fallback offset of 8px via margin or transform) */
+.suraia-popover[data-suraia-position="top"] {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+}
+.suraia-popover[data-suraia-position="top"][data-suraia-opened],
+.suraia-popover-wrapper[data-suraia-opened] .suraia-popover[data-suraia-position="top"] {
+  transform: translateX(-50%) translateY(0);
+}
+
+.suraia-popover[data-suraia-position="bottom"] {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+}
+.suraia-popover[data-suraia-position="bottom"][data-suraia-opened],
+.suraia-popover-wrapper[data-suraia-opened] .suraia-popover[data-suraia-position="bottom"] {
+  transform: translateX(-50%) translateY(0);
+}
+
+.suraia-popover[data-suraia-position="left"] {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%) translateX(8px);
+}
+.suraia-popover[data-suraia-position="left"][data-suraia-opened],
+.suraia-popover-wrapper[data-suraia-opened] .suraia-popover[data-suraia-position="left"] {
+  transform: translateY(-50%) translateX(0);
+}
+
+.suraia-popover[data-suraia-position="right"] {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-8px);
+}
+.suraia-popover[data-suraia-position="right"][data-suraia-opened],
+.suraia-popover-wrapper[data-suraia-opened] .suraia-popover[data-suraia-position="right"] {
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Popover Arrow */
+.suraia-popover-arrow {
+  display: none;
+}
+
+.suraia-popover-arrow[data-suraia-with-arrow] {
+  display: block;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: var(--suraia-surface-0);
+  border-left: var(--suraia-border-sm) solid var(--suraia-surface-border);
+  border-top: var(--suraia-border-sm) solid var(--suraia-surface-border);
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+.suraia-popover[data-suraia-position="top"] .suraia-popover-arrow[data-suraia-with-arrow] {
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(225deg);
+}
+
+.suraia-popover[data-suraia-position="bottom"] .suraia-popover-arrow[data-suraia-with-arrow] {
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.suraia-popover[data-suraia-position="left"] .suraia-popover-arrow[data-suraia-with-arrow] {
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%) rotate(135deg);
+}
+
+.suraia-popover[data-suraia-position="right"] .suraia-popover-arrow[data-suraia-with-arrow] {
+  left: -5px;
+  top: 50%;
+  transform: translateY(-50%) rotate(315deg);
+}
