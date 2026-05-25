@@ -1,0 +1,1 @@
+{"name":"AspectRatio","description":"Maintains a fixed width-to-height ratio for its children.","tier":1,"dependencies":[],"variants":{},"states":[],"slots":{"default":"Content to maintain aspect ratio."},"attributes":{"ratio":{"type":"number","description":"Aspect ratio (width / height), defaults to 1."}},"accessibility":{"role":null,"keyboardNavigation":[],"aria":{}}}
