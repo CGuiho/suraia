@@ -1,0 +1,62 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-table-of-contents {
+  font-family: var(--suraia-font-family-sans, sans-serif);
+  font-size: var(--suraia-font-size-sm, 14px);
+  border-inline-start: 1px solid var(--suraia-color-border-neutral-light, #e9ecef);
+}
+
+.suraia-table-of-contents-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--suraia-space-2, 8px);
+}
+
+.suraia-table-of-contents-item {
+  position: relative;
+  margin-inline-start: -1px;
+}
+
+.suraia-table-of-contents-item[data-suraia-level="2"] {
+  padding-inline-start: var(--suraia-space-3, 12px);
+}
+
+.suraia-table-of-contents-item[data-suraia-level="3"] {
+  padding-inline-start: calc(var(--suraia-space-3, 12px) * 2);
+}
+
+.suraia-table-of-contents-item[data-suraia-level="4"] {
+  padding-inline-start: calc(var(--suraia-space-3, 12px) * 3);
+}
+
+.suraia-table-of-contents-link {
+  display: block;
+  text-decoration: none;
+  color: var(--suraia-color-text-secondary, #6c757d);
+  transition: color 0.15s ease;
+}
+
+.suraia-table-of-contents-link:hover {
+  color: var(--suraia-color-text-primary, #212529);
+}
+
+.suraia-table-of-contents-item[data-suraia-active="true"]::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--suraia-color-primary, #007bff);
+}
+
+.suraia-table-of-contents-item[data-suraia-active="true"] .suraia-table-of-contents-link {
+  color: var(--suraia-color-primary, #007bff);
+  font-weight: var(--suraia-font-weight-medium, 500);
+}
