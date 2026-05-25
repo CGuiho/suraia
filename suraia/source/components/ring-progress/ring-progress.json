@@ -1,0 +1,27 @@
+{
+  "name": "RingProgress",
+  "description": "A circular progress indicator built with SVG.",
+  "tier": 2,
+  "dependencies": [],
+  "variants": {},
+  "states": [],
+  "slots": {
+    "label": "Content inside the center of the ring (e.g. text or percentage)."
+  },
+  "attributes": {
+    "value": { "type": "number", "default": 0 },
+    "sections": { "type": "array", "description": "Array of {value, color} for progress segments." },
+    "size": { "type": "number", "default": 120 },
+    "thickness": { "type": "number", "default": 12 },
+    "roundCaps": { "type": "boolean", "default": false }
+  },
+  "accessibility": {
+    "role": "progressbar",
+    "keyboardNavigation": [],
+    "aria": {
+      "aria-valuenow": "Total progress percentage (0-100).",
+      "aria-valuemin": "0",
+      "aria-valuemax": "100"
+    }
+  }
+}
