@@ -1,0 +1,35 @@
+<!-- Suraia TextInput Component Blueprint -->
+<div
+  class="suraia-input-wrapper"
+  data-suraia-component="TextInput"
+  data-suraia-size="sm"
+  data-suraia-variant="default"
+>
+  <label class="suraia-input-label" for="text-input-id">
+    Label
+    <span class="suraia-input-required" aria-hidden="true"> *</span>
+  </label>
+
+  <p class="suraia-input-description">Optional description text.</p>
+
+  <div class="suraia-input-container">
+    <!-- Left section slot -->
+    <div class="suraia-input-section" data-position="left">
+      <slot name="leftSection"></slot>
+    </div>
+
+    <input
+      type="text"
+      class="suraia-input"
+      id="text-input-id"
+      placeholder="Enter text..."
+    />
+
+    <!-- Right section slot -->
+    <div class="suraia-input-section" data-position="right">
+      <slot name="rightSection"></slot>
+    </div>
+  </div>
+
+  <p class="suraia-input-error">Error message here.</p>
+</div>
