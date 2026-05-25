@@ -2,6 +2,12 @@
 
 ## Components
 
+- Explore: https://github.com/tusen-ai/naive-ui.git
+- Add utilities
+- Work on CLI
+
+## Components
+
 The complete inventory of components that must exist in the library. Each component will have a full blueprint (`.json`, `.structure.html`, `.css`, `.ts`, `.md`).
 
 ### Layout
