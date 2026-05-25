@@ -1,0 +1,28 @@
+{
+  "name": "ScrollArea",
+  "description": "A scrollable container with customized cross-browser scrollbar layouts.",
+  "tier": 1,
+  "dependencies": [],
+  "variants": {
+    "scrollbarVisibility": {
+      "options": ["auto", "always", "hover", "never"],
+      "default": "hover"
+    }
+  },
+  "states": [],
+  "slots": {
+    "default": "The scrollable element contents."
+  },
+  "attributes": {
+    "scrollbarVisibility": {
+      "type": "string",
+      "default": "hover",
+      "description": "Configures when scrollbars are visible: auto, always, hover, or never."
+    }
+  },
+  "accessibility": {
+    "role": "region",
+    "keyboardNavigation": [],
+    "aria": {}
+  }
+}
