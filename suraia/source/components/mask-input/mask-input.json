@@ -1,0 +1,37 @@
+{
+  "name": "MaskInput",
+  "description": "A text input that formats user input against a declared token mask.",
+  "tier": 2,
+  "dependencies": ["Input"],
+  "variants": {
+    "tokens": {
+      "options": ["9 digit", "a letter", "* alphanumeric"],
+      "default": "9 digit"
+    }
+  },
+  "states": ["disabled", "complete", "focused"],
+  "slots": {
+    "label": "Optional text label.",
+    "input": "Masked text input.",
+    "description": "Optional helper text describing the expected pattern."
+  },
+  "attributes": {
+    "mask": {
+      "type": "string",
+      "default": "",
+      "description": "Mask string where 9 means digit, a means letter, and * means alphanumeric."
+    },
+    "placeholderChar": {
+      "type": "string",
+      "default": "_",
+      "description": "Placeholder used for empty editable positions."
+    }
+  },
+  "accessibility": {
+    "role": "textbox",
+    "keyboardNavigation": ["Standard text input editing behavior"],
+    "aria": {
+      "aria-describedby": "Connect to format description and errors."
+    }
+  }
+}
