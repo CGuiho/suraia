@@ -1,0 +1,95 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-segmented-control {
+  --suraia-sc-height: var(--suraia-component-size-sm);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--suraia-surface-1);
+  border-radius: var(--suraia-radius-md);
+  padding: 4px;
+  gap: 0;
+  font-family: var(--suraia-font-family-sans);
+}
+
+.suraia-segmented-control[data-suraia-size="xs"] { --suraia-sc-height: var(--suraia-component-size-xs); }
+.suraia-segmented-control[data-suraia-size="sm"] { --suraia-sc-height: var(--suraia-component-size-sm); }
+.suraia-segmented-control[data-suraia-size="md"] { --suraia-sc-height: var(--suraia-component-size-md); }
+.suraia-segmented-control[data-suraia-size="lg"] { --suraia-sc-height: var(--suraia-component-size-lg); }
+.suraia-segmented-control[data-suraia-size="xl"] { --suraia-sc-height: var(--suraia-component-size-xl); }
+
+.suraia-segmented-control[data-suraia-full-width] {
+  display: flex;
+}
+
+.suraia-segmented-control[data-suraia-full-width] .suraia-segmented-control-item {
+  flex: 1;
+}
+
+.suraia-segmented-control[data-suraia-orientation="vertical"] {
+  flex-direction: column;
+  width: auto;
+}
+
+.suraia-segmented-control-item {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(var(--suraia-sc-height) - 8px);
+  padding: 0 var(--suraia-space-3);
+  border-radius: calc(var(--suraia-radius-md) - 2px);
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: color var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-segmented-control-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.suraia-segmented-control-label {
+  font-size: var(--suraia-font-size-sm);
+  font-weight: var(--suraia-font-weight-medium);
+  color: var(--suraia-surface-foreground-muted);
+  line-height: 1;
+  transition: color var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-segmented-control-item[data-suraia-active] .suraia-segmented-control-label {
+  color: var(--suraia-surface-foreground);
+}
+
+/* Active indicator */
+.suraia-segmented-control-item[data-suraia-active] {
+  background-color: var(--suraia-surface-0);
+  box-shadow: var(--suraia-shadow-xs);
+}
+
+/* Hover */
+.suraia-segmented-control-item:hover:not([data-suraia-active]) .suraia-segmented-control-label {
+  color: var(--suraia-surface-foreground);
+}
+
+/* Disabled */
+.suraia-segmented-control[data-suraia-disabled] {
+  opacity: var(--suraia-opacity-disabled);
+  pointer-events: none;
+}
+
+/* Focus */
+.suraia-segmented-control-input:focus-visible + .suraia-segmented-control-label {
+  outline: var(--suraia-focus-ring-width) solid var(--suraia-focus-ring-color);
+  outline-offset: var(--suraia-focus-ring-offset);
+  border-radius: calc(var(--suraia-radius-md) - 2px);
+}
