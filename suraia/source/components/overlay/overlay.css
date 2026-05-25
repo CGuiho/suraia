@@ -1,0 +1,24 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: var(--suraia-z-index-modal);
+  background-color: var(--suraia-overlay-color, rgba(0, 0, 0, 0.6));
+  backdrop-filter: blur(var(--suraia-overlay-blur, 0px));
+  -webkit-backdrop-filter: blur(var(--suraia-overlay-blur, 0px));
+}
+
+.suraia-overlay[data-suraia-fixed] {
+  position: fixed;
+}
+
+/* Allow content centered on the overlay */
+.suraia-overlay[data-suraia-center] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
