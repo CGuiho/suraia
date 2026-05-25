@@ -1,0 +1,42 @@
+{
+  "name": "Image",
+  "description": "Image component with border-radius, object-fit, and fallback image support.",
+  "tier": 1,
+  "dependencies": [],
+  "variants": {},
+  "states": [
+    "error"
+  ],
+  "slots": {},
+  "attributes": {
+    "src": {
+      "type": "string",
+      "required": true,
+      "description": "Image source URL."
+    },
+    "alt": {
+      "type": "string",
+      "default": "",
+      "description": "Alternative text description of the image."
+    },
+    "fit": {
+      "type": "string",
+      "default": "cover",
+      "description": "Image object-fit property: cover, contain, fill, none, scale-down."
+    },
+    "radius": {
+      "type": "string",
+      "default": "none",
+      "description": "Border radius key."
+    },
+    "fallbackSrc": {
+      "type": "string",
+      "description": "Fallback image source URL used if the primary image fails to load."
+    }
+  },
+  "accessibility": {
+    "role": "img",
+    "keyboardNavigation": [],
+    "aria": {}
+  }
+}
