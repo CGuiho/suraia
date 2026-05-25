@@ -1,0 +1,37 @@
+{
+  "name": "Spoiler",
+  "description": "A disclosure container that truncates tall content until expanded by the user.",
+  "tier": 2,
+  "dependencies": ["Collapse", "Button"],
+  "variants": {},
+  "states": ["expanded", "collapsed"],
+  "slots": {
+    "content": "Content that may be clipped while collapsed.",
+    "control": "Toggle button used to expand or collapse content."
+  },
+  "attributes": {
+    "maxHeight": {
+      "type": "number",
+      "default": 120,
+      "description": "Collapsed maximum height in pixels."
+    },
+    "showLabel": {
+      "type": "string",
+      "default": "Show more",
+      "description": "Control label while collapsed."
+    },
+    "hideLabel": {
+      "type": "string",
+      "default": "Hide",
+      "description": "Control label while expanded."
+    }
+  },
+  "accessibility": {
+    "role": "region",
+    "keyboardNavigation": ["Enter and Space activate the toggle control"],
+    "aria": {
+      "aria-expanded": "Set on the toggle control.",
+      "aria-controls": "Connect toggle to content region."
+    }
+  }
+}
