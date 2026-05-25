@@ -1,0 +1,45 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-skeleton {
+  border-radius: var(--suraia-radius-md);
+  overflow: hidden;
+  position: relative;
+  background-color: color-mix(in srgb, var(--suraia-surface-foreground) 11%, transparent);
+}
+
+.suraia-skeleton[data-suraia-circle] {
+  border-radius: var(--suraia-radius-full);
+}
+
+.suraia-skeleton[data-suraia-animate]::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--suraia-surface-foreground) 6%, transparent),
+    transparent
+  );
+  animation: suraia-skeleton-shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes suraia-skeleton-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Visible state — skeleton is hidden, content is shown */
+.suraia-skeleton[data-suraia-visible] {
+  background-color: transparent;
+}
+
+.suraia-skeleton[data-suraia-visible]::after {
+  display: none;
+}
