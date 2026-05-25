@@ -1,0 +1,43 @@
+<!-- Suraia Checkbox Component Blueprint -->
+<div
+  class="suraia-checkbox-wrapper"
+  data-suraia-component="Checkbox"
+  data-suraia-size="sm"
+>
+  <div class="suraia-checkbox-inner">
+    <input
+      type="checkbox"
+      class="suraia-checkbox-input"
+      id="checkbox-id"
+    />
+    <span class="suraia-checkbox-icon" aria-hidden="true">
+      <!-- Checkmark SVG icon rendered here -->
+    </span>
+  </div>
+
+  <div class="suraia-checkbox-body">
+    <label class="suraia-checkbox-label" for="checkbox-id">
+      Checkbox label
+    </label>
+    <p class="suraia-checkbox-description">
+      Optional description text.
+    </p>
+  </div>
+</div>
+
+<!-- Error state -->
+<div
+  class="suraia-checkbox-wrapper"
+  data-suraia-component="Checkbox"
+  data-suraia-size="sm"
+  data-suraia-error
+>
+  <div class="suraia-checkbox-inner">
+    <input type="checkbox" class="suraia-checkbox-input" id="checkbox-error" aria-invalid="true" />
+    <span class="suraia-checkbox-icon" aria-hidden="true"></span>
+  </div>
+  <div class="suraia-checkbox-body">
+    <label class="suraia-checkbox-label" for="checkbox-error">Checkbox with error</label>
+    <p class="suraia-checkbox-error">This field is required.</p>
+  </div>
+</div>
