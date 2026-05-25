@@ -1,0 +1,125 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-navlink {
+  --suraia-navlink-color: var(--suraia-color-primary);
+
+  display: flex;
+  align-items: center;
+  gap: var(--suraia-space-3);
+  padding: var(--suraia-space-2) var(--suraia-space-3);
+  font-family: var(--suraia-font-family-sans);
+  font-size: var(--suraia-font-size-sm);
+  color: var(--suraia-surface-foreground);
+  text-decoration: none;
+  border-radius: var(--suraia-radius-sm);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  transition: background-color var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out),
+              color var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-navlink:hover {
+  background-color: var(--suraia-surface-hover);
+}
+
+/* Light variant */
+.suraia-navlink[data-suraia-variant="light"][data-suraia-active] {
+  background-color: color-mix(in srgb, var(--suraia-navlink-color) 10%, transparent);
+  color: var(--suraia-navlink-color);
+}
+
+/* Filled variant */
+.suraia-navlink[data-suraia-variant="filled"][data-suraia-active] {
+  background-color: var(--suraia-navlink-color);
+  color: var(--suraia-color-on-primary);
+}
+
+/* Subtle variant */
+.suraia-navlink[data-suraia-variant="subtle"][data-suraia-active] {
+  color: var(--suraia-navlink-color);
+}
+
+.suraia-navlink-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+.suraia-navlink-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.suraia-navlink-label {
+  line-height: var(--suraia-line-height-sm);
+  font-weight: var(--suraia-font-weight-medium);
+}
+
+.suraia-navlink[data-suraia-no-wrap] .suraia-navlink-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.suraia-navlink-description {
+  font-size: var(--suraia-font-size-xs);
+  color: var(--suraia-surface-foreground-muted);
+  line-height: var(--suraia-line-height-sm);
+}
+
+.suraia-navlink-section[data-position="right"] {
+  margin-left: auto;
+}
+
+.suraia-navlink-chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  color: var(--suraia-surface-foreground-muted);
+  margin-left: auto;
+  transition: transform var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-navlink-chevron::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  margin-top: -3px;
+}
+
+.suraia-navlink[aria-expanded="true"] .suraia-navlink-chevron {
+  transform: rotate(180deg);
+}
+
+.suraia-navlink-children[hidden] {
+  display: none;
+}
+
+/* Disabled */
+.suraia-navlink[data-suraia-disabled] {
+  opacity: var(--suraia-opacity-disabled);
+  cursor: var(--suraia-cursor-disabled);
+  pointer-events: none;
+}
+
+/* Focus */
+.suraia-navlink:focus-visible {
+  outline: var(--suraia-focus-ring-width) solid var(--suraia-focus-ring-color);
+  outline-offset: var(--suraia-focus-ring-offset);
+}
