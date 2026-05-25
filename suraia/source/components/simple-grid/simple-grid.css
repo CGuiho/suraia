@@ -1,0 +1,12 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-simple-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--suraia-grid-cols, 1), minmax(0, 1fr));
+  gap: var(--suraia-grid-spacing, var(--suraia-space-md));
+  row-gap: var(--suraia-grid-vertical-spacing, var(--suraia-grid-spacing, var(--suraia-space-md)));
+  box-sizing: border-box;
+}
