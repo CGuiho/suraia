@@ -49,7 +49,7 @@ describe("FileInputController", () => {
     const fileList = {
       0: file,
       length: 1,
-      item: (index: number) => file,
+      item: (_index: number) => file,
     } as unknown as FileList;
 
     ctrl.handleFilesChange(fileList);
