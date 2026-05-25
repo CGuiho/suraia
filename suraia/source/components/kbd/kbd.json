@@ -1,0 +1,1 @@
+{"name":"Kbd","description":"Represents keyboard input or shortcuts.","tier":1,"dependencies":[],"variants":{},"states":[],"slots":{"default":"Keyboard key name (e.g. ⌘, Ctrl, Shift, K)."},"attributes":{},"accessibility":{"role":null,"keyboardNavigation":[],"aria":{}}}
