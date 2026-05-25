@@ -1,0 +1,104 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.suraia-tooltip {
+  position: absolute;
+  z-index: var(--suraia-z-index-overlay);
+  padding: var(--suraia-space-1) var(--suraia-space-2);
+  font-family: var(--suraia-font-family-sans);
+  font-size: var(--suraia-font-size-xs);
+  line-height: var(--suraia-line-height-xs);
+  color: #fff;
+  background-color: #1a1b1e;
+  border-radius: var(--suraia-radius-sm);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-tooltip[data-suraia-multiline] {
+  white-space: normal;
+  max-width: 300px;
+}
+
+/* Show tooltip on hover/focus */
+.suraia-tooltip-wrapper:hover .suraia-tooltip,
+.suraia-tooltip-wrapper:focus-within .suraia-tooltip,
+.suraia-tooltip[data-suraia-opened] {
+  opacity: 1;
+}
+
+/* Positions */
+.suraia-tooltip[data-suraia-position="top"] {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 5px;
+}
+
+.suraia-tooltip[data-suraia-position="bottom"] {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 5px;
+}
+
+.suraia-tooltip[data-suraia-position="left"] {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 5px;
+}
+
+.suraia-tooltip[data-suraia-position="right"] {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 5px;
+}
+
+/* Arrow */
+.suraia-tooltip-arrow {
+  display: none;
+}
+
+.suraia-tooltip-arrow[data-suraia-with-arrow] {
+  display: block;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #1a1b1e;
+  transform: rotate(45deg);
+}
+
+.suraia-tooltip[data-suraia-position="top"] .suraia-tooltip-arrow[data-suraia-with-arrow] {
+  bottom: -4px;
+  left: 50%;
+  margin-left: -4px;
+}
+
+.suraia-tooltip[data-suraia-position="bottom"] .suraia-tooltip-arrow[data-suraia-with-arrow] {
+  top: -4px;
+  left: 50%;
+  margin-left: -4px;
+}
+
+.suraia-tooltip[data-suraia-position="left"] .suraia-tooltip-arrow[data-suraia-with-arrow] {
+  right: -4px;
+  top: 50%;
+  margin-top: -4px;
+}
+
+.suraia-tooltip[data-suraia-position="right"] .suraia-tooltip-arrow[data-suraia-with-arrow] {
+  left: -4px;
+  top: 50%;
+  margin-top: -4px;
+}
