@@ -200,14 +200,14 @@ Full UI patterns composed of multiple Tier 1 and Tier 2 components.
 * Data Table (headers + rows + sorting + pagination)
 * Card Grid / Masonry Layout
 
-### Tier 4 — Pages
-Complete page blueprints that assemble patterns into full screens.
+### Tier 4 — Blocks
+Large-scale, reusable page-level building blocks that assemble patterns into major sections or full screens.
 
-* Landing Page
-* Authentication Flow (login + registration + password reset)
-* Dashboard Layout
-* Settings Page
-* Error Pages (404, 500)
+* Hero Block (full hero section with background, heading, CTA)
+* Authentication Block (login + registration + password reset)
+* Dashboard Shell (sidebar + header + content area + widgets)
+* Settings Panel (grouped form sections with navigation)
+* Error Block (404, 500 error displays)
 
 ---
 
@@ -262,7 +262,7 @@ Today, Suraia provides blueprints for individual components. The roadmap extends
 1. **Complex compositions** — Hero sections, app shells, full page layouts, all described as blueprints with dependency chains.
 2. **Visual profiles** — Apple-like, Material-like, custom brand profiles that reskin every component through token overrides.
 3. **Interaction patterns** — Drag-and-drop, virtualized lists, infinite scroll, all as behavior blueprints.
-4. **Full application scaffolds** — Complete application skeletons (dashboard app, e-commerce storefront, SaaS admin) as Tier 4 blueprints.
+4. **Full application scaffolds** — Complete application skeletons (dashboard app, e-commerce storefront, SaaS admin) as Tier 4 Blocks.
 5. **Multi-platform** — Extend beyond web to React Native, Flutter, SwiftUI, and Kotlin Compose through platform-specific prompt guides.
 
 The ambition: **one blueprint library that describes every UI component, pattern, and page a developer will ever need — and AI generates it in whatever technology they choose.**
