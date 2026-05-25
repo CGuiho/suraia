@@ -1,0 +1,38 @@
+{
+  "name": "JsonInput",
+  "description": "A textarea input specialized for JSON editing, parsing, formatting, and validation feedback.",
+  "tier": 2,
+  "dependencies": ["Textarea"],
+  "variants": {
+    "autosize": {
+      "options": [true, false],
+      "default": true
+    }
+  },
+  "states": ["disabled", "invalid", "focused"],
+  "slots": {
+    "label": "Optional text label.",
+    "textarea": "JSON editing area.",
+    "error": "Validation message shown when JSON cannot be parsed."
+  },
+  "attributes": {
+    "value": {
+      "type": "string",
+      "default": "",
+      "description": "Raw JSON string."
+    },
+    "formatOnBlur": {
+      "type": "boolean",
+      "default": false,
+      "description": "Pretty-print valid JSON when the input loses focus."
+    }
+  },
+  "accessibility": {
+    "role": "textbox",
+    "keyboardNavigation": ["Standard multiline text editing behavior"],
+    "aria": {
+      "aria-invalid": "Set when JSON is invalid.",
+      "aria-describedby": "Connect to error text when present."
+    }
+  }
+}
