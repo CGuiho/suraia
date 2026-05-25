@@ -1,4 +1,4 @@
-# 🌻 suraia — Architecture Specification (AI-First UI Blueprint)
+# 🌻 GUIHO Suraia — Architecture Specification (AI-First UI Blueprint)
 
 **npm package:** `@guiho/suraia`  
 **CSS Prefix:** `x40-suraia-`
@@ -7,7 +7,7 @@
 
 ## 1. Vision & Core Philosophy
 
-**suraia** is an **AI-first UI blueprint library**. It is not a React component library, Svelte library, Vue library, or a Web Components library. Instead, suraia stores the neutral, framework-agnostic knowledge required to describe UI components so that developer-facing AI assistants can translate and generate them directly into target applications.
+**GUIHO Suraia** is an **AI-first UI blueprint library**. It is not a React component library, Svelte library, Vue library, or a Web Components library. Instead, Suraia stores the neutral, framework-agnostic knowledge required to describe UI components so that developer-facing AI assistants can translate and generate them directly into target applications.
 
 The core principle is:
 > A component should have one source of truth: its structural anatomy, styling constraints, interactive behavior logic, and accessibility contract. Framework-specific implementation is an output generated locally, not a foundation we distribute.
@@ -17,7 +17,7 @@ The core principle is:
 ## 2. Consumption Model (How it is Used)
 
 ### 2.1 devDependency-Only Architecture
-suraia is designed specifically for **AI-augmented development workflows**:
+Suraia is designed specifically for **AI-augmented development workflows**:
 
 1. **Install as devDependency:** The package `@guiho/suraia` is added to a project's `devDependencies`. It is never bundled into production code.
 2. **Zero Production Runtime Footprint:** No runtime code from suraia is imported in the production application bundle.
