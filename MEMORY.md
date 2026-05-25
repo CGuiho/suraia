@@ -19,3 +19,15 @@
 - **Pending Task:** [task_20260520_4_components_hooks_list.md](file:///.agentkanban/tasks/task_20260520_4_components_hooks_list.md) — Compile master list of components, adapter hooks, and editor integration hooks.
 - **Remaining MVP Blueprints:** Card, Badge, and Dialog component folders under `suraia/source/components/`.
 - **Visual Design Profiles:** Implement theme override sheets (`apple-like.css`, `material-like.css`) in `suraia/source/themes/profiles/`.
+
+## 2026-05-25 — Philosophy Document & Vision Alignment
+- **Created:** `docs/2026-05-25-philosophy.md` — comprehensive philosophy document articulating the full library vision.
+- **Confirmed Alignment:** Owner's verbal description matches ARCHITECTURE.md precisely. Key points validated:
+  - Suraia is a **blueprint library**, not a framework-specific component library.
+  - AI reads blueprints and generates native components into the developer's project.
+  - Components are generated **once**, stored locally, and fully owned by the developer.
+  - Same blueprint generates React, Vue, Angular, Svelte, Vanilla, or any framework.
+  - **devDependency only** — zero production runtime footprint.
+- **New concept explicitly documented:** Dependency resolution contract — complex components declare dependencies on simpler ones; AI must resolve and generate them in dependency order before generating the complex component.
+- **Component complexity tiers documented:** Tier 1 (Primitives) → Tier 2 (Composites) → Tier 3 (Patterns) → Tier 4 (Pages).
+- **Long-term vision documented:** Hero sections, app shells, full page blueprints, multi-platform expansion (React Native, Flutter, SwiftUI).
