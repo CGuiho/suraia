@@ -1,0 +1,37 @@
+{
+  "name": "ThemeIcon",
+  "description": "A styled container for icons, supporting visual variants, sizes, colors, and border-radius.",
+  "tier": 1,
+  "dependencies": [],
+  "variants": {
+    "variant": {
+      "options": ["filled", "light", "outline", "default", "gradient"],
+      "default": "filled"
+    },
+    "size": {
+      "options": ["xs", "sm", "md", "lg", "xl"],
+      "default": "md"
+    }
+  },
+  "states": [],
+  "slots": {
+    "default": "The icon component or SVG content."
+  },
+  "attributes": {
+    "color": {
+      "type": "string",
+      "default": "primary",
+      "description": "Color theme key or custom color."
+    },
+    "radius": {
+      "type": "string",
+      "default": "sm",
+      "description": "Border radius key."
+    }
+  },
+  "accessibility": {
+    "role": "presentation",
+    "keyboardNavigation": [],
+    "aria": {}
+  }
+}
