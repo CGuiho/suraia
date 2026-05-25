@@ -1,0 +1,53 @@
+{
+  "name": "NumberFormatter",
+  "description": "Formats numbers with locales, currency, percentages, decimal points, and custom prefixes/suffixes.",
+  "tier": 1,
+  "dependencies": [],
+  "variants": {},
+  "states": [],
+  "slots": {},
+  "attributes": {
+    "value": {
+      "type": "number",
+      "description": "The number to format."
+    },
+    "locale": {
+      "type": "string",
+      "default": "en-US",
+      "description": "Locale code used by Intl.NumberFormat."
+    },
+    "type": {
+      "type": "string",
+      "default": "decimal",
+      "description": "Format type: decimal, currency, or percent."
+    },
+    "currency": {
+      "type": "string",
+      "default": "USD",
+      "description": "The currency code to format."
+    },
+    "minimumFractionDigits": {
+      "type": "number",
+      "description": "Minimum number of fraction digits."
+    },
+    "maximumFractionDigits": {
+      "type": "number",
+      "description": "Maximum number of fraction digits."
+    },
+    "prefix": {
+      "type": "string",
+      "default": "",
+      "description": "Custom prefix prepended to the formatted value."
+    },
+    "suffix": {
+      "type": "string",
+      "default": "",
+      "description": "Custom suffix appended to the formatted value."
+    }
+  },
+  "accessibility": {
+    "role": "text",
+    "keyboardNavigation": [],
+    "aria": {}
+  }
+}
