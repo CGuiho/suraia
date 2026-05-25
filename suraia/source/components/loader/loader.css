@@ -1,0 +1,81 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-loader {
+  --suraia-loader-size: 36px;
+  --suraia-loader-color: var(--suraia-color-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sizes */
+.suraia-loader[data-suraia-size="xs"] { --suraia-loader-size: 18px; }
+.suraia-loader[data-suraia-size="sm"] { --suraia-loader-size: 22px; }
+.suraia-loader[data-suraia-size="md"] { --suraia-loader-size: 36px; }
+.suraia-loader[data-suraia-size="lg"] { --suraia-loader-size: 44px; }
+.suraia-loader[data-suraia-size="xl"] { --suraia-loader-size: 58px; }
+
+/* Oval spinner */
+.suraia-loader-oval {
+  width: var(--suraia-loader-size);
+  height: var(--suraia-loader-size);
+  border: calc(var(--suraia-loader-size) * 0.1) solid color-mix(in srgb, var(--suraia-loader-color) 25%, transparent);
+  border-top-color: var(--suraia-loader-color);
+  border-radius: var(--suraia-radius-full);
+  animation: suraia-loader-spin 0.65s linear infinite;
+}
+
+@keyframes suraia-loader-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Bars */
+.suraia-loader-bars {
+  height: var(--suraia-loader-size);
+  gap: calc(var(--suraia-loader-size) * 0.1);
+}
+
+.suraia-loader-bars > span {
+  display: block;
+  width: calc(var(--suraia-loader-size) * 0.15);
+  height: 100%;
+  background-color: var(--suraia-loader-color);
+  border-radius: var(--suraia-radius-full);
+  animation: suraia-loader-bars 1s ease-in-out infinite;
+}
+
+.suraia-loader-bars > span:nth-child(1) { animation-delay: -0.45s; }
+.suraia-loader-bars > span:nth-child(2) { animation-delay: -0.3s; }
+.suraia-loader-bars > span:nth-child(3) { animation-delay: -0.15s; }
+.suraia-loader-bars > span:nth-child(4) { animation-delay: 0s; }
+
+@keyframes suraia-loader-bars {
+  0%, 100% { transform: scaleY(0.4); }
+  50% { transform: scaleY(1); }
+}
+
+/* Dots */
+.suraia-loader-dots {
+  gap: calc(var(--suraia-loader-size) * 0.15);
+}
+
+.suraia-loader-dots > span {
+  display: block;
+  width: calc(var(--suraia-loader-size) * 0.25);
+  height: calc(var(--suraia-loader-size) * 0.25);
+  background-color: var(--suraia-loader-color);
+  border-radius: var(--suraia-radius-full);
+  animation: suraia-loader-dots 1.2s ease-in-out infinite;
+}
+
+.suraia-loader-dots > span:nth-child(1) { animation-delay: -0.32s; }
+.suraia-loader-dots > span:nth-child(2) { animation-delay: -0.16s; }
+.suraia-loader-dots > span:nth-child(3) { animation-delay: 0s; }
+
+@keyframes suraia-loader-dots {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
+  40% { transform: scale(1); opacity: 1; }
+}
