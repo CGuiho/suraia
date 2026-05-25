@@ -1,9 +1,17 @@
 :root {
-  /* Colors */
+  /* Colors — Semantic */
   --suraia-color-primary: #2563eb;
   --suraia-color-on-primary: #ffffff;
   --suraia-color-secondary: #475569;
   --suraia-color-on-secondary: #ffffff;
+  --suraia-color-error: #fa5252;
+  --suraia-color-on-error: #ffffff;
+  --suraia-color-success: #40c057;
+  --suraia-color-on-success: #ffffff;
+  --suraia-color-warning: #fab005;
+  --suraia-color-on-warning: #ffffff;
+  --suraia-color-info: #228be6;
+  --suraia-color-on-info: #ffffff;
 
   /* Spacing */
   --suraia-space-0: 0px;
@@ -33,13 +41,14 @@
   --suraia-border-md: 2px;
   --suraia-border-lg: 3px;
 
-  /* Typography */
+  /* Font Family */
   --suraia-font-family-sans: system-ui, -apple-system, sans-serif;
   --suraia-font-family-sans-condensed: system-ui, -apple-system, sans-serif;
   --suraia-font-family-sans-extra-condensed: system-ui, -apple-system, sans-serif;
   --suraia-font-family-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
   --suraia-font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
+  /* Font Size */
   --suraia-font-size-xxs: 10px;
   --suraia-font-size-xs: 12px;
   --suraia-font-size-sm: 14px;
@@ -48,11 +57,82 @@
   --suraia-font-size-xl: 20px;
   --suraia-font-size-2xl: 24px;
 
+  /* Font Weight */
+  --suraia-font-weight-thin: 100;
+  --suraia-font-weight-extralight: 200;
+  --suraia-font-weight-light: 300;
+  --suraia-font-weight-regular: 400;
+  --suraia-font-weight-medium: 500;
+  --suraia-font-weight-semibold: 600;
+  --suraia-font-weight-bold: 700;
+  --suraia-font-weight-extrabold: 800;
+  --suraia-font-weight-black: 900;
+
+  /* Line Height */
+  --suraia-line-height-xs: 1.25;
+  --suraia-line-height-sm: 1.375;
+  --suraia-line-height-md: 1.5;
+  --suraia-line-height-lg: 1.625;
+  --suraia-line-height-xl: 1.75;
+
+  /* Headings */
+  --suraia-heading-h1-font-size: 34px;
+  --suraia-heading-h1-line-height: 1.25;
+  --suraia-heading-h1-font-weight: 700;
+
+  --suraia-heading-h2-font-size: 26px;
+  --suraia-heading-h2-line-height: 1.3;
+  --suraia-heading-h2-font-weight: 700;
+
+  --suraia-heading-h3-font-size: 22px;
+  --suraia-heading-h3-line-height: 1.35;
+  --suraia-heading-h3-font-weight: 700;
+
+  --suraia-heading-h4-font-size: 18px;
+  --suraia-heading-h4-line-height: 1.4;
+  --suraia-heading-h4-font-weight: 700;
+
+  --suraia-heading-h5-font-size: 16px;
+  --suraia-heading-h5-line-height: 1.45;
+  --suraia-heading-h5-font-weight: 700;
+
+  --suraia-heading-h6-font-size: 14px;
+  --suraia-heading-h6-line-height: 1.5;
+  --suraia-heading-h6-font-weight: 700;
+
+  /* Component Size — Default heights for inputs, buttons, etc. */
+  --suraia-component-size-xs: 30px;
+  --suraia-component-size-sm: 36px;
+  --suraia-component-size-md: 42px;
+  --suraia-component-size-lg: 50px;
+  --suraia-component-size-xl: 60px;
+
+  /* Breakpoints */
+  --suraia-breakpoint-xs: 576px;
+  --suraia-breakpoint-sm: 768px;
+  --suraia-breakpoint-md: 992px;
+  --suraia-breakpoint-lg: 1200px;
+  --suraia-breakpoint-xl: 1408px;
+
+  /* Surface — Light scheme (default) */
+  --suraia-surface-background: #ffffff;
+  --suraia-surface-foreground: #1a1b1e;
+  --suraia-surface-foreground-muted: #868e96;
+  --suraia-surface-border: #dee2e6;
+  --suraia-surface-border-muted: #e9ecef;
+  --suraia-surface-0: #ffffff;
+  --suraia-surface-1: #f8f9fa;
+  --suraia-surface-2: #f1f3f5;
+  --suraia-surface-hover: #f8f9fa;
+  --suraia-surface-active: #f1f3f5;
+
   /* Shadows */
   --suraia-shadow-none: none;
-  --suraia-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --suraia-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  --suraia-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --suraia-shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+  --suraia-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0 10px 15px -5px, rgba(0, 0, 0, 0.04) 0 7px 7px -5px;
+  --suraia-shadow-md: 0 1px 3px rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0 20px 25px -5px, rgba(0, 0, 0, 0.04) 0 10px 10px -5px;
+  --suraia-shadow-lg: 0 1px 3px rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0 28px 23px -7px, rgba(0, 0, 0, 0.04) 0 12px 12px -7px;
+  --suraia-shadow-xl: 0 1px 3px rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0 36px 28px -7px, rgba(0, 0, 0, 0.04) 0 17px 17px -7px;
 
   /* Z-Index */
   --suraia-z-index-1: 1;
@@ -76,5 +156,21 @@
   /* Transitions */
   --suraia-transition-duration-fast: 150ms;
   --suraia-transition-duration-normal: 250ms;
+  --suraia-transition-duration-slow: 400ms;
   --suraia-transition-easing-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --suraia-transition-easing-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Surface — Dark scheme override */
+[data-suraia-color-scheme="dark"] {
+  --suraia-surface-background: #1a1b1e;
+  --suraia-surface-foreground: #f1f3f5;
+  --suraia-surface-foreground-muted: #909296;
+  --suraia-surface-border: #373a40;
+  --suraia-surface-border-muted: #2c2e33;
+  --suraia-surface-0: #1a1b1e;
+  --suraia-surface-1: #25262b;
+  --suraia-surface-2: #2c2e33;
+  --suraia-surface-hover: #25262b;
+  --suraia-surface-active: #2c2e33;
 }
