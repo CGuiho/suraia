@@ -1,0 +1,12 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-portal-wrapper {
+  display: none;
+}
+
+.suraia-portal-content {
+  display: block;
+}
