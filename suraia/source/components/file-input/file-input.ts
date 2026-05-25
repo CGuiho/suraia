@@ -73,7 +73,7 @@ class FileInputController {
     if (this.multiple) {
       this.setValue(filesArray);
     } else {
-      this.setValue(filesArray[0]);
+      this.setValue(filesArray[0] ?? null);
     }
   }
 
