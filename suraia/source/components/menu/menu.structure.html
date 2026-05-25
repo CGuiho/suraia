@@ -1,0 +1,27 @@
+<!-- Suraia Menu Component Blueprint -->
+<div class="suraia-menu" data-suraia-component="Menu">
+  <!-- Trigger -->
+  <button class="suraia-menu-target" aria-haspopup="true" aria-expanded="false">
+    Open menu
+  </button>
+
+  <!-- Dropdown -->
+  <div class="suraia-menu-dropdown" role="menu" hidden>
+    <div class="suraia-menu-label">Application</div>
+    <button class="suraia-menu-item" role="menuitem">
+      <span class="suraia-menu-item-icon">⚙</span>
+      <span class="suraia-menu-item-label">Settings</span>
+    </button>
+    <button class="suraia-menu-item" role="menuitem">
+      <span class="suraia-menu-item-label">Messages</span>
+      <span class="suraia-menu-item-section" data-position="right">⌘M</span>
+    </button>
+
+    <div class="suraia-menu-divider"></div>
+
+    <div class="suraia-menu-label">Danger zone</div>
+    <button class="suraia-menu-item" role="menuitem" data-suraia-color="error">
+      <span class="suraia-menu-item-label">Delete account</span>
+    </button>
+  </div>
+</div>
