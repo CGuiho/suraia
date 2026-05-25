@@ -1,0 +1,27 @@
+/*! Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO. All Rights Reserved. */
+
+.suraia-root .suraia-spoiler {
+  display: grid;
+  gap: var(--suraia-space-2);
+}
+
+.suraia-root .suraia-spoiler-content {
+  max-height: var(--suraia-spoiler-max-height, 120px);
+  overflow: hidden;
+  transition: max-height var(--suraia-transition-duration-md) var(--suraia-transition-ease);
+}
+
+.suraia-root .suraia-spoiler[data-suraia-expanded="false"] .suraia-spoiler-content {
+  mask-image: linear-gradient(to bottom, #000 65%, transparent);
+}
+
+.suraia-root .suraia-spoiler-control {
+  justify-self: start;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--suraia-color-primary);
+  font: inherit;
+  font-weight: var(--suraia-font-weight-medium);
+  cursor: pointer;
+}
