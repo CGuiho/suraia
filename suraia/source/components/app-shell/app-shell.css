@@ -1,0 +1,98 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-app-shell {
+  box-sizing: border-box;
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: var(--suraia-shell-navbar-w, 0px) 1fr var(--suraia-shell-aside-w, 0px);
+  grid-template-rows: var(--suraia-shell-header-h, 0px) 1fr var(--suraia-shell-footer-h, 0px);
+  grid-template-areas:
+    "header header header"
+    "navbar main aside"
+    "footer footer footer";
+}
+
+.suraia-app-shell-header {
+  grid-area: header;
+  box-sizing: border-box;
+  z-index: var(--suraia-z-index-header, 100);
+  background-color: var(--suraia-color-bg-card, #ffffff);
+  border-bottom: 1px solid var(--suraia-surface-border, #dee2e6);
+}
+
+.suraia-app-shell-navbar {
+  grid-area: navbar;
+  box-sizing: border-box;
+  z-index: var(--suraia-z-index-navbar, 90);
+  background-color: var(--suraia-color-bg-card, #ffffff);
+  border-right: 1px solid var(--suraia-surface-border, #dee2e6);
+}
+
+.suraia-app-shell-aside {
+  grid-area: aside;
+  box-sizing: border-box;
+  z-index: var(--suraia-z-index-aside, 80);
+  background-color: var(--suraia-color-bg-card, #ffffff);
+  border-left: 1px solid var(--suraia-surface-border, #dee2e6);
+}
+
+.suraia-app-shell-main {
+  grid-area: main;
+  box-sizing: border-box;
+  padding: var(--suraia-shell-padding, var(--suraia-space-md));
+  background-color: var(--suraia-color-bg-app, #f8f9fa);
+  overflow-y: auto;
+}
+
+.suraia-app-shell-footer {
+  grid-area: footer;
+  box-sizing: border-box;
+  z-index: var(--suraia-z-index-footer, 70);
+  background-color: var(--suraia-color-bg-card, #ffffff);
+  border-top: 1px solid var(--suraia-surface-border, #dee2e6);
+}
+
+/* Fixed Layout settings */
+.suraia-app-shell[data-suraia-fixed="true"] .suraia-app-shell-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--suraia-shell-header-h, 0px);
+}
+
+.suraia-app-shell[data-suraia-fixed="true"] .suraia-app-shell-navbar {
+  position: fixed;
+  top: var(--suraia-shell-header-h, 0px);
+  left: 0;
+  bottom: var(--suraia-shell-footer-h, 0px);
+  width: var(--suraia-shell-navbar-w, 0px);
+}
+
+.suraia-app-shell[data-suraia-fixed="true"] .suraia-app-shell-aside {
+  position: fixed;
+  top: var(--suraia-shell-header-h, 0px);
+  right: 0;
+  bottom: var(--suraia-shell-footer-h, 0px);
+  width: var(--suraia-shell-aside-w, 0px);
+}
+
+.suraia-app-shell[data-suraia-fixed="true"] .suraia-app-shell-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--suraia-shell-footer-h, 0px);
+}
+
+/* Offset when fixed layout is active */
+.suraia-app-shell[data-suraia-fixed="true"] .suraia-app-shell-main {
+  margin-top: var(--suraia-shell-header-h, 0px);
+  margin-left: var(--suraia-shell-navbar-w, 0px);
+  margin-right: var(--suraia-shell-aside-w, 0px);
+  margin-bottom: var(--suraia-shell-footer-h, 0px);
+  min-height: calc(100vh - var(--suraia-shell-header-h, 0px) - var(--suraia-shell-footer-h, 0px));
+}
