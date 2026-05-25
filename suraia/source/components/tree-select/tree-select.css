@@ -1,0 +1,130 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-tree-select-wrapper {
+  position: relative;
+}
+
+.suraia-tree-select-input {
+  cursor: pointer;
+}
+
+.suraia-tree-select-chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  color: var(--suraia-surface-foreground-muted);
+  pointer-events: none;
+  transition: transform var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-tree-select-chevron::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  margin-top: -3px;
+}
+
+.suraia-tree-select-wrapper[data-suraia-opened] .suraia-tree-select-chevron {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Tree */
+.suraia-tree-select-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: var(--suraia-z-index-dropdown);
+  max-height: 250px;
+  overflow-y: auto;
+  background-color: var(--suraia-surface-0);
+  border: 1px solid var(--suraia-surface-border);
+  border-radius: var(--suraia-radius-md);
+  box-shadow: var(--suraia-shadow-md);
+  padding: var(--suraia-space-1);
+  margin-top: var(--suraia-space-1);
+}
+
+.suraia-tree-select-dropdown[hidden] {
+  display: none;
+}
+
+.suraia-tree-node-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.suraia-tree-node {
+  display: flex;
+  align-items: center;
+  padding: var(--suraia-space-2) var(--suraia-space-3);
+  padding-left: calc(var(--suraia-space-3) + var(--level, 0) * var(--suraia-space-4));
+  font-family: var(--suraia-font-family-sans);
+  font-size: var(--suraia-font-size-sm);
+  color: var(--suraia-surface-foreground);
+  border-radius: var(--suraia-radius-sm);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-tree-node:hover:not([data-suraia-disabled]),
+.suraia-tree-node[data-suraia-hovered] {
+  background-color: var(--suraia-surface-hover);
+}
+
+.suraia-tree-node[data-suraia-selected] {
+  background-color: color-mix(in srgb, var(--suraia-color-primary) var(--suraia-alpha-10), transparent);
+  color: var(--suraia-color-primary);
+  font-weight: var(--suraia-font-weight-medium);
+}
+
+.suraia-tree-node[data-suraia-disabled] {
+  opacity: var(--suraia-opacity-disabled);
+  cursor: var(--suraia-cursor-disabled);
+}
+
+.suraia-tree-node-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  margin-right: var(--suraia-space-2);
+  color: var(--suraia-surface-foreground-muted);
+  cursor: pointer;
+}
+
+.suraia-tree-node-toggle::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-tree-node[aria-expanded="true"] .suraia-tree-node-toggle::before {
+  transform: rotate(45deg);
+}
+
+.suraia-tree-node-toggle[data-suraia-leaf]::before {
+  content: none;
+}
+
+.suraia-tree-node-children {
+  display: block;
+}
+
+.suraia-tree-node-children[hidden] {
+  display: none;
+}
