@@ -44,10 +44,10 @@
   },
   "scripts": {
     "dev": "bun run --watch source/guiho-suraia-bin.ts",
-    "build": "rm -rf library && tsc -p .",
+    "build": "rm -rf library && bunx --bun tsc -p .",
     "binary": "bun build source/guiho-suraia-bin.ts --compile --outfile bin/suraia",
     "bundle": "rm -rf bundle && bun build source/guiho-suraia-bin.ts --outdir bundle --target node --sourcemap=linked",
-    "typecheck": "tsc -p . --noEmit",
+    "typecheck": "bunx --bun tsc -p . --noEmit",
     "clean": "rm -rf .temp",
     "clean-build": "rm -rf build library bundle bin",
     "clean-installation": "rm -rf node_modules bun.lock",
