@@ -1,0 +1,17 @@
+<!-- Suraia Notification Component Blueprint -->
+<div
+  class="suraia-notification"
+  data-suraia-component="Notification"
+  data-suraia-variant="light"
+  data-suraia-color="primary"
+  role="alert"
+>
+  <div class="suraia-notification-icon">
+    <slot name="icon"></slot>
+  </div>
+  <div class="suraia-notification-body">
+    <div class="suraia-notification-title">Notification Title</div>
+    <div class="suraia-notification-description">Notification message content.</div>
+  </div>
+  <button class="suraia-notification-close" type="button" aria-label="Close">&times;</button>
+</div>
