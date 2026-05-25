@@ -1,0 +1,53 @@
+<!-- Suraia TreeSelect Component Blueprint -->
+<div class="suraia-input-wrapper" data-suraia-component="TreeSelect" data-suraia-size="sm" data-suraia-variant="default">
+  <label class="suraia-input-label" for="tree-select-input">Label</label>
+  <p class="suraia-input-description">Description text.</p>
+
+  <div class="suraia-tree-select-wrapper">
+    <div class="suraia-input-container">
+      <input
+        type="text"
+        class="suraia-input suraia-tree-select-input"
+        id="tree-select-input"
+        role="combobox"
+        aria-expanded="false"
+        aria-haspopup="tree"
+        aria-controls="tree-select-dropdown"
+        readonly
+        placeholder="Select node"
+      />
+      <div class="suraia-input-section" data-position="right">
+        <span class="suraia-tree-select-chevron" aria-hidden="true"></span>
+      </div>
+    </div>
+
+    <!-- Dropdown Tree -->
+    <div class="suraia-tree-select-dropdown" id="tree-select-dropdown" role="tree" hidden>
+      <!-- Root Node (expanded) -->
+      <div class="suraia-tree-node-container" style="--level: 0;">
+        <div class="suraia-tree-node" role="treeitem" aria-expanded="true">
+          <span class="suraia-tree-node-toggle" data-suraia-expanded></span>
+          <span class="suraia-tree-node-label">Root Node</span>
+        </div>
+
+        <!-- Nested Children -->
+        <div class="suraia-tree-node-children">
+          <div class="suraia-tree-node-container" style="--level: 1;">
+            <div class="suraia-tree-node" role="treeitem" data-suraia-selected aria-selected="true">
+              <span class="suraia-tree-node-toggle" data-suraia-leaf></span>
+              <span class="suraia-tree-node-label">Child Leaf 1</span>
+            </div>
+          </div>
+          <div class="suraia-tree-node-container" style="--level: 1;">
+            <div class="suraia-tree-node" role="treeitem" aria-expanded="false">
+              <span class="suraia-tree-node-toggle"></span>
+              <span class="suraia-tree-node-label">Child Folder</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="suraia-input-error">Error message.</p>
+</div>
