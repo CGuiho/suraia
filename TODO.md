@@ -1,14 +1,16 @@
 # Suraia — TODO
 
-## Components
+## Backlog
 
 - [ ] Explore: https://github.com/tusen-ai/naive-ui.git
 - [ ] Add utilities
 - [ ] Work on CLI
 
-## Components
+## Component Inventory
 
-The complete inventory of components that must exist in the library. Each component will have a full blueprint (`.json`, `.structure.html`, `.css`, `.ts`, `.md`).
+Status: complete - 111/111 component blueprints implemented.
+
+The complete inventory of components that must exist in the library. Each component has a full blueprint (`.json`, `.structure.html`, `.css`, `.ts`, `.md`, `.test.ts`).
 
 ### Layout
 
@@ -25,25 +27,25 @@ The complete inventory of components that must exist in the library. Each compon
 
 ### Inputs
 
-- [ ] AlphaSlider
-- [ ] AngleSlider
+- [x] AlphaSlider
+- [x] AngleSlider
 - [x] Checkbox
 - [x] Chip
-- [ ] ColorInput
-- [ ] ColorPicker
+- [x] ColorInput
+- [x] ColorPicker
 - [x] Fieldset
 - [x] FileInput
-- [ ] HueSlider
+- [x] HueSlider
 - [x] Input
-- [ ] JsonInput
-- [ ] MaskInput
+- [x] JsonInput
+- [x] MaskInput
 - [x] NativeSelect
 - [x] NumberInput
 - [x] PasswordInput
 - [x] PinInput
 - [x] Radio
-- [ ] RangeSlider
-- [ ] Rating
+- [x] RangeSlider
+- [x] Rating
 - [x] SegmentedControl
 - [x] Slider
 - [x] Switch
@@ -52,14 +54,14 @@ The complete inventory of components that must exist in the library. Each compon
 
 ### Combobox
 
-- [ ] Autocomplete
-- [ ] Combobox
-- [ ] MultiSelect
-- [ ] Pill
-- [ ] PillsInput
+- [x] Autocomplete
+- [x] Combobox
+- [x] MultiSelect
+- [x] Pill
+- [x] PillsInput
 - [x] Select
-- [ ] TagsInput
-- [ ] TreeSelect
+- [x] TagsInput
+- [x] TreeSelect
 
 ### Buttons
 
@@ -77,10 +79,10 @@ The complete inventory of components that must exist in the library. Each compon
 - [x] Burger
 - [x] NavLink
 - [x] Pagination
-- [ ] Stepper
-- [ ] TableOfContents
+- [x] Stepper
+- [x] TableOfContents
 - [x] Tabs
-- [ ] Tree
+- [x] Tree
 
 ### Feedback
 
@@ -88,65 +90,65 @@ The complete inventory of components that must exist in the library. Each compon
 - [x] Loader
 - [x] Notification
 - [x] Progress
-- [ ] RingProgress
-- [ ] SemiCircleProgress
+- [x] RingProgress
+- [x] SemiCircleProgress
 - [x] Skeleton
 
 ### Overlays
 
-- [ ] Affix
-- [ ] Dialog
+- [x] Affix
+- [x] Dialog
 - [x] Drawer
-- [ ] FloatingIndicator
-- [ ] FloatingWindow
-- [ ] HoverCard
-- [ ] LoadingOverlay
+- [x] FloatingIndicator
+- [x] FloatingWindow
+- [x] HoverCard
+- [x] LoadingOverlay
 - [x] Menu
 - [x] Modal
 - [x] Overlay
-- [ ] Popover
+- [x] Popover
 - [x] Tooltip
 
 ### Data Display
 
 - [x] Accordion
 - [x] Avatar
-- [ ] BackgroundImage
+- [x] BackgroundImage
 - [x] Badge
 - [x] Card
-- [ ] ColorSwatch
-- [ ] Image
-- [ ] Indicator
+- [x] ColorSwatch
+- [x] Image
+- [x] Indicator
 - [x] Kbd
-- [ ] NumberFormatter
-- [ ] OverflowList
-- [ ] RollingNumber
-- [ ] Spoiler
-- [ ] ThemeIcon
-- [ ] Timeline
+- [x] NumberFormatter
+- [x] OverflowList
+- [x] RollingNumber
+- [x] Spoiler
+- [x] ThemeIcon
+- [x] Timeline
 
 ### Typography
 
-- [ ] Blockquote
-- [ ] Code
+- [x] Blockquote
+- [x] Code
 - [x] Highlight
-- [ ] List
+- [x] List
 - [x] Mark
 - [x] Table
 - [x] Text
 - [x] Title
-- [ ] Typography
+- [x] Typography
 
 ### Miscellaneous
 
 - [x] Box
-- [ ] Collapse
+- [x] Collapse
 - [x] Divider
-- [ ] FocusTrap
-- [ ] Marquee
+- [x] FocusTrap
+- [x] Marquee
 - [x] Paper
-- [ ] Portal
-- [ ] ScrollArea
-- [ ] Scroller
-- [ ] Transition
+- [x] Portal
+- [x] ScrollArea
+- [x] Scroller
+- [x] Transition
 - [x] VisuallyHidden
