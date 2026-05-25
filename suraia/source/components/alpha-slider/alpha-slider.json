@@ -1,0 +1,34 @@
+{
+  "name": "AlphaSlider",
+  "description": "A slider component specifically designed to modify the alpha (transparency) channel of a color.",
+  "tier": 2,
+  "dependencies": [],
+  "variants": {
+    "size": {
+      "options": ["xs", "sm", "md", "lg", "xl"],
+      "default": "md"
+    }
+  },
+  "states": ["disabled"],
+  "slots": {},
+  "attributes": {
+    "value": { "type": "number", "default": 1 },
+    "color": { "type": "string", "default": "#000000" },
+    "step": { "type": "number", "default": 0.01 }
+  },
+  "accessibility": {
+    "role": "slider",
+    "keyboardNavigation": [
+      { "key": "ArrowRight/ArrowUp", "description": "Increases alpha value by step." },
+      { "key": "ArrowLeft/ArrowDown", "description": "Decreases alpha value by step." },
+      { "key": "Home", "description": "Sets alpha to 0." },
+      { "key": "End", "description": "Sets alpha to 1." }
+    ],
+    "aria": {
+      "aria-valuenow": "Current alpha value.",
+      "aria-valuemin": "0",
+      "aria-valuemax": "1",
+      "aria-orientation": "horizontal"
+    }
+  }
+}
