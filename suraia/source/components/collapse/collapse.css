@@ -1,0 +1,17 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-collapse {
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  transition: height var(--suraia-collapse-duration, 200ms) var(--suraia-collapse-timing, ease),
+              opacity var(--suraia-collapse-duration, 200ms) var(--suraia-collapse-timing, ease);
+}
+
+.suraia-collapse[data-suraia-opened] {
+  opacity: 1;
+  height: auto;
+}
