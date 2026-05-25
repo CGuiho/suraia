@@ -28,9 +28,12 @@ describe("FocusTrapController", () => {
       ]),
     } as unknown as HTMLElement;
 
-    global.window = {
-      getComputedStyle: () => ({ visibility: "visible" }),
-    } as unknown as Window & typeof globalThis;
+    Object.defineProperty(globalThis, "window", {
+      value: {
+        getComputedStyle: () => ({ visibility: "visible" }),
+      },
+      configurable: true,
+    });
 
     const res = ctrl.findFocusableElements(container);
     expect(res.length).toBe(1);
@@ -46,9 +49,12 @@ describe("FocusTrapController", () => {
 
     const evTab = { key: "Tab", shiftKey: false, preventDefault: mock(() => {}) } as unknown as KeyboardEvent;
     
-    Object.defineProperty(document, "activeElement", {
-      value: el2,
+    Object.defineProperty(globalThis, "document", {
+      value: {
+        activeElement: el2,
+      },
       writable: true,
+      configurable: true,
     });
 
     const handled = ctrl.handleTabKey(evTab, container);
@@ -58,9 +64,12 @@ describe("FocusTrapController", () => {
 
     const evShiftTab = { key: "Tab", shiftKey: true, preventDefault: mock(() => {}) } as unknown as KeyboardEvent;
     
-    Object.defineProperty(document, "activeElement", {
-      value: el1,
+    Object.defineProperty(globalThis, "document", {
+      value: {
+        activeElement: el1,
+      },
       writable: true,
+      configurable: true,
     });
 
     const handledShift = ctrl.handleTabKey(evShiftTab, container);
