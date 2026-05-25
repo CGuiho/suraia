@@ -1,0 +1,22 @@
+<!-- Suraia Blockquote Component Blueprint -->
+<blockquote
+  class="suraia-blockquote"
+  data-suraia-component="Blockquote"
+>
+  <div class="suraia-blockquote-inner">
+    <!-- Icon slot if provided -->
+    <span class="suraia-blockquote-icon">
+      <slot name="icon"></slot>
+    </span>
+
+    <div class="suraia-blockquote-body">
+      <!-- Default content -->
+      <slot></slot>
+
+      <!-- Cite slot if provided -->
+      <cite class="suraia-blockquote-cite">
+        <slot name="cite"></slot>
+      </cite>
+    </div>
+  </div>
+</blockquote>
