@@ -1,0 +1,27 @@
+{
+  "name": "FocusTrap",
+  "description": "Traps focus within a DOM element for overlay accessibility support.",
+  "tier": 1,
+  "dependencies": [],
+  "variants": {},
+  "states": [
+    "active"
+  ],
+  "slots": {
+    "default": "Content that gets the focus boundary trap."
+  },
+  "attributes": {
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether focus trapping is active."
+    }
+  },
+  "accessibility": {
+    "role": "none",
+    "keyboardNavigation": [
+      "Tab cycles focus exclusively among focusable items in the child container."
+    ],
+    "aria": {}
+  }
+}
