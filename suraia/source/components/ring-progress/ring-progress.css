@@ -1,0 +1,48 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-ring-progress {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.suraia-ring-progress-svg {
+  display: block;
+  overflow: visible;
+}
+
+.suraia-ring-progress-track {
+  fill: none;
+  stroke: color-mix(in srgb, var(--suraia-surface-foreground) 8%, transparent);
+}
+
+.suraia-ring-progress-bar {
+  fill: none;
+  stroke: var(--suraia-color-primary);
+  transition: stroke-dashoffset var(--suraia-transition-duration-normal) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-ring-progress-bar[data-suraia-color="primary"] { stroke: var(--suraia-color-primary); }
+.suraia-ring-progress-bar[data-suraia-color="blue"] { stroke: var(--suraia-color-blue-5); }
+.suraia-ring-progress-bar[data-suraia-color="green"] { stroke: var(--suraia-color-green-5); }
+.suraia-ring-progress-bar[data-suraia-color="red"] { stroke: var(--suraia-color-red-5); }
+.suraia-ring-progress-bar[data-suraia-color="orange"] { stroke: var(--suraia-color-orange-5); }
+.suraia-ring-progress-bar[data-suraia-color="yellow"] { stroke: var(--suraia-color-yellow-5); }
+
+.suraia-ring-progress-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--suraia-font-family-sans);
+  font-size: var(--suraia-font-size-sm);
+  color: var(--suraia-surface-foreground);
+}
