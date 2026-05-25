@@ -1,0 +1,49 @@
+<!-- Suraia Accordion Component Blueprint -->
+<div class="suraia-accordion" data-suraia-component="Accordion" data-suraia-variant="default">
+  <!-- Item 1 (open) -->
+  <div class="suraia-accordion-item" data-suraia-active>
+    <button
+      class="suraia-accordion-control"
+      aria-expanded="true"
+      aria-controls="accordion-panel-1"
+      id="accordion-trigger-1"
+    >
+      <span class="suraia-accordion-label">Section Title</span>
+      <span class="suraia-accordion-chevron" aria-hidden="true"></span>
+    </button>
+    <div
+      class="suraia-accordion-panel"
+      role="region"
+      id="accordion-panel-1"
+      aria-labelledby="accordion-trigger-1"
+    >
+      <div class="suraia-accordion-content">
+        Panel content goes here.
+      </div>
+    </div>
+  </div>
+
+  <!-- Item 2 (closed) -->
+  <div class="suraia-accordion-item">
+    <button
+      class="suraia-accordion-control"
+      aria-expanded="false"
+      aria-controls="accordion-panel-2"
+      id="accordion-trigger-2"
+    >
+      <span class="suraia-accordion-label">Another Section</span>
+      <span class="suraia-accordion-chevron" aria-hidden="true"></span>
+    </button>
+    <div
+      class="suraia-accordion-panel"
+      role="region"
+      id="accordion-panel-2"
+      aria-labelledby="accordion-trigger-2"
+      hidden
+    >
+      <div class="suraia-accordion-content">
+        Hidden content.
+      </div>
+    </div>
+  </div>
+</div>
