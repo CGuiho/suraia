@@ -1,0 +1,91 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-scroll-area {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.suraia-scroll-area-viewport {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  scrollbar-width: none; /* Hide standard Firefox scrollbars */
+}
+
+.suraia-scroll-area-viewport::-webkit-scrollbar {
+  display: none; /* Hide standard Chrome/Safari scrollbars */
+}
+
+.suraia-scroll-area-scrollbar-x,
+.suraia-scroll-area-scrollbar-y {
+  position: absolute;
+  background-color: transparent;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+  z-index: 10;
+  display: flex;
+  user-select: none;
+}
+
+.suraia-scroll-area-scrollbar-x {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--suraia-scroll-area-size, 8px);
+  flex-direction: row;
+}
+
+.suraia-scroll-area-scrollbar-y {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--suraia-scroll-area-size, 8px);
+  flex-direction: column;
+}
+
+.suraia-scroll-area-thumb-x,
+.suraia-scroll-area-thumb-y {
+  background-color: color-mix(in srgb, var(--suraia-color-text-secondary, #6c757d) var(--suraia-alpha-40, 40%), transparent);
+  border-radius: var(--suraia-radius-xl, 9999px);
+  transition: background-color 0.15s ease;
+}
+
+.suraia-scroll-area-thumb-x:hover,
+.suraia-scroll-area-thumb-y:hover {
+  background-color: color-mix(in srgb, var(--suraia-color-text-secondary, #6c757d) var(--suraia-alpha-70, 70%), transparent);
+}
+
+.suraia-scroll-area-thumb-x {
+  height: 100%;
+  min-width: 20px;
+}
+
+.suraia-scroll-area-thumb-y {
+  width: 100%;
+  min-height: 20px;
+}
+
+/* Visibility triggers */
+.suraia-scroll-area[data-suraia-scrollbar-visibility="never"] .suraia-scroll-area-scrollbar-x,
+.suraia-scroll-area[data-suraia-scrollbar-visibility="never"] .suraia-scroll-area-scrollbar-y {
+  display: none;
+}
+
+.suraia-scroll-area[data-suraia-scrollbar-visibility="hover"] .suraia-scroll-area-scrollbar-x,
+.suraia-scroll-area[data-suraia-scrollbar-visibility="hover"] .suraia-scroll-area-scrollbar-y {
+  opacity: 0;
+}
+
+.suraia-scroll-area[data-suraia-scrollbar-visibility="hover"]:hover .suraia-scroll-area-scrollbar-x,
+.suraia-scroll-area[data-suraia-scrollbar-visibility="hover"]:hover .suraia-scroll-area-scrollbar-y {
+  opacity: 1;
+}
+
+.suraia-scroll-area[data-suraia-scrollbar-visibility="always"] .suraia-scroll-area-scrollbar-x,
+.suraia-scroll-area[data-suraia-scrollbar-visibility="always"] .suraia-scroll-area-scrollbar-y {
+  opacity: 1;
+}
