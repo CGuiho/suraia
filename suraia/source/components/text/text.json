@@ -1,0 +1,51 @@
+{
+  "name": "Text",
+  "description": "A typography primitive for rendering body text. Supports configurable font size, line height, truncation, line clamping, and gradient text variant.",
+  "tier": 1,
+  "dependencies": [],
+  "variants": {
+    "variant": {
+      "options": ["text", "gradient"],
+      "default": "text"
+    },
+    "size": {
+      "options": ["xs", "sm", "md", "lg", "xl"],
+      "default": "md"
+    }
+  },
+  "states": [],
+  "slots": {
+    "default": "The text content to render."
+  },
+  "attributes": {
+    "truncate": {
+      "type": "string",
+      "enum": ["end", "start"],
+      "description": "Truncates text with ellipsis at the specified end."
+    },
+    "lineClamp": {
+      "type": "number",
+      "description": "Number of lines after which text is clamped with ellipsis."
+    },
+    "inline": {
+      "type": "boolean",
+      "default": false,
+      "description": "Sets line-height to 1 for inline centering."
+    },
+    "inherit": {
+      "type": "boolean",
+      "default": false,
+      "description": "Inherits font properties from parent element."
+    },
+    "span": {
+      "type": "boolean",
+      "default": false,
+      "description": "Renders as <span> instead of <p>."
+    }
+  },
+  "accessibility": {
+    "role": null,
+    "keyboardNavigation": [],
+    "aria": {}
+  }
+}
