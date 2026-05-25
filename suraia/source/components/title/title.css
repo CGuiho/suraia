@@ -1,0 +1,76 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-title {
+  font-family: var(--suraia-font-family-sans);
+  color: var(--suraia-surface-foreground);
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Order-based defaults (semantic heading level = visual size) */
+.suraia-title[data-suraia-order="1"],
+.suraia-title[data-suraia-size="h1"] {
+  font-size: var(--suraia-heading-h1-font-size);
+  line-height: var(--suraia-heading-h1-line-height);
+  font-weight: var(--suraia-heading-h1-font-weight);
+}
+
+.suraia-title[data-suraia-order="2"],
+.suraia-title[data-suraia-size="h2"] {
+  font-size: var(--suraia-heading-h2-font-size);
+  line-height: var(--suraia-heading-h2-line-height);
+  font-weight: var(--suraia-heading-h2-font-weight);
+}
+
+.suraia-title[data-suraia-order="3"],
+.suraia-title[data-suraia-size="h3"] {
+  font-size: var(--suraia-heading-h3-font-size);
+  line-height: var(--suraia-heading-h3-line-height);
+  font-weight: var(--suraia-heading-h3-font-weight);
+}
+
+.suraia-title[data-suraia-order="4"],
+.suraia-title[data-suraia-size="h4"] {
+  font-size: var(--suraia-heading-h4-font-size);
+  line-height: var(--suraia-heading-h4-line-height);
+  font-weight: var(--suraia-heading-h4-font-weight);
+}
+
+.suraia-title[data-suraia-order="5"],
+.suraia-title[data-suraia-size="h5"] {
+  font-size: var(--suraia-heading-h5-font-size);
+  line-height: var(--suraia-heading-h5-line-height);
+  font-weight: var(--suraia-heading-h5-font-weight);
+}
+
+.suraia-title[data-suraia-order="6"],
+.suraia-title[data-suraia-size="h6"] {
+  font-size: var(--suraia-heading-h6-font-size);
+  line-height: var(--suraia-heading-h6-line-height);
+  font-weight: var(--suraia-heading-h6-font-weight);
+}
+
+/* Size override takes precedence over order */
+.suraia-title[data-suraia-size] {
+  /* CSS specificity: [data-suraia-size] selectors above already handle this */
+}
+
+/* Truncation */
+.suraia-title[data-suraia-truncate] {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Line clamp */
+.suraia-title[data-suraia-line-clamp] {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: var(--suraia-title-line-clamp);
+  -webkit-box-orient: vertical;
+}
