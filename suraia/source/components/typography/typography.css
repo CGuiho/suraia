@@ -1,0 +1,89 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-typography {
+  margin: 0;
+  color: var(--suraia-color-text-primary, inherit);
+  font-family: var(--suraia-font-family-sans, sans-serif);
+}
+
+/* Variants */
+.suraia-typography[data-suraia-variant="h1"] {
+  font-size: var(--suraia-font-size-h1, 32px);
+  line-height: var(--suraia-line-height-h1, 1.2);
+}
+.suraia-typography[data-suraia-variant="h2"] {
+  font-size: var(--suraia-font-size-h2, 24px);
+  line-height: var(--suraia-line-height-h2, 1.3);
+}
+.suraia-typography[data-suraia-variant="h3"] {
+  font-size: var(--suraia-font-size-h3, 20px);
+  line-height: var(--suraia-line-height-h3, 1.35);
+}
+.suraia-typography[data-suraia-variant="h4"] {
+  font-size: var(--suraia-font-size-h4, 18px);
+  line-height: var(--suraia-line-height-h4, 1.4);
+}
+.suraia-typography[data-suraia-variant="h5"] {
+  font-size: var(--suraia-font-size-h5, 16px);
+  line-height: var(--suraia-line-height-h5, 1.4);
+}
+.suraia-typography[data-suraia-variant="h6"] {
+  font-size: var(--suraia-font-size-h6, 14px);
+  line-height: var(--suraia-line-height-h6, 1.45);
+}
+.suraia-typography[data-suraia-variant="p"] {
+  font-size: var(--suraia-font-size-md, 16px);
+  line-height: var(--suraia-line-height-md, 1.5);
+}
+.suraia-typography[data-suraia-variant="lead"] {
+  font-size: var(--suraia-font-size-lg, 18px);
+  line-height: var(--suraia-line-height-lg, 1.6);
+}
+.suraia-typography[data-suraia-variant="blockquote"] {
+  font-size: var(--suraia-font-size-md, 16px);
+  line-height: var(--suraia-line-height-md, 1.5);
+  font-style: italic;
+  border-inline-start: 4px solid var(--suraia-color-primary, #007bff);
+  padding-inline-start: var(--suraia-space-3, 12px);
+}
+.suraia-typography[data-suraia-variant="code"] {
+  font-family: var(--suraia-font-family-monospace, monospace);
+  font-size: var(--suraia-font-size-sm, 14px);
+  background-color: var(--suraia-color-bg-neutral-light, #f8f9fa);
+  padding: 2px 4px;
+  border-radius: var(--suraia-radius-sm, 4px);
+}
+
+/* Weights */
+.suraia-typography[data-suraia-weight="light"] {
+  font-weight: var(--suraia-font-weight-light, 300);
+}
+.suraia-typography[data-suraia-weight="normal"] {
+  font-weight: var(--suraia-font-weight-normal, 400);
+}
+.suraia-typography[data-suraia-weight="medium"] {
+  font-weight: var(--suraia-font-weight-medium, 500);
+}
+.suraia-typography[data-suraia-weight="semibold"] {
+  font-weight: var(--suraia-font-weight-semibold, 600);
+}
+.suraia-typography[data-suraia-weight="bold"] {
+  font-weight: var(--suraia-font-weight-bold, 700);
+}
+
+/* Alignments */
+.suraia-typography[data-suraia-align="left"] {
+  text-align: left;
+}
+.suraia-typography[data-suraia-align="center"] {
+  text-align: center;
+}
+.suraia-typography[data-suraia-align="right"] {
+  text-align: right;
+}
+.suraia-typography[data-suraia-align="justify"] {
+  text-align: justify;
+}
