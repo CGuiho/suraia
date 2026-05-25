@@ -1,0 +1,1 @@
+{"name":"Mark","description":"Highlights text with a background color.","tier":1,"dependencies":[],"variants":{},"states":[],"slots":{"default":"Text to highlight."},"attributes":{"color":{"type":"string","description":"Custom background color for the highlight."}},"accessibility":{"role":null,"keyboardNavigation":[],"aria":{}}}
