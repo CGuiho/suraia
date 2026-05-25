@@ -1,0 +1,1 @@
+{"name":"Center","description":"Centers content vertically and horizontally using flexbox.","tier":1,"dependencies":[],"variants":{},"states":["inline"],"slots":{"default":"Content to center."},"attributes":{"inline":{"type":"boolean","description":"If set, renders inline-flex instead of flex."}},"accessibility":{"role":null,"keyboardNavigation":[],"aria":{}}}
