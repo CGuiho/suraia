@@ -1,0 +1,30 @@
+<!-- Suraia Autocomplete Component Blueprint -->
+<div class="suraia-input-wrapper" data-suraia-component="Autocomplete" data-suraia-size="sm" data-suraia-variant="default">
+  <label class="suraia-input-label" for="autocomplete-input">Label</label>
+  <p class="suraia-input-description">Description text.</p>
+
+  <div class="suraia-autocomplete-wrapper">
+    <div class="suraia-input-container">
+      <input
+        type="text"
+        class="suraia-input suraia-autocomplete-input"
+        id="autocomplete-input"
+        role="combobox"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        aria-controls="autocomplete-listbox"
+        aria-autocomplete="list"
+        placeholder="Type something..."
+      />
+    </div>
+
+    <!-- Dropdown suggestions -->
+    <div class="suraia-autocomplete-dropdown" id="autocomplete-listbox" role="listbox" hidden>
+      <div class="suraia-autocomplete-option" role="option">Suggestion 1</div>
+      <div class="suraia-autocomplete-option" role="option">Suggestion 2</div>
+      <div class="suraia-autocomplete-nothing">No matches</div>
+    </div>
+  </div>
+
+  <p class="suraia-input-error">Error message.</p>
+</div>
