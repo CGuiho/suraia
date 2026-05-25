@@ -1,0 +1,27 @@
+{
+  "name": "Tree",
+  "description": "Displays hierarchical nested nodes that can be expanded, collapsed, and selected.",
+  "tier": 1,
+  "dependencies": [],
+  "variants": {},
+  "states": [],
+  "slots": {
+    "node": "Template to customize node rendering."
+  },
+  "attributes": {
+    "nodes": {
+      "type": "array",
+      "description": "List of tree nodes, possibly nested."
+    }
+  },
+  "accessibility": {
+    "role": "tree",
+    "keyboardNavigation": [
+      "ArrowUp moves focus to the previous visible node.",
+      "ArrowDown moves focus to the next visible node.",
+      "ArrowRight expands a collapsed node, or moves to first child.",
+      "ArrowLeft collapses an expanded node, or moves to parent."
+    ],
+    "aria": {}
+  }
+}
