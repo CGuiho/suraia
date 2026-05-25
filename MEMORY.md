@@ -85,3 +85,11 @@ Each component has 6 files: `.json`, `.structure.html`, `.css`, `.ts`, `.md`, `.
 - **Bug Fix:** Fixed precision rounding issue in `NumberInputController` where standard floating-point representation boundaries led to failing tests for rounding up values like 1.005. Resolved using `Math.round` and `Number.EPSILON`.
 - **Progress:** Audited all component blueprints, reaching 61/114 components total (54%) with 268 passing tests.
 
+## 2026-05-26 01:37 +02:00 - Component Inventory Completion Sprint
+- **Completed TODO component inventory:** All 111 component inventory entries in `TODO.md` now have complete blueprint folders under `suraia/source/components/`.
+- **New components added:** ColorInput, ColorPicker, JsonInput, MaskInput, Stepper, FloatingIndicator, FloatingWindow, Spoiler, List, Scroller, Transition.
+- **Missing test restored:** Added `scroll-area.test.ts` so ScrollArea has the full six-file blueprint contract.
+- **Bug fixes:** Fixed FocusTrap Bun DOM test shim, Marquee speed-to-duration math, NumberFormatter percent precision, RollingNumber negative zero offset, and Typography test index-signature access.
+- **TODO status updated:** Component inventory checkboxes are all marked complete. The unrelated top-level TODO items (`Explore naive-ui`, `Add utilities`, `Work on CLI`) remain open.
+- **Tooling fix:** `package.json` `typecheck` and `build` scripts now run TypeScript through `bunx --bun tsc` to avoid the broken local Bun `.bin/tsc` remap on Windows.
+- **Verification:** `bun test` passed after build with 976 tests across source and library outputs. `bun run typecheck` passed. `bun run build` passed.
