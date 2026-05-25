@@ -1,0 +1,155 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-badge {
+  --suraia-badge-height: 20px;
+  --suraia-badge-fz: 11px;
+  --suraia-badge-padding-x: 10px;
+  --suraia-badge-radius: var(--suraia-radius-full);
+  --suraia-badge-color: var(--suraia-color-on-primary);
+  --suraia-badge-bg: var(--suraia-color-primary);
+  --suraia-badge-bd: 1px solid transparent;
+
+  -webkit-tap-highlight-color: transparent;
+  font-family: var(--suraia-font-family-sans);
+  font-size: var(--suraia-badge-fz);
+  border-radius: var(--suraia-badge-radius);
+  height: var(--suraia-badge-height);
+  line-height: calc(var(--suraia-badge-height) - 2px);
+  text-decoration: none;
+  padding: 0 var(--suraia-badge-padding-x);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  text-transform: uppercase;
+  font-weight: var(--suraia-font-weight-bold);
+  letter-spacing: 0.25px;
+  cursor: default;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: var(--suraia-badge-color);
+  background: var(--suraia-badge-bg);
+  border: var(--suraia-badge-bd);
+  gap: var(--suraia-space-1);
+}
+
+/* Size variants */
+.suraia-badge[data-suraia-size="xs"] {
+  --suraia-badge-height: 16px;
+  --suraia-badge-fz: 9px;
+  --suraia-badge-padding-x: 6px;
+}
+
+.suraia-badge[data-suraia-size="sm"] {
+  --suraia-badge-height: 18px;
+  --suraia-badge-fz: 10px;
+  --suraia-badge-padding-x: 8px;
+}
+
+.suraia-badge[data-suraia-size="md"] {
+  --suraia-badge-height: 20px;
+  --suraia-badge-fz: 11px;
+  --suraia-badge-padding-x: 10px;
+}
+
+.suraia-badge[data-suraia-size="lg"] {
+  --suraia-badge-height: 26px;
+  --suraia-badge-fz: 13px;
+  --suraia-badge-padding-x: 12px;
+}
+
+.suraia-badge[data-suraia-size="xl"] {
+  --suraia-badge-height: 32px;
+  --suraia-badge-fz: 16px;
+  --suraia-badge-padding-x: 16px;
+}
+
+/* Filled variant (default) */
+.suraia-badge[data-suraia-variant="filled"] {
+  background-color: var(--suraia-badge-bg);
+  color: var(--suraia-badge-color);
+}
+
+/* Light variant */
+.suraia-badge[data-suraia-variant="light"] {
+  background-color: color-mix(in srgb, var(--suraia-color-primary) 12%, transparent);
+  color: var(--suraia-color-primary);
+  border-color: transparent;
+}
+
+/* Outline variant */
+.suraia-badge[data-suraia-variant="outline"] {
+  background-color: transparent;
+  color: var(--suraia-color-primary);
+  border-color: var(--suraia-color-primary);
+}
+
+/* Transparent variant */
+.suraia-badge[data-suraia-variant="transparent"] {
+  background-color: transparent;
+  color: var(--suraia-color-primary);
+  border-color: transparent;
+}
+
+/* Default variant */
+.suraia-badge[data-suraia-variant="default"] {
+  background-color: var(--suraia-surface-1);
+  color: var(--suraia-surface-foreground);
+  border-color: var(--suraia-surface-border);
+}
+
+/* Dot variant */
+.suraia-badge[data-suraia-variant="dot"] {
+  background-color: var(--suraia-surface-0);
+  color: var(--suraia-surface-foreground);
+  border-color: var(--suraia-surface-border);
+}
+
+.suraia-badge[data-suraia-variant="dot"]::before {
+  content: '';
+  display: block;
+  width: calc(var(--suraia-badge-height) / 3.4);
+  height: calc(var(--suraia-badge-height) / 3.4);
+  border-radius: var(--suraia-radius-full);
+  background-color: var(--suraia-color-primary);
+  margin-inline-end: calc(var(--suraia-badge-height) / 3.4);
+}
+
+/* Gradient variant */
+.suraia-badge[data-suraia-variant="gradient"] {
+  background-image: linear-gradient(45deg, var(--suraia-color-primary), var(--suraia-color-info));
+  color: var(--suraia-color-on-primary);
+  border-color: transparent;
+}
+
+/* Full width */
+.suraia-badge[data-suraia-block] {
+  display: flex;
+  width: 100%;
+}
+
+/* Circle */
+.suraia-badge[data-suraia-circle] {
+  padding-inline: 2px;
+  width: var(--suraia-badge-height);
+}
+
+/* Label */
+.suraia-badge-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  cursor: inherit;
+}
+
+/* Sections */
+.suraia-badge-section {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  max-height: calc(var(--suraia-badge-height) - 2px);
+}
