@@ -5,6 +5,7 @@
 - [ ] Explore: https://github.com/tusen-ai/naive-ui.git
 - [ ] Add utilities
 - [ ] Work on CLI
+- [ ] Rename to Suraia
 
 ## Component Inventory
 
