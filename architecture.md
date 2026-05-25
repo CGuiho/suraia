@@ -12,7 +12,7 @@ The core principle is:
 > A component should have one source of truth: its structural anatomy, styling constraints, interactive behavior logic, and accessibility contract. Framework-specific implementation is an output generated locally, not a foundation we distribute.
 
 > [!NOTE]
-> For the full library philosophy — including the blueprint-not-component model, AI-as-compiler consumption workflow, dependency resolution contract, component complexity tiers, and long-term vision — see **`docs/2026-05-25-philosophy.md`**.
+> For the full library philosophy — including the blueprint-not-component model, AI-as-compiler consumption workflow, dependency resolution contract, component complexity tiers, and long-term vision — see **`suraia/docs/2026-05-25-philosophy.md`**.
 
 
 ## 2. Consumption Model (How it is Used)
