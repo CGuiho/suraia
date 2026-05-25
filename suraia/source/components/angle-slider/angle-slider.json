@@ -1,0 +1,33 @@
+{
+  "name": "AngleSlider",
+  "description": "A circular dial component to select an angle (0-360 degrees).",
+  "tier": 2,
+  "dependencies": [],
+  "variants": {
+    "size": {
+      "options": ["xs", "sm", "md", "lg", "xl"],
+      "default": "md"
+    }
+  },
+  "states": ["disabled"],
+  "slots": {},
+  "attributes": {
+    "value": { "type": "number", "default": 0 },
+    "step": { "type": "number", "default": 1 }
+  },
+  "accessibility": {
+    "role": "slider",
+    "keyboardNavigation": [
+      { "key": "ArrowRight/ArrowUp", "description": "Increases angle by step." },
+      { "key": "ArrowLeft/ArrowDown", "description": "Decreases angle by step." },
+      { "key": "Home", "description": "Sets angle to 0." },
+      { "key": "End", "description": "Sets angle to 359." }
+    ],
+    "aria": {
+      "aria-valuenow": "Current angle in degrees.",
+      "aria-valuemin": "0",
+      "aria-valuemax": "360",
+      "aria-orientation": "horizontal"
+    }
+  }
+}
