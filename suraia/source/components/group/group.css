@@ -1,0 +1,22 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-group {
+  display: flex;
+  flex-direction: row;
+  align-items: var(--suraia-group-align, center);
+  justify-content: var(--suraia-group-justify, flex-start);
+  flex-wrap: var(--suraia-group-wrap, nowrap);
+  gap: var(--suraia-group-gap, var(--suraia-space-4));
+}
+
+.suraia-group[data-suraia-grow] > * {
+  flex-grow: 1;
+}
+
+.suraia-group[data-suraia-grow][data-suraia-prevent-grow-overflow] > * {
+  max-width: 100%;
+  overflow: hidden;
+}
