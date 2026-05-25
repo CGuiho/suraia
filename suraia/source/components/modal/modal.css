@@ -1,0 +1,93 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-modal-root {
+  position: fixed;
+  inset: 0;
+  z-index: var(--suraia-z-index-modal);
+  display: none;
+}
+
+.suraia-modal-root[data-suraia-opened] {
+  display: block;
+}
+
+.suraia-modal-inner {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--suraia-space-8) var(--suraia-space-4);
+  overflow-y: auto;
+}
+
+.suraia-modal-root[data-suraia-centered] .suraia-modal-inner {
+  align-items: center;
+}
+
+.suraia-modal-content {
+  position: relative;
+  width: 100%;
+  max-width: var(--suraia-modal-size, 440px);
+  background-color: var(--suraia-surface-0);
+  border-radius: var(--suraia-radius-md);
+  box-shadow: var(--suraia-shadow-xl);
+  z-index: 1;
+}
+
+/* Size variants */
+.suraia-modal-content[data-suraia-size="xs"] { --suraia-modal-size: 320px; }
+.suraia-modal-content[data-suraia-size="sm"] { --suraia-modal-size: 380px; }
+.suraia-modal-content[data-suraia-size="md"] { --suraia-modal-size: 440px; }
+.suraia-modal-content[data-suraia-size="lg"] { --suraia-modal-size: 620px; }
+.suraia-modal-content[data-suraia-size="xl"] { --suraia-modal-size: 780px; }
+.suraia-modal-content[data-suraia-size="full"] { --suraia-modal-size: 100%; }
+
+.suraia-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--suraia-space-4);
+  padding-bottom: 0;
+}
+
+.suraia-modal-title {
+  font-family: var(--suraia-font-family-sans);
+  font-size: var(--suraia-font-size-lg);
+  font-weight: var(--suraia-font-weight-semibold);
+  color: var(--suraia-surface-foreground);
+  margin: 0;
+  line-height: var(--suraia-line-height-sm);
+}
+
+.suraia-modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: var(--suraia-radius-sm);
+  color: var(--suraia-surface-foreground-muted);
+  font-size: 20px;
+  line-height: 1;
+  padding: 0;
+  transition: background-color var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-modal-close:hover {
+  background-color: var(--suraia-surface-hover);
+}
+
+.suraia-modal-body {
+  padding: var(--suraia-space-4);
+  font-family: var(--suraia-font-family-sans);
+  font-size: var(--suraia-font-size-sm);
+  color: var(--suraia-surface-foreground);
+  line-height: var(--suraia-line-height-md);
+}
