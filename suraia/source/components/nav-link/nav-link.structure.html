@@ -1,0 +1,32 @@
+<!-- Suraia NavLink Component Blueprint -->
+<div class="suraia-navlink-wrapper" data-suraia-component="NavLink">
+  <a class="suraia-navlink" href="#" data-suraia-variant="light" data-suraia-active aria-current="page">
+    <span class="suraia-navlink-icon">🏠</span>
+    <div class="suraia-navlink-body">
+      <span class="suraia-navlink-label">Dashboard</span>
+      <span class="suraia-navlink-description">Main dashboard view</span>
+    </div>
+    <span class="suraia-navlink-section" data-position="right"></span>
+  </a>
+
+  <!-- With nested children -->
+  <div class="suraia-navlink" data-suraia-variant="light" aria-expanded="true" tabindex="0">
+    <span class="suraia-navlink-icon">⚙</span>
+    <div class="suraia-navlink-body">
+      <span class="suraia-navlink-label">Settings</span>
+    </div>
+    <span class="suraia-navlink-chevron" aria-hidden="true"></span>
+  </div>
+  <div class="suraia-navlink-children" style="padding-left: 16px;">
+    <a class="suraia-navlink" href="#" data-suraia-variant="light">
+      <div class="suraia-navlink-body">
+        <span class="suraia-navlink-label">General</span>
+      </div>
+    </a>
+    <a class="suraia-navlink" href="#" data-suraia-variant="light">
+      <div class="suraia-navlink-body">
+        <span class="suraia-navlink-label">Security</span>
+      </div>
+    </a>
+  </div>
+</div>
