@@ -1,0 +1,39 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-pin-input-group {
+  display: flex;
+  gap: var(--suraia-space-2, 8px);
+  box-sizing: border-box;
+}
+
+.suraia-pin-input-field {
+  box-sizing: border-box;
+  width: var(--suraia-pin-input-size, 40px);
+  height: var(--suraia-pin-input-size, 40px);
+  text-align: center;
+  font-family: inherit;
+  font-size: var(--suraia-font-size-md, 1rem);
+  font-weight: var(--suraia-font-weight-bold, 700);
+  background-color: var(--suraia-color-bg-card, #ffffff);
+  border: 1px solid var(--suraia-surface-border, #dee2e6);
+  border-radius: var(--suraia-radius-sm, 4px);
+  color: var(--suraia-color-text-primary, #212529);
+  outline: none;
+  transition: border-color var(--suraia-transition-duration-normal, 150ms) ease;
+}
+
+.suraia-pin-input-field:focus {
+  border-color: var(--suraia-color-primary, #7950f2);
+  box-shadow: 0 0 0 2px var(--suraia-focus-ring-color, rgba(121, 80, 242, 0.15));
+}
+
+.suraia-pin-input-field:disabled,
+.suraia-pin-input-group[data-suraia-disabled="true"] .suraia-pin-input-field {
+  background-color: var(--suraia-color-bg-app, #f8f9fa);
+  color: var(--suraia-color-text-secondary, #868e96);
+  cursor: not-allowed;
+  opacity: var(--suraia-opacity-disabled, 0.6);
+}
