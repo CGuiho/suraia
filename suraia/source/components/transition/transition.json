@@ -1,0 +1,40 @@
+{
+  "name": "Transition",
+  "description": "A behavior primitive that resolves mounted state into transition attributes and CSS variables.",
+  "tier": 1,
+  "dependencies": [],
+  "variants": {
+    "transition": {
+      "options": ["fade", "scale", "slide-up", "slide-down", "slide-left", "slide-right"],
+      "default": "fade"
+    }
+  },
+  "states": ["entered", "exited"],
+  "slots": {
+    "default": "Content controlled by transition state."
+  },
+  "attributes": {
+    "mounted": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether content should be visible."
+    },
+    "duration": {
+      "type": "number",
+      "default": 150,
+      "description": "Transition duration in milliseconds."
+    },
+    "keepMounted": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether exited content remains in the DOM."
+    }
+  },
+  "accessibility": {
+    "role": "presentation",
+    "keyboardNavigation": [],
+    "aria": {
+      "aria-hidden": "Use true when content is exited but kept mounted."
+    }
+  }
+}
