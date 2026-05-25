@@ -8,10 +8,11 @@
 
 ## Key Documents
 
-- **`ARCHITECTURE.md`** — Full technical architecture specification: system layers, component blueprint structure, design token system, naming conventions, and directory layout.
+- **`ARCHITECTURE.md`** — Full technical architecture specification: library domains, component blueprint structure, design token system, naming conventions, and directory layout.
 - **`PHILOSOPHY.md`** — Library philosophy and vision: why Suraia exists, the blueprint-not-component model, AI-as-compiler consumption, dependency resolution contract, component complexity tiers (Primitives → Composites → Patterns → Blocks), and the long-term roadmap.
+- **`TODO.md`** — Master component inventory: the complete checklist of every component that must exist in the library, organized by category (Layout, Inputs, Combobox, Buttons, Navigation, Feedback, Overlays, Data Display, Typography, Miscellaneous).
 
-Read both documents before making architectural decisions or working on component blueprints.
+Read these documents before making architectural decisions or working on component blueprints.
 
 ## Commands
 
