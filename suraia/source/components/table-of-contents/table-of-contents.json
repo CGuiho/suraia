@@ -1,0 +1,26 @@
+{
+  "name": "TableOfContents",
+  "description": "Lists headings and highlights the active section in a long document.",
+  "tier": 2,
+  "dependencies": [],
+  "variants": {},
+  "states": [],
+  "slots": {
+    "default": "Custom layout for TOC list items."
+  },
+  "attributes": {
+    "headings": {
+      "type": "array",
+      "description": "List of headings containing id, text, and indent level."
+    },
+    "activeId": {
+      "type": "string",
+      "description": "The active heading id."
+    }
+  },
+  "accessibility": {
+    "role": "navigation",
+    "keyboardNavigation": [],
+    "aria": {}
+  }
+}
