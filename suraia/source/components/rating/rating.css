@@ -1,0 +1,81 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-rating {
+  --suraia-rating-color: var(--suraia-color-yellow-5);
+  --suraia-rating-symbol-size: 24px;
+
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  outline: none;
+  cursor: pointer;
+}
+
+.suraia-rating[data-suraia-size="xs"] { --suraia-rating-symbol-size: 14px; }
+.suraia-rating[data-suraia-size="sm"] { --suraia-rating-symbol-size: 18px; }
+.suraia-rating[data-suraia-size="md"] { --suraia-rating-symbol-size: 24px; }
+.suraia-rating[data-suraia-size="lg"] { --suraia-rating-symbol-size: 30px; }
+.suraia-rating[data-suraia-size="xl"] { --suraia-rating-symbol-size: 36px; }
+
+.suraia-rating-item {
+  position: relative;
+  width: var(--suraia-rating-symbol-size);
+  height: var(--suraia-rating-symbol-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-rating-item:not([data-suraia-read-only]):hover {
+  transform: scale(1.1);
+}
+
+.suraia-rating-symbol {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.suraia-rating-symbol-background {
+  width: 100%;
+  height: 100%;
+  fill: color-mix(in srgb, var(--suraia-surface-foreground) 15%, transparent);
+}
+
+.suraia-rating-symbol-filled {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.suraia-rating-symbol-filled svg {
+  width: var(--suraia-rating-symbol-size);
+  height: var(--suraia-rating-symbol-size);
+  fill: var(--suraia-rating-color);
+}
+
+/* Disabled State */
+.suraia-rating[data-suraia-disabled] {
+  opacity: var(--suraia-opacity-disabled);
+  cursor: var(--suraia-cursor-disabled);
+  pointer-events: none;
+}
+
+/* Readonly State */
+.suraia-rating[data-suraia-read-only] {
+  cursor: default;
+}
+
+/* Focus Styling */
+.suraia-rating:focus-visible {
+  outline: var(--suraia-focus-ring-width) solid var(--suraia-focus-ring-color);
+  outline-offset: var(--suraia-focus-ring-offset);
+  border-radius: var(--suraia-radius-sm);
+}
