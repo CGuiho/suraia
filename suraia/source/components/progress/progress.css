@@ -1,0 +1,57 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-progress {
+  --suraia-progress-height: 8px;
+  --suraia-progress-color: var(--suraia-color-primary);
+  --suraia-progress-radius: var(--suraia-radius-full);
+
+  position: relative;
+  width: 100%;
+  height: var(--suraia-progress-height);
+  background-color: color-mix(in srgb, var(--suraia-surface-foreground) 12%, transparent);
+  border-radius: var(--suraia-progress-radius);
+  overflow: hidden;
+}
+
+/* Size variants */
+.suraia-progress[data-suraia-size="xs"] { --suraia-progress-height: 3px; }
+.suraia-progress[data-suraia-size="sm"] { --suraia-progress-height: 5px; }
+.suraia-progress[data-suraia-size="md"] { --suraia-progress-height: 8px; }
+.suraia-progress[data-suraia-size="lg"] { --suraia-progress-height: 12px; }
+.suraia-progress[data-suraia-size="xl"] { --suraia-progress-height: 16px; }
+
+.suraia-progress-bar {
+  height: 100%;
+  background-color: var(--suraia-progress-color);
+  border-radius: var(--suraia-progress-radius);
+  transition: width var(--suraia-transition-duration-normal) var(--suraia-transition-easing-ease-out);
+  min-width: 0;
+}
+
+/* Striped */
+.suraia-progress[data-suraia-striped] .suraia-progress-bar {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: calc(var(--suraia-progress-height) * 2.5) calc(var(--suraia-progress-height) * 2.5);
+}
+
+/* Animated stripes */
+.suraia-progress[data-suraia-animated] .suraia-progress-bar {
+  animation: suraia-progress-stripes 1s linear infinite;
+}
+
+@keyframes suraia-progress-stripes {
+  from { background-position: 0 0; }
+  to { background-position: calc(var(--suraia-progress-height) * 2.5) 0; }
+}
