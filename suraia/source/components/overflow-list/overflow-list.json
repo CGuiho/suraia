@@ -1,0 +1,34 @@
+{
+  "name": "OverflowList",
+  "description": "Renders a list of items, collapsing excess items into an overflow indicator based on visibility constraints.",
+  "tier": 2,
+  "dependencies": [],
+  "variants": {},
+  "states": [],
+  "slots": {
+    "default": "The visible items to render.",
+    "overflow": "Content representing the overflow indicator."
+  },
+  "attributes": {
+    "visibleCount": {
+      "type": "number",
+      "default": 3,
+      "description": "Number of items visible before collapsing."
+    },
+    "collapsePosition": {
+      "type": "string",
+      "default": "end",
+      "description": "Whether the collapsed items are at the start or the end of the list."
+    },
+    "overflowLabel": {
+      "type": "string",
+      "default": "+{count} more",
+      "description": "Template label for the overflow item."
+    }
+  },
+  "accessibility": {
+    "role": "list",
+    "keyboardNavigation": [],
+    "aria": {}
+  }
+}
