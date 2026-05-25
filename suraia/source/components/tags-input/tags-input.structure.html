@@ -1,0 +1,28 @@
+<!-- Suraia TagsInput Component Blueprint -->
+<div class="suraia-input-wrapper" data-suraia-component="TagsInput" data-suraia-size="sm" data-suraia-variant="default">
+  <label class="suraia-input-label" for="tags-input-field">Label</label>
+  <p class="suraia-input-description">Description text.</p>
+
+  <div class="suraia-tags-input-container">
+    <div class="suraia-tags-input-field-wrapper">
+      <!-- Tag Pills -->
+      <div class="suraia-pill" data-suraia-size="xs">
+        <span class="suraia-pill-label">tag1</span>
+        <button type="button" class="suraia-pill-remove" aria-label="Remove tag1">×</button>
+      </div>
+      <div class="suraia-pill" data-suraia-size="xs">
+        <span class="suraia-pill-label">tag2</span>
+        <button type="button" class="suraia-pill-remove" aria-label="Remove tag2">×</button>
+      </div>
+
+      <input
+        type="text"
+        class="suraia-tags-input-field"
+        id="tags-input-field"
+        placeholder="Add tag"
+      />
+    </div>
+  </div>
+
+  <p class="suraia-input-error">Error message.</p>
+</div>
