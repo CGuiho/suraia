@@ -1,0 +1,70 @@
+/*!
+ * Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO
+ * All Rights Reserved.
+ */
+
+.suraia-autocomplete-wrapper {
+  position: relative;
+}
+
+.suraia-autocomplete-input {
+  cursor: text;
+}
+
+/* Dropdown */
+.suraia-autocomplete-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: var(--suraia-z-index-dropdown);
+  max-height: 220px;
+  overflow-y: auto;
+  background-color: var(--suraia-surface-0);
+  border: 1px solid var(--suraia-surface-border);
+  border-radius: var(--suraia-radius-md);
+  box-shadow: var(--suraia-shadow-md);
+  padding: var(--suraia-space-1);
+  margin-top: var(--suraia-space-1);
+}
+
+.suraia-autocomplete-dropdown[hidden] {
+  display: none;
+}
+
+.suraia-autocomplete-option {
+  display: flex;
+  align-items: center;
+  padding: var(--suraia-space-2) var(--suraia-space-3);
+  font-family: var(--suraia-font-family-sans);
+  font-size: var(--suraia-font-size-sm);
+  color: var(--suraia-surface-foreground);
+  border-radius: var(--suraia-radius-sm);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color var(--suraia-transition-duration-fast) var(--suraia-transition-easing-ease-out);
+}
+
+.suraia-autocomplete-option:hover:not([data-suraia-disabled]),
+.suraia-autocomplete-option[data-suraia-hovered] {
+  background-color: var(--suraia-surface-hover);
+}
+
+.suraia-autocomplete-option[data-suraia-selected] {
+  background-color: color-mix(in srgb, var(--suraia-color-primary) var(--suraia-alpha-10), transparent);
+  color: var(--suraia-color-primary);
+  font-weight: var(--suraia-font-weight-medium);
+}
+
+.suraia-autocomplete-option[data-suraia-disabled] {
+  opacity: var(--suraia-opacity-disabled);
+  cursor: var(--suraia-cursor-disabled);
+}
+
+.suraia-autocomplete-nothing {
+  padding: var(--suraia-space-3);
+  font-family: var(--suraia-font-family-sans);
+  font-size: var(--suraia-font-size-sm);
+  color: var(--suraia-surface-foreground-muted);
+  text-align: center;
+}
