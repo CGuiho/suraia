@@ -49,7 +49,7 @@ class MarqueeController {
   }
 
   public getStyle(): Record<string, string> {
-    const duration = Math.round(1000 / this.speed * 10);
+    const duration = Math.round(1000 / this.speed);
     return {
       '--suraia-marquee-speed': `${duration}s`,
     };
