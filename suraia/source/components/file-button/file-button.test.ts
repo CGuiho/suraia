@@ -13,10 +13,10 @@ describe("FileButtonController", () => {
     expect(ctrl.isDisabled()).toBe(false);
 
     const inputAttrs = ctrl.getInputAttributes();
-    expect(inputAttrs.type).toBe("file");
-    expect(inputAttrs.multiple).toBeUndefined();
-    expect(inputAttrs.disabled).toBeUndefined();
-    expect(inputAttrs.style).toBe("display: none;");
+    expect(inputAttrs["type"]).toBe("file");
+    expect(inputAttrs["multiple"]).toBeUndefined();
+    expect(inputAttrs["disabled"]).toBeUndefined();
+    expect(inputAttrs["style"]).toBe("display: none;");
   });
 
   test("multiple and accept values", () => {
@@ -30,9 +30,9 @@ describe("FileButtonController", () => {
     expect(ctrl.isDisabled()).toBe(true);
 
     const inputAttrs = ctrl.getInputAttributes();
-    expect(inputAttrs.multiple).toBe("true");
-    expect(inputAttrs.accept).toBe("image/*");
-    expect(inputAttrs.disabled).toBe("true");
+    expect(inputAttrs["multiple"]).toBe("true");
+    expect(inputAttrs["accept"]).toBe("image/*");
+    expect(inputAttrs["disabled"]).toBe("true");
   });
 
   test("selectFiles invokes onChange callback", () => {
@@ -48,7 +48,7 @@ describe("FileButtonController", () => {
     const fileList = {
       0: file,
       length: 1,
-      item: (index: number) => file,
+      item: (_index: number) => file,
     } as unknown as FileList;
 
     ctrl.selectFiles(fileList);
