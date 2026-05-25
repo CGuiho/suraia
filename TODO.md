@@ -7,42 +7,42 @@ The complete inventory of components that must exist in the library. Each compon
 ### Layout
 
 - [ ] AppShell
-- [ ] AspectRatio
-- [ ] Center
-- [ ] Container
-- [ ] Flex
-- [ ] Grid
-- [ ] Group
+- [x] AspectRatio
+- [x] Center
+- [x] Container
+- [x] Flex
+- [x] Grid
+- [x] Group
 - [ ] SimpleGrid
-- [ ] Space
-- [ ] Stack
+- [x] Space
+- [x] Stack
 
 ### Inputs
 
 - [ ] AlphaSlider
 - [ ] AngleSlider
-- [ ] Checkbox
+- [x] Checkbox
 - [ ] Chip
 - [ ] ColorInput
 - [ ] ColorPicker
 - [ ] Fieldset
 - [ ] FileInput
 - [ ] HueSlider
-- [ ] Input
+- [x] Input
 - [ ] JsonInput
 - [ ] MaskInput
 - [ ] NativeSelect
-- [ ] NumberInput
-- [ ] PasswordInput
+- [x] NumberInput
+- [x] PasswordInput
 - [ ] PinInput
-- [ ] Radio
+- [x] Radio
 - [ ] RangeSlider
 - [ ] Rating
-- [ ] SegmentedControl
-- [ ] Slider
-- [ ] Switch
-- [ ] Textarea
-- [ ] TextInput
+- [x] SegmentedControl
+- [x] Slider
+- [x] Switch
+- [x] Textarea
+- [x] TextInput
 
 ### Combobox
 
@@ -51,67 +51,67 @@ The complete inventory of components that must exist in the library. Each compon
 - [ ] MultiSelect
 - [ ] Pill
 - [ ] PillsInput
-- [ ] Select
+- [x] Select
 - [ ] TagsInput
 - [ ] TreeSelect
 
 ### Buttons
 
-- [ ] ActionIcon
-- [ ] Button
-- [ ] CloseButton
+- [x] ActionIcon
+- [x] Button
+- [x] CloseButton
 - [ ] CopyButton
 - [ ] FileButton
-- [ ] UnstyledButton
+- [x] UnstyledButton
 
 ### Navigation
 
-- [ ] Anchor
-- [ ] Breadcrumbs
-- [ ] Burger
-- [ ] NavLink
-- [ ] Pagination
+- [x] Anchor
+- [x] Breadcrumbs
+- [x] Burger
+- [x] NavLink
+- [x] Pagination
 - [ ] Stepper
 - [ ] TableOfContents
-- [ ] Tabs
+- [x] Tabs
 - [ ] Tree
 
 ### Feedback
 
-- [ ] Alert
-- [ ] Loader
-- [ ] Notification
-- [ ] Progress
+- [x] Alert
+- [x] Loader
+- [x] Notification
+- [x] Progress
 - [ ] RingProgress
 - [ ] SemiCircleProgress
-- [ ] Skeleton
+- [x] Skeleton
 
 ### Overlays
 
 - [ ] Affix
 - [ ] Dialog
-- [ ] Drawer
+- [x] Drawer
 - [ ] FloatingIndicator
 - [ ] FloatingWindow
 - [ ] HoverCard
 - [ ] LoadingOverlay
-- [ ] Menu
-- [ ] Modal
-- [ ] Overlay
+- [x] Menu
+- [x] Modal
+- [x] Overlay
 - [ ] Popover
-- [ ] Tooltip
+- [x] Tooltip
 
 ### Data Display
 
-- [ ] Accordion
-- [ ] Avatar
+- [x] Accordion
+- [x] Avatar
 - [ ] BackgroundImage
-- [ ] Badge
-- [ ] Card
+- [x] Badge
+- [x] Card
 - [ ] ColorSwatch
 - [ ] Image
 - [ ] Indicator
-- [ ] Kbd
+- [x] Kbd
 - [ ] NumberFormatter
 - [ ] OverflowList
 - [ ] RollingNumber
@@ -123,24 +123,24 @@ The complete inventory of components that must exist in the library. Each compon
 
 - [ ] Blockquote
 - [ ] Code
-- [ ] Highlight
+- [x] Highlight
 - [ ] List
-- [ ] Mark
-- [ ] Table
-- [ ] Text
-- [ ] Title
+- [x] Mark
+- [x] Table
+- [x] Text
+- [x] Title
 - [ ] Typography
 
 ### Miscellaneous
 
-- [ ] Box
+- [x] Box
 - [ ] Collapse
-- [ ] Divider
+- [x] Divider
 - [ ] FocusTrap
 - [ ] Marquee
-- [ ] Paper
+- [x] Paper
 - [ ] Portal
 - [ ] ScrollArea
 - [ ] Scroller
 - [ ] Transition
-- [ ] VisuallyHidden
+- [x] VisuallyHidden
