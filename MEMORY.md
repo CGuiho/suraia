@@ -93,3 +93,10 @@ Each component has 6 files: `.json`, `.structure.html`, `.css`, `.ts`, `.md`, `.
 - **TODO status updated:** Component inventory checkboxes are all marked complete. The unrelated top-level TODO items (`Explore naive-ui`, `Add utilities`, `Work on CLI`) remain open.
 - **Tooling fix:** `package.json` `typecheck` and `build` scripts now run TypeScript through `bunx --bun tsc` to avoid the broken local Bun `.bin/tsc` remap on Windows.
 - **Verification:** `bun test` passed after build with 976 tests across source and library outputs. `bun run typecheck` passed. `bun run build` passed.
+
+## 2026-05-26 - Working Example Apps
+- **Vanilla example implemented:** `example/vanilla` is a Bun-native Vanilla TypeScript app using `src/server.ts`, `index.html`, `src/main.ts`, and local generated-style CSS. It demonstrates overview, generator, components, and instructions pages with loading, empty, success, error, form, toast, progress, tab, theme, and dialog states. Default dev port: `4101`.
+- **React example implemented:** `example/react` mirrors Bun's React template with `src/index.ts` server, `src/frontend.tsx` browser entry, `src/App.tsx` generated local TSX components, and `src/index.html` static build entry. Default dev port: `4102`.
+- **Usage docs added:** `docs/2026-05-26-using-suraia-with-vanilla-react-arrow-remix.md`, `example/README.md`, `example/vanilla/README.md`, `example/react/README.md`, `example/arrow-js/README.md`, and `example/remix/README.md`.
+- **Later targets documented:** Arrow.js should map blueprints to Arrow templates/reactivity. Remix SQL generation should map blueprints to route modules, loaders/actions, and typed SQL scaffolds after UI dependency resolution.
+- **Verification:** `bun run typecheck` and `bun run build` passed for both `example/vanilla` and `example/react`. Runtime smoke checks succeeded on `http://127.0.0.1:4101` and `http://127.0.0.1:4102`, including `/api/blueprints` responses.
