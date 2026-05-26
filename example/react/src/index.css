@@ -1,0 +1,572 @@
+/*! Copyright © 2026 GUIHO Technologies as represented by Cristóvão GUIHO. All Rights Reserved. */
+
+:root {
+  color-scheme: light;
+  font-family:
+    "Satoshi",
+    "Geist",
+    "Aptos",
+    system-ui,
+    sans-serif;
+  background: #f6f3ec;
+  color: #1f211d;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100dvh;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.suraia-root {
+  --suraia-color-primary: #7950f2;
+  --suraia-color-ink: #1f211d;
+  --suraia-color-muted: #6f7168;
+  --suraia-color-paper: #fffaf0;
+  --suraia-color-panel: rgba(255, 250, 240, 0.82);
+  --suraia-color-border: rgba(31, 33, 29, 0.12);
+  --suraia-color-danger: #b44942;
+  --suraia-color-success: #327a56;
+  --suraia-shadow-soft: 0 24px 80px rgba(48, 40, 24, 0.14);
+  min-height: 100dvh;
+  padding: 24px;
+  color: var(--suraia-color-ink);
+  background:
+    radial-gradient(circle at 8% 10%, rgba(121, 80, 242, 0.14), transparent 28rem),
+    radial-gradient(circle at 82% 18%, rgba(214, 124, 73, 0.2), transparent 30rem),
+    linear-gradient(135deg, #f6f3ec, #efe7d7);
+}
+
+.suraia-root[data-suraia-color-scheme="dark"] {
+  color-scheme: dark;
+  --suraia-color-ink: #f3efe3;
+  --suraia-color-muted: #b9b3a5;
+  --suraia-color-paper: #20211d;
+  --suraia-color-panel: rgba(32, 33, 29, 0.82);
+  --suraia-color-border: rgba(243, 239, 227, 0.13);
+  background:
+    radial-gradient(circle at 8% 10%, rgba(121, 80, 242, 0.22), transparent 28rem),
+    radial-gradient(circle at 82% 18%, rgba(214, 124, 73, 0.14), transparent 30rem),
+    linear-gradient(135deg, #161713, #25231f);
+}
+
+.topbar {
+  position: sticky;
+  top: 18px;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+  width: min(1180px, 100%);
+  margin: 0 auto 54px;
+  padding: 12px;
+  border: 1px solid var(--suraia-color-border);
+  border-radius: 999px;
+  background: var(--suraia-color-panel);
+  box-shadow: var(--suraia-shadow-soft);
+  backdrop-filter: blur(18px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.6), transparent),
+    var(--suraia-color-primary);
+}
+
+.brand strong,
+.brand small {
+  display: block;
+}
+
+.brand small,
+.muted,
+.metric-card span,
+.component-row small,
+.field small {
+  color: var(--suraia-color-muted);
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.nav-link,
+.suraia-button,
+.tab {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  transition:
+    transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
+    background 180ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link,
+.tab {
+  padding: 10px 14px;
+  background: transparent;
+  color: var(--suraia-color-muted);
+}
+
+.nav-link.is-active,
+.tab.is-active {
+  background: var(--suraia-color-ink);
+  color: var(--suraia-color-paper);
+}
+
+.suraia-button {
+  padding: 12px 18px;
+  font-weight: 800;
+}
+
+.suraia-button:active,
+.nav-link:active,
+.tab:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.suraia-button.primary {
+  background: var(--suraia-color-primary);
+  color: white;
+}
+
+.suraia-button.secondary {
+  border-color: var(--suraia-color-border);
+  background: var(--suraia-color-panel);
+  color: var(--suraia-color-ink);
+}
+
+.suraia-button.ghost {
+  background: transparent;
+  color: var(--suraia-color-muted);
+}
+
+.suraia-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.hero,
+.workspace-grid,
+.component-layout,
+.instructions,
+.metric-grid {
+  width: min(1180px, 100%);
+  margin-inline: auto;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: clamp(24px, 5vw, 68px);
+  align-items: center;
+  min-height: 58dvh;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  color: var(--suraia-color-primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  max-width: 11ch;
+  font-size: clamp(3.2rem, 9vw, 7.8rem);
+  line-height: 0.86;
+  letter-spacing: -0.08em;
+}
+
+h2 {
+  max-width: 15ch;
+  font-size: clamp(2rem, 4vw, 4.4rem);
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+.lede {
+  max-width: 65ch;
+  margin-top: 24px;
+  color: var(--suraia-color-muted);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.blueprint-panel,
+.workspace-card,
+.component-demo,
+.component-list,
+.instructions article,
+.instruction-note,
+.metric-card {
+  border: 1px solid var(--suraia-color-border);
+  background: var(--suraia-color-panel);
+  box-shadow: var(--suraia-shadow-soft);
+  backdrop-filter: blur(18px);
+}
+
+.blueprint-panel {
+  overflow: hidden;
+  border-radius: 34px;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--suraia-color-border);
+  color: var(--suraia-color-muted);
+  font-size: 0.85rem;
+}
+
+pre {
+  margin: 0;
+  padding: 28px;
+  overflow: auto;
+  color: var(--suraia-color-ink);
+  font-family: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+  line-height: 1.65;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1fr 0.7fr;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.metric-card {
+  min-height: 150px;
+  padding: 22px;
+  border-radius: 28px;
+}
+
+.metric-card strong {
+  display: block;
+  margin: 18px 0 8px;
+  font-size: clamp(2rem, 5vw, 4rem);
+  letter-spacing: -0.06em;
+}
+
+.workspace-grid,
+.component-layout,
+.instructions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 18px;
+}
+
+.workspace-card,
+.component-demo,
+.component-list,
+.instructions article,
+.instruction-note {
+  border-radius: 32px;
+  padding: clamp(22px, 4vw, 42px);
+}
+
+.workspace-card.wide {
+  min-height: 520px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field span {
+  font-weight: 800;
+}
+
+.field input,
+.field select {
+  min-height: 48px;
+  border: 1px solid var(--suraia-color-border);
+  border-radius: 16px;
+  padding: 0 14px;
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--suraia-color-ink);
+}
+
+.suraia-root[data-suraia-color-scheme="dark"] .field input,
+.suraia-root[data-suraia-color-scheme="dark"] .field select {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.field em {
+  color: var(--suraia-color-danger);
+  font-style: normal;
+}
+
+.state-box {
+  margin-top: 28px;
+  border-radius: 24px;
+  padding: 20px;
+}
+
+.empty-state {
+  border: 1px dashed var(--suraia-color-border);
+  color: var(--suraia-color-muted);
+}
+
+.success-state {
+  border: 1px solid rgba(50, 122, 86, 0.24);
+  background: rgba(50, 122, 86, 0.1);
+}
+
+.error-state {
+  border: 1px solid rgba(180, 73, 66, 0.24);
+  background: rgba(180, 73, 66, 0.1);
+}
+
+.loading-state {
+  display: grid;
+  gap: 10px;
+}
+
+.skeleton-line {
+  height: 14px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(127, 127, 127, 0.1), rgba(127, 127, 127, 0.28), rgba(127, 127, 127, 0.1));
+  background-size: 220% 100%;
+  animation: shimmer 1.2s infinite;
+}
+
+.skeleton-line.long {
+  width: 84%;
+}
+
+.skeleton-line.medium {
+  width: 62%;
+}
+
+.skeleton-line.short {
+  width: 36%;
+}
+
+.progress-shell {
+  height: 14px;
+  margin: 26px 0 14px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(127, 127, 127, 0.14);
+}
+
+.progress-shell span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--suraia-color-primary);
+  transition: width 260ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tab-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 28px 0 16px;
+}
+
+.tab-panel {
+  min-height: 120px;
+  border-radius: 24px;
+  padding: 22px;
+  background: rgba(127, 127, 127, 0.1);
+  color: var(--suraia-color-muted);
+  line-height: 1.65;
+}
+
+.signup-form {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.component-list {
+  display: grid;
+  gap: 10px;
+}
+
+.component-row {
+  display: grid;
+  gap: 5px;
+  padding: 16px;
+  border: 1px solid var(--suraia-color-border);
+  border-radius: 20px;
+}
+
+.instruction-list {
+  display: grid;
+  gap: 18px;
+  margin: 30px 0 0;
+  padding-left: 20px;
+  line-height: 1.65;
+}
+
+.instruction-note {
+  align-self: start;
+  line-height: 1.65;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(31, 33, 29, 0.55);
+  backdrop-filter: blur(10px);
+}
+
+.dialog {
+  width: min(520px, 100%);
+  border: 1px solid var(--suraia-color-border);
+  border-radius: 32px;
+  padding: 30px;
+  background: var(--suraia-color-paper);
+  color: var(--suraia-color-ink);
+  box-shadow: var(--suraia-shadow-soft);
+}
+
+.dialog p {
+  margin-top: 12px;
+  color: var(--suraia-color-muted);
+  line-height: 1.7;
+}
+
+.toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 50;
+  max-width: 320px;
+  border: 1px solid var(--suraia-color-border);
+  border-radius: 999px;
+  padding: 14px 18px;
+  background: var(--suraia-color-ink);
+  color: var(--suraia-color-paper);
+  box-shadow: var(--suraia-shadow-soft);
+  animation: toast-in 260ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: reveal 650ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -220% 0;
+  }
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 920px) {
+  .suraia-root {
+    padding: 14px;
+  }
+
+  .topbar,
+  .hero,
+  .workspace-grid,
+  .component-layout,
+  .instructions,
+  .metric-grid,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    position: static;
+    border-radius: 24px;
+  }
+
+  .nav {
+    justify-content: start;
+    overflow-x: auto;
+  }
+
+  h1 {
+    max-width: 100%;
+  }
+}
