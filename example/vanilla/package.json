@@ -1,0 +1,16 @@
+{
+  "name": "@guiho/suraia-example-vanilla",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --hot src/server.ts",
+    "typecheck": "bunx --bun tsc -p . --noEmit",
+    "build": "bunx --bun tsc -p . --noEmit && bun build ./index.html --outdir=dist --sourcemap --target=browser --minify --define:process.env.NODE_ENV='\"production\"' --env='BUN_PUBLIC_*'",
+    "start": "NODE_ENV=production bun src/server.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "1.3.14",
+    "typescript": "6.0.3"
+  }
+}
