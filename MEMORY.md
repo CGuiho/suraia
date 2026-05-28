@@ -119,3 +119,18 @@ Each component has 6 files: `.json`, `.structure.html`, `.css`, `.ts`, `.md`, `.
 - Fixed `example/react/src/frontend.tsx` so React root reuse accesses `import.meta.hot.data.root` directly instead of storing `import.meta.hot.data` in an intermediate variable.
 - Rationale: Bun 1.3.14 rejects indirect HMR API/data access in browser bundles with `import.meta.hot.data cannot be used indirectly`.
 - Verification: `bun run typecheck` passed in `example/react`; headless Chrome rendered `http://localhost:4102/` successfully through the existing Bun dev server.
+
+## 2026-05-29 00:02 +02:00 - React Blueprint Conversion Instruction Draft
+- Created `docs/2026-05-28-react-blueprint-conversion-instructions.md` as the working draft for converting Suraia blueprints into local React components.
+- Captured owner direction that generated Suraia components must live in a library-owned local namespace such as `app/suraira/suraira-button.tsx` or `src/suraira/suraira-button.tsx`, not as inline `GeneratedButton` functions inside `App.tsx` and not primarily under a generic `components/` directory.
+- Captured the first operational step: locate `@guiho/suraia` in the target app's `package.json` and `node_modules`, verify `library/components/<component>/` or local-source fallback paths, ask before running `bun add -d @guiho/suraia`, and stop with an explicit report if verification repeatedly fails.
+- Current `example/react` status noted in the draft: `@guiho/suraia` is not listed in `example/react/package.json`, and `example/react/node_modules/@guiho/suraia` is absent. No install was run.
+
+## 2026-05-29 00:14 +02:00 - Suaira Config TOML Contract Draft
+- Created `docs/2026-05-29-suaira-config-toml.md` documenting the first TOML configuration contract for blueprint conversion.
+- The config filename is currently documented exactly as specified by the owner: `suaira.config.toml`.
+- The config file must live beside the target app's `package.json`; that directory is the package scope and relative config paths resolve from there.
+- Documented `[paths].read` with default `node_modules/@guiho/suraia`, checking `library/components/<component>/` first and `source/components/<component>/` as a fallback for linked/local package layouts.
+- Documented `[paths].write` as the final local Suraia-owned output directory. If omitted, default to `source/suraira` when `source/` exists, else `src/suraira` when `src/` exists, else `suraira` beside the config.
+- Updated the React conversion instructions so the process starts by loading `suaira.config.toml`, then ensures the library is installed, then verifies the local component output path before writing React files.
+- Current `example/react` status: `suaira.config.toml` is absent, `src/` exists, and the default write directory would be `example/react/src/suraira/`.
