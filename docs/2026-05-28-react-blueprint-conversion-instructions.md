@@ -19,7 +19,8 @@ Use a library-named directory instead. For the current React implementation dire
 ```txt
 ./app/
   suraira/
-    suraira-button.tsx
+    suraia-button.tsx
+    suraia-button.modules.css
 ```
 
 If the target React app does not use an `app/` directory, map `./app/` to the app's source root while preserving the library-owned namespace. For example, a Bun React app using `src/` can use:
@@ -27,13 +28,14 @@ If the target React app does not use an `app/` directory, map `./app/` to the ap
 ```txt
 ./src/
   suraira/
-    suraira-button.tsx
+    suraia-button.tsx
+    suraia-button.modules.css
 ```
 
 A page, route, or application shell may import a button only after the button has been generated locally:
 
 ```tsx
-import { SurairaButton } from "./suraira/suraira-button";
+import { SuraiaButton } from "#suraia/suraia-button";
 ```
 
 The bad pattern is defining `GeneratedButton` inline inside `App.tsx` and treating that as a Suraia implementation. The correct pattern is to generate the Suraia-derived button first, place it in the Suraia-owned local directory, and then import it into `App.tsx`.
@@ -52,9 +54,15 @@ The first operational step is to load the Suraia conversion configuration file.
    - All relative paths in the config resolve from the package scope.
    - See `docs/2026-05-29-suaira-config-toml.md` for the configuration contract.
 
-3. If `suaira.config.toml` is missing, stop and ask whether to create it.
-   - Do not silently continue without the config file.
-   - Explain the default `read` and `write` values that would be used for that package layout.
+3. If `suaira.config.toml` is missing, tell the user, create a default config file, and continue.
+   - Do not interrupt the workflow to ask permission for the default config.
+   - Use this message shape:
+
+     ```txt
+     I don't see `suaira.config.toml` beside this app's `package.json`. I'm going to create a default configuration file and continue.
+     ```
+
+   - The default config must use the default read path and the write path selected from the detected package layout.
 
 4. Resolve the Suraia blueprint read path.
    - Use `paths.read` from the config when present.
@@ -73,7 +81,7 @@ The first operational step is to load the Suraia conversion configuration file.
    - For a button, this should resolve to a path like:
 
      ```txt
-     <resolved-write-directory>/suraira-button.tsx
+     <resolved-write-directory>/suraia-button.tsx
      ```
 
 ## Step 2: Ensure The Suraia Blueprint Package Is Installed
@@ -153,29 +161,170 @@ After loading configuration and resolving paths, ensure the Suraia blueprint pac
     - State what was missing.
     - Include the instructions written so far so the user can correct the environment and continue.
 
-## Step 3: Verify The Local Component Output Path
+## Step 3: Run General Project Verification
 
-Before writing React code, verify where the component will be created.
+Before writing React code, verify the local generation target, package setup, and project import path.
 
-1. Use the `paths.write` value resolved during config loading.
-2. Ensure the write directory is Suraia-owned, such as `src/suraira/` or `suraira/`.
-3. Do not write generated Suraia components into a generic `components/` directory as the primary namespace.
-4. If the write directory does not exist, create it when generation begins.
-5. For the button component, create the React file at:
+1. Verify the local component output path.
+   - Use the `paths.write` value resolved during config loading.
+   - Ensure the write directory is Suraia-owned, such as `src/suraira/` or `suraira/`.
+   - Do not write generated Suraia components into a generic `components/` directory as the primary namespace.
+   - If the write directory does not exist, create it when generation begins.
+   - For the button component, create the React file at:
+
+     ```txt
+     <resolved-write-directory>/suraia-button.tsx
+     ```
+
+   - Create the matching CSS module file at:
+
+     ```txt
+     <resolved-write-directory>/suraia-button.modules.css
+     ```
+
+2. Verify the TypeScript import alias.
+   - If `tsconfig.json` exists in the package scope, inspect `compilerOptions.paths`.
+   - Prefer a global alias for Suraia-generated files:
+
+     ```json
+     {
+       "compilerOptions": {
+         "paths": {
+           "#suraia/*": ["./src/suraira/*"]
+         }
+       }
+     }
+     ```
+
+   - The alias target must match the resolved write directory.
+   - If the resolved write directory is `source/suraira`, use:
+
+     ```json
+     "#suraia/*": ["./source/suraira/*"]
+     ```
+
+   - If the resolved write directory is `suraira`, use:
+
+     ```json
+     "#suraia/*": ["./suraira/*"]
+     ```
+
+   - Preserve existing aliases. Add `#suraia/*` when it is missing.
+
+3. Prefer global imports in generated React code.
+   - With the alias present, import the local component like this:
+
+     ```tsx
+     import { SuraiaButton } from "#suraia/suraia-button";
+     ```
+
+   - If `tsconfig.json` is not present, use the project's existing import mechanism when one exists.
+   - If no global import mechanism exists, use relative imports as the fallback.
+
+4. Report the verification result briefly.
+   - State whether the config was loaded or created.
+   - State whether `@guiho/suraia` is installed.
+   - State the resolved blueprint read path.
+   - State the resolved component write path.
+   - State whether the `#suraia/*` alias exists or was added.
+
+After this verification, the React application imports generated local files and uses them from application code. It must not import production UI from `@guiho/suraia`.
+
+## Step 4: Create The React Component And Style Files
+
+After configuration, package installation, and project verification are complete, create both generated files for the requested component.
+
+For a blueprint with the kebab-case slug `component-log-name`, create:
+
+```txt
+<resolved-write-directory>/suraia-component-log-name.tsx
+<resolved-write-directory>/suraia-component-log-name.modules.css
+```
+
+The exported component name must be:
+
+```txt
+SuraiaComponentLogName
+```
+
+Before creating files, check the resolved write directory:
+
+1. Look for the component file:
 
    ```txt
-   <resolved-write-directory>/suraira-button.tsx
+   <resolved-write-directory>/suraia-component-log-name.tsx
    ```
 
-6. The React application imports this local file and uses it from application code.
+2. Look for the CSS module file:
+
+   ```txt
+   <resolved-write-directory>/suraia-component-log-name.modules.css
+   ```
+
+3. If both files already exist and the user did not explicitly request override, report that the component is already written in React and stop for that component.
+
+   Use this message shape:
+
+   ```txt
+   `SuraiaComponentLogName` is already written in React at `<resolved-write-directory>/suraia-component-log-name.tsx`.
+   ```
+
+4. If only one of the two files exists, treat this as a partial existing conversion. Report which file exists and which file is missing, then stop unless the user explicitly requested override.
+
+5. If the user explicitly requested override, overwrite both generated files and continue.
+
+The same check applies to dependency components. When a dependency is already written locally, import it through the configured alias instead of regenerating it:
+
+```tsx
+import { SuraiaButton } from "#suraia/suraia-button";
+```
+
+Generated React component files must follow this file order:
+
+1. Import block.
+2. Export block, including `export default` when applicable.
+3. Component types and implementation logic.
+
+Do not inline exports on the function or constant declaration. Use a top export block instead:
+
+```tsx
+import type { ReactNode } from "react";
+import classes from "./suraia-component-log-name.modules.css";
+
+export type { Props };
+export { SuraiaComponentLogName };
+export default SuraiaComponentLogName;
+
+interface Props {
+  children?: ReactNode;
+}
+
+function SuraiaComponentLogName(props: Props) {
+  return <div className={classes.root}>{props.children}</div>;
+}
+```
+
+Use `Props` as the component props interface name. If the component has no public props yet, define `interface Props {}`.
+
+Always import the component CSS module as `classes`.
+
+If a generated component depends on another generated Suraia component, import it through the configured alias:
+
+```tsx
+import { SuraiaButton } from "#suraia/suraia-button";
+```
 
 ## Current React Example Status
 
 As of this draft:
 
-- `example/react/package.json` does not list `@guiho/suraia`.
-- `example/react/node_modules/@guiho/suraia` is not present.
-- `example/react/suaira.config.toml` is not present.
+- `example/react/package.json` lists `@guiho/suraia` as a local file devDependency.
+- `example/react/node_modules/@guiho/suraia/library/components/button/` is present in the current workspace.
+- `example/react/suaira.config.toml` exists.
 - `example/react/src/` exists.
-- The default write directory for this app would be `example/react/src/suraira/`.
-- No install command has been run for this instruction-writing pass.
+- The configured write directory is `example/react/src/suraira/`.
+- A button component generated in this app should be written to `example/react/src/suraira/suraia-button.tsx`.
+- Its CSS module should be written to `example/react/src/suraira/suraia-button.modules.css`.
+- `example/react/tsconfig.json` exists.
+- `example/react/tsconfig.json` has `@/*` and `#suraia/*`.
+- The configured Suraia alias is `"#suraia/*": ["./src/suraira/*"]`.
