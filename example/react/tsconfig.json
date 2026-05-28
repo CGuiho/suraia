@@ -20,7 +20,8 @@
     "noUnusedParameters": true,
     "noPropertyAccessFromIndexSignature": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "#suraia/*": ["./src/suraira/*"]
     }
   },
   "include": ["src/**/*", "bun-env.d.ts"],
