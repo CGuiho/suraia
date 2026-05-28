@@ -57,6 +57,34 @@ Build artifacts (`library/`, `bundle/`, `bin/`) are gitignored.
 - CSS and TS token files are kept in sync: `themes/base-tokens.css` ↔ `themes/base-tokens.ts`, `styles/colors.css` ↔ `styles/colors.ts`.
 - Opacity in CSS: use `color-mix(in srgb, var(--color) var(--suraia-alpha-N), transparent)`. Opacity in TS: use the `alpha()` utility from `styles/functions.ts`.
 
+## Generated React Component Rules
+
+- Generated Suraia React components must create both a component file and a CSS module file in the resolved Suraia-owned write directory:
+  - Component file: `suraia-<component-slug>.tsx`
+  - CSS module file: `suraia-<component-slug>.modules.css`
+- Generated React component symbols use PascalCase with the `Suraia` prefix:
+  - File `suraia-component-log-name.tsx` exports component `SuraiaComponentLogName`.
+- Generated React component files must be ordered as:
+  1. Import block.
+  2. Export block, including `export default` when applicable.
+  3. Implementation code.
+- Do not inline exports on function or constant declarations in generated React component files. Do not write `export function SuraiaButton(...)` or `export const SuraiaButton = ...`. Export from the top export block instead.
+- Place `export default` in the top export block unless the default export depends on a value that cannot be safely exported before later mutation or initialization.
+- Import the component CSS module as `classes`:
+  ```tsx
+  import classes from "./suraia-component-log-name.modules.css";
+  ```
+- Define component props with an interface named `Props`. If the component has no public props, use an empty `interface Props {}` until specific props are introduced.
+- Implement generated React components with a TypeScript `function` declaration, not an inline exported function and not an arrow function component.
+- If a generated component imports another generated Suraia component, import it through the configured project alias, for example:
+  ```tsx
+  import { SuraiaButton } from "#suraia/suraia-button";
+  ```
+- Before generating a Suraia React component, check whether its component file and CSS module already exist in the resolved write directory. If they exist and the user did not explicitly request override/overwrite/regeneration, tell the user the component is already written and stop for that component.
+- If only one of the expected files exists, treat it as a partial existing conversion. Report the partial state and stop unless the user explicitly requested override/overwrite/regeneration.
+- If the user explicitly requests override, overwrite both generated files for that component.
+- When a needed dependency component already exists locally, import it through `#suraia/*` instead of regenerating it.
+
 ## Package & Publishing
 
 - Package name: `@guiho/suraia`. Publishes to both **npm** and **JSR**.
