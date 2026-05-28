@@ -1,0 +1,30 @@
+{
+  "include": ["source/**/*"],
+  "exclude": ["node_modules", "dist"],
+
+  "compilerOptions": {
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "types": ["vite/client"],
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleDetection": "force",
+    "jsx": "preserve",
+    "allowJs": false,
+    "resolveJsonModule": true,
+
+    "rootDir": "source",
+    "outDir": "dist",
+
+    "declaration": false,
+    "moduleResolution": "bundler",
+    "verbatimModuleSyntax": true,
+
+    "strict": true,
+    "skipLibCheck": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noPropertyAccessFromIndexSignature": true
+  }
+}
