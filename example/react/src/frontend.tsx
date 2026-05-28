@@ -13,8 +13,9 @@ const element = document.getElementById("root");
 if (!element) {
   document.body.textContent = "Missing React application root.";
 } else {
-  const hotData = import.meta.hot?.data as { root?: Root } | undefined;
-  const root = hotData ? (hotData.root ??= createRoot(element)) : createRoot(element);
+  const root = import.meta.hot
+    ? ((import.meta.hot.data.root ??= createRoot(element)) as Root)
+    : createRoot(element);
 
   root.render(
     <StrictMode>
