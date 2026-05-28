@@ -134,3 +134,101 @@ Each component has 6 files: `.json`, `.structure.html`, `.css`, `.ts`, `.md`, `.
 - Documented `[paths].write` as the final local Suraia-owned output directory. If omitted, default to `source/suraira` when `source/` exists, else `src/suraira` when `src/` exists, else `suraira` beside the config.
 - Updated the React conversion instructions so the process starts by loading `suaira.config.toml`, then ensures the library is installed, then verifies the local component output path before writing React files.
 - Current `example/react` status: `suaira.config.toml` is absent, `src/` exists, and the default write directory would be `example/react/src/suraira/`.
+
+## 2026-05-29 00:27 +02:00 - React Conversion General Verification Update
+- Updated `docs/2026-05-29-suaira-config-toml.md` so missing `suaira.config.toml` no longer blocks the workflow. The assistant should tell the user it is creating a default config, create it beside `package.json`, and continue.
+- Updated `docs/2026-05-28-react-blueprint-conversion-instructions.md` so Step 3 is now general project verification, not only output-path verification.
+- Documented preferred generated-component import alias: `#suraia/*`, mapped to the resolved local write directory, such as `"#suraia/*": ["./src/suraira/*"]`.
+- If `tsconfig.json` exists, the assistant should inspect `compilerOptions.paths`, preserve existing aliases, and add `#suraia/*` when missing. If `tsconfig.json` is absent, use the project's existing import mechanism when available, otherwise fall back to relative imports.
+- Current `example/react/tsconfig.json` has `@/*` mapped to `./src/*` but does not yet have `#suraia/*`; the matching alias would be `"#suraia/*": ["./src/suraira/*"]`.
+
+## 2026-05-29 00:33 +02:00 - React Example Config And Alias Applied
+- Applied the new workflow defaults to `example/react`: added `suaira.config.toml` with `[paths] read = "node_modules/@guiho/suraia"` and `write = "src/suraira"`.
+- Added `"#suraia/*": ["./src/suraira/*"]` to `example/react/tsconfig.json` while preserving the existing `"@/*": ["./src/*"]` alias.
+- Added `@guiho/suraia` to `example/react/package.json` as a local file devDependency: `"file:../../suraia"`, and updated `example/react/bun.lock`.
+- `bun install` for the local file dependency currently fails with `EPERM: failed copying files from cache to destination for package @guiho/suraia`; using `link:../../suraia` also failed because Bun could not link the local package. The workspace `node_modules/@guiho/suraia` was manually populated from `suraia/package.json`, `jsr.json`, `CHANGELOG.md`, `LICENSE.md`, `library/`, and `docs/` so the current example can resolve the blueprint read path.
+- Verification: `example/react/node_modules/@guiho/suraia/library/components/button/` is present, `bun run typecheck` passes in `example/react`, and `bun run build` passes when run outside the sandbox after sandboxed node_modules reads hit EPERM.
+
+## 2026-05-29 00:36 +02:00 - Blueprint Workbench Implementation Prompt
+- Prepared a detailed single-task handoff prompt for another AI to implement the Suraia Blueprint Workbench.
+- The prompt directs the implementer to build a Bun + Vite + Vanilla TypeScript workbench inside `suraia/preview/`, generate a blueprint registry from `source/components/*`, render `.structure.html` plus component CSS/tokens, auto-generate controls from `.json`, and verify with Bun typecheck/build plus browser smoke testing.
+- Current repository facts used by the prompt: 111 component directories, 666 component blueprint files, strict TypeScript settings, and no existing framework adapters.
+
+## 2026-05-29 00:42 +02:00 - Generated React Component Naming Rules
+- Added generated React component rules to `AGENTS.md` and mirrored them in the React conversion/config docs.
+- Generated React conversion must create two files per component in the resolved write directory: `suraia-<component-slug>.tsx` and `suraia-<component-slug>.modules.css`.
+- Generated React component symbols use the `Suraia` PascalCase prefix, e.g. `suraia-component-log-name.tsx` exports `SuraiaComponentLogName`.
+- Generated `.tsx` files must be ordered as imports, then top export block, then implementation. Do not inline exports on function/const declarations.
+- Generated components import their CSS module as `classes`, define props as `interface Props`, use a TypeScript `function` declaration, and import other generated Suraia components through the configured `#suraia/*` alias.
+
+## 2026-05-29 00:47 +02:00 - React Conversion Existing Output Rule
+- Added idempotency/override rules to `AGENTS.md`, `docs/2026-05-28-react-blueprint-conversion-instructions.md`, and `docs/2026-05-29-suaira-config-toml.md`.
+- Before generating a React component, check whether `suraia-<component-slug>.tsx` and `suraia-<component-slug>.modules.css` already exist in the resolved write directory.
+- If both exist and the user did not explicitly request override/overwrite/regeneration, report that the component is already written in React and stop for that component.
+- If only one expected file exists, treat it as a partial existing conversion and stop unless override/overwrite/regeneration was explicitly requested.
+- If override/overwrite/regeneration is explicitly requested, overwrite both generated files.
+- Existing dependency components should be imported through `#suraia/*` instead of regenerated.
+
+## 2026-05-29 01:00 +02:00 — Suraia Blueprint Workbench Implementation
+
+### Workbench Built
+- Created `suraia/preview/` — a Bun + Vite + Vanilla TypeScript local workbench app that previews all 111 blueprint components directly from their source files in `source/components/`.
+- No framework adapters (React, Vue, Svelte, Web Components) were used. The workbench uses pure DOM APIs and vanilla TypeScript.
+
+### Files Created (18 files)
+```
+preview/
+  index.html                          Entry HTML
+  vite.config.ts                      Vite configuration (root: preview/, fs.allow for source/)
+  tsconfig.json                       TypeScript config (DOM lib, vite/client types)
+  source/
+    main.ts                           DOMContentLoaded entry → initApp()
+    app.ts                            App shell: hash routing, sidebar, component page rendering
+    styles/workbench.css              Dense utilitarian workbench UI (sidebar, panels, tabs, matrix)
+    blueprints/types.ts               BlueprintRecord, ComponentSpec, CategoryMap types
+    blueprints/load-blueprints.ts     import.meta.glob loader for all 111 × 6 component files
+    blueprints/normalize-blueprint.ts JSON spec parser + six-file contract validator
+    blueprints/categories.ts          Slug → category mapping from TODO.md inventory
+    preview/render-preview.ts         iframe srcdoc renderer (tokens + component CSS + slot replacement)
+    preview/apply-controls.ts         ControlState builder from JSON spec (variants/states/attributes)
+    preview/render-matrix.ts          Variant/state/dark mode matrix generator (cap: 24 cells)
+    ui/sidebar.ts                     Left sidebar: search, category grouping, tier badge, warning indicator
+    ui/component-page.ts              Main view: header, preview canvas, tab bar, controls, deps
+    ui/controls-panel.ts              Auto-generated controls from JSON spec (selects, toggles, inputs)
+    ui/code-panel.ts                  8-tab panel: Preview, Matrix, Structure, Spec, Styles, Behavior, Guide, Tests
+    ui/dependency-panel.ts            Dependency list with exists/missing status and click navigation
+```
+
+### Package Scripts Added
+```json
+"preview": "vite --config preview/vite.config.ts",
+"preview:build": "vite build --config preview/vite.config.ts",
+"preview:typecheck": "bunx --bun tsc -p preview/tsconfig.json --noEmit"
+```
+
+### Key Implementation Details
+- Vite `import.meta.glob` with `eager: true, query: '?raw'` loads all component source files at build time (689 modules, 920KB JS bundle).
+- Glob paths use `../../../source/components/*/*.json` — relative to `preview/source/blueprints/` going up to `suraia/source/components/`.
+- Preview rendering uses `iframe srcdoc` with embedded token CSS + component CSS + slot placeholders.
+- `<slot>` elements are replaced in-memory only (HTML source is not modified).
+- Hash routing (`#/components/<slug>`) enables direct navigation without page reload.
+- Light/dark theme switching via `data-suraia-color-scheme` attribute on the iframe body.
+- Width controls for desktop/tablet/mobile preview sizes.
+- Matrix view caps at 24 cells to avoid combinatorial explosion; shows truncation notice when cap is hit.
+
+### Verification Results
+| Check | Result |
+|---|---|
+| `bun run typecheck` | Clean (0 errors) |
+| `bun run preview:typecheck` | Clean (0 errors) |
+| `bun test` | 976/976 passing |
+| `bun run preview:build` | Success (689 modules, 920KB JS, 7.9KB CSS) |
+| 111 component folders | Confirmed |
+| ClickUp task `86ca12da7` | Updated to "in progress" |
+
+### Dependencies Added
+- `vite` (devDependency, v8.0.14)
+
+### Known Warnings
+- Build chunk size warning (>500KB) — acceptable for a local workbench, can be optimized with code splitting later.
+- No browser automation available for smoke testing; the build output and typecheck results serve as verification.
