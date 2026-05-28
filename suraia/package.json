@@ -55,6 +55,9 @@
     "_ci": "bun clean && bun clean-build && bun clean-installation",
     "_up": "bun _gaa && bun x taze --install --write --interactive",
     "_upb": "bun _gaa && bun update --interactive",
+    "preview": "vite --config preview/vite.config.ts",
+    "preview:build": "vite build --config preview/vite.config.ts",
+    "preview:typecheck": "bunx --bun tsc -p preview/tsconfig.json --noEmit",
     "_uid": "bun nanoid --alphabet abcdefghijklmnopqrstuvwxyz-_0123456789",
     "_gaa": "npx google-artifactregistry-auth"
   },
@@ -73,6 +76,7 @@
   "devDependencies": {
     "@guiho/mirror": "^3.0.0",
     "@types/bun": "1.3.14",
-    "typescript": "6.0.3"
+    "typescript": "6.0.3",
+    "vite": "^8.0.14"
   }
 }
