@@ -4,17 +4,17 @@ The examples show what a target application looks like after an AI assistant rea
 
 ## Active Examples
 
-| Target | Path | Runtime | Status |
-|---|---|---|---|
-| Vanilla TypeScript | `example/vanilla` | Bun dev server + Bun static HTML build | Working |
-| React TypeScript | `example/react` | Bun React dev server + Bun static HTML build | Working |
+| Target             | Path              | Runtime                                      | Status  |
+| ------------------ | ----------------- | -------------------------------------------- | ------- |
+| Vanilla TypeScript | `example/vanilla` | Bun dev server + Bun static HTML build       | Working |
+| React TypeScript   | `example/react`   | Bun React dev server + Bun static HTML build | Working |
 
 ## Later Targets
 
-| Target | Path | Status |
-|---|---|---|
-| Arrow.js | `example/arrow-js` | Planned |
-| Remix SQL generation | `example/remix` | Planned |
+| Target               | Path               | Status  |
+| -------------------- | ------------------ | ------- |
+| Arrow.js             | `example/arrow-js` | Planned |
+| Remix SQL generation | `example/remix`    | Planned |
 
 ## Commands
 
