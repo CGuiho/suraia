@@ -100,3 +100,22 @@ Each component has 6 files: `.json`, `.structure.html`, `.css`, `.ts`, `.md`, `.
 - **Usage docs added:** `docs/2026-05-26-using-suraia-with-vanilla-react-arrow-remix.md`, `example/README.md`, `example/vanilla/README.md`, `example/react/README.md`, `example/arrow-js/README.md`, and `example/remix/README.md`.
 - **Later targets documented:** Arrow.js should map blueprints to Arrow templates/reactivity. Remix SQL generation should map blueprints to route modules, loaders/actions, and typed SQL scaffolds after UI dependency resolution.
 - **Verification:** `bun run typecheck` and `bun run build` passed for both `example/vanilla` and `example/react`. Runtime smoke checks succeeded on `http://127.0.0.1:4101` and `http://127.0.0.1:4102`, including `/api/blueprints` responses.
+
+## 2026-05-28 23:40 +02:00 - Blueprint Preview Tooling Recommendation
+- Evaluated documentation and preview options for Suraia's 111 framework-agnostic component blueprints.
+- Current `.storybook/` is effectively empty; existing `example/vanilla` and `example/react` apps are target-consumption demos, not an exhaustive blueprint workbench.
+- Recommended direction: build a Suraia-native Blueprint Workbench first, likely Bun/Vite-powered, that reads `suraia/source/components/**` directly and renders `.structure.html`, `.css`, `.json`, `.md`, and controller metadata with generated variant/state previews.
+- Recommended secondary layer: add Storybook later as a publication/testing shell around the same generated preview registry, using the HTML or Web Components/Vite framework rather than a React-only setup.
+- Recommendation rationale: Suraia's source of truth is not React/Vue/etc.; preview tooling should validate the blueprint contract itself before validating generated framework adapters.
+
+## 2026-05-28 23:50 +02:00 - ClickUp Preview Tooling Tasks
+- Created ClickUp tasks in the GUIHO Suraia list (`901523550736`) for the preview/documentation roadmap:
+  - `86ca12da7` - Build Suraia Blueprint Workbench - priority urgent - https://app.clickup.com/t/86ca12da7
+  - `86ca12dbc` - Add Storybook Web Components/Vite Preview Layer - priority high - https://app.clickup.com/t/86ca12dbc
+  - `86ca12dby` - Implement VitePress Documentation Site - priority normal - https://app.clickup.com/t/86ca12dby
+- Next intended implementation task: start with `86ca12da7` and build the Blueprint Workbench before Storybook or VitePress.
+
+## 2026-05-28 23:48 +02:00 - React Example Bun HMR Fix
+- Fixed `example/react/src/frontend.tsx` so React root reuse accesses `import.meta.hot.data.root` directly instead of storing `import.meta.hot.data` in an intermediate variable.
+- Rationale: Bun 1.3.14 rejects indirect HMR API/data access in browser bundles with `import.meta.hot.data cannot be used indirectly`.
+- Verification: `bun run typecheck` passed in `example/react`; headless Chrome rendered `http://localhost:4102/` successfully through the existing Bun dev server.
