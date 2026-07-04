@@ -1,4 +1,4 @@
-{
+﻿{
   "compilerOptions": {
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "target": "ESNext",
@@ -21,7 +21,7 @@
     "noPropertyAccessFromIndexSignature": true,
     "paths": {
       "@/*": ["./src/*"],
-      "#suraia/*": ["./src/suraira/*"]
+      "#suraia/*": ["./src/suraia/*"]
     }
   },
   "include": ["src/**/*", "bun-env.d.ts"],

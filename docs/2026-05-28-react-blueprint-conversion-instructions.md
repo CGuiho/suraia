@@ -1,4 +1,4 @@
-# React Blueprint Conversion Instructions
+﻿# React Blueprint Conversion Instructions
 
 Status: working draft. This document captures the agreed React conversion workflow as it is being defined.
 
@@ -18,7 +18,7 @@ Use a library-named directory instead. For the current React implementation dire
 
 ```txt
 ./app/
-  suraira/
+  suraia/
     suraia-button.tsx
     suraia-button.modules.css
 ```
@@ -27,7 +27,7 @@ If the target React app does not use an `app/` directory, map `./app/` to the ap
 
 ```txt
 ./src/
-  suraira/
+  suraia/
     suraia-button.tsx
     suraia-button.modules.css
 ```
@@ -45,21 +45,21 @@ The bad pattern is defining `GeneratedButton` inline inside `App.tsx` and treati
 The first operational step is to load the Suraia conversion configuration file.
 
 1. Identify the target React app root.
-   - Example: `/c/GUIHO/suraira/example/react`.
+   - Example: `/c/GUIHO/suraia/example/react`.
    - The target app root is the directory containing the target app's `package.json`.
    - Run package-manager commands from this app root, not from an unrelated parent directory.
 
-2. Load `suaira.config.toml` from the same directory as `package.json`.
+2. Load `suraia.config.toml` from the same directory as `package.json`.
    - The config file must be in the package scope.
    - All relative paths in the config resolve from the package scope.
-   - See `docs/2026-05-29-suaira-config-toml.md` for the configuration contract.
+   - See `docs/2026-05-29-suraia-config-toml.md` for the configuration contract.
 
-3. If `suaira.config.toml` is missing, tell the user, create a default config file, and continue.
+3. If `suraia.config.toml` is missing, tell the user, create a default config file, and continue.
    - Do not interrupt the workflow to ask permission for the default config.
    - Use this message shape:
 
      ```txt
-     I don't see `suaira.config.toml` beside this app's `package.json`. I'm going to create a default configuration file and continue.
+     I don't see `suraia.config.toml` beside this app's `package.json`. I'm going to create a default configuration file and continue.
      ```
 
    - The default config must use the default read path and the write path selected from the detected package layout.
@@ -72,9 +72,9 @@ The first operational step is to load the Suraia conversion configuration file.
 5. Resolve the local component write directory.
    - Use `paths.write` from the config when present.
    - Otherwise choose the default write directory:
-     - `<package-scope>/source/suraira/` when `source/` exists.
-     - `<package-scope>/src/suraira/` when `source/` does not exist and `src/` exists.
-     - `<package-scope>/suraira/` when neither `source/` nor `src/` exists.
+     - `<package-scope>/source/suraia/` when `source/` exists.
+     - `<package-scope>/src/suraia/` when `source/` does not exist and `src/` exists.
+     - `<package-scope>/suraia/` when neither `source/` nor `src/` exists.
    - If both `source/` and `src/` exist, prefer `source/` and state that decision before writing files.
 
 6. Before converting a component, state the final write path.
@@ -167,7 +167,7 @@ Before writing React code, verify the local generation target, package setup, an
 
 1. Verify the local component output path.
    - Use the `paths.write` value resolved during config loading.
-   - Ensure the write directory is Suraia-owned, such as `src/suraira/` or `suraira/`.
+   - Ensure the write directory is Suraia-owned, such as `src/suraia/` or `suraia/`.
    - Do not write generated Suraia components into a generic `components/` directory as the primary namespace.
    - If the write directory does not exist, create it when generation begins.
    - For the button component, create the React file at:
@@ -190,23 +190,23 @@ Before writing React code, verify the local generation target, package setup, an
      {
        "compilerOptions": {
          "paths": {
-           "#suraia/*": ["./src/suraira/*"]
+           "#suraia/*": ["./src/suraia/*"]
          }
        }
      }
      ```
 
    - The alias target must match the resolved write directory.
-   - If the resolved write directory is `source/suraira`, use:
+   - If the resolved write directory is `source/suraia`, use:
 
      ```json
-     "#suraia/*": ["./source/suraira/*"]
+     "#suraia/*": ["./source/suraia/*"]
      ```
 
-   - If the resolved write directory is `suraira`, use:
+   - If the resolved write directory is `suraia`, use:
 
      ```json
-     "#suraia/*": ["./suraira/*"]
+     "#suraia/*": ["./suraia/*"]
      ```
 
    - Preserve existing aliases. Add `#suraia/*` when it is missing.
@@ -320,11 +320,11 @@ As of this draft:
 
 - `example/react/package.json` lists `@guiho/suraia` as a local file devDependency.
 - `example/react/node_modules/@guiho/suraia/library/components/button/` is present in the current workspace.
-- `example/react/suaira.config.toml` exists.
+- `example/react/suraia.config.toml` exists.
 - `example/react/src/` exists.
-- The configured write directory is `example/react/src/suraira/`.
-- A button component generated in this app should be written to `example/react/src/suraira/suraia-button.tsx`.
-- Its CSS module should be written to `example/react/src/suraira/suraia-button.modules.css`.
+- The configured write directory is `example/react/src/suraia/`.
+- A button component generated in this app should be written to `example/react/src/suraia/suraia-button.tsx`.
+- Its CSS module should be written to `example/react/src/suraia/suraia-button.modules.css`.
 - `example/react/tsconfig.json` exists.
 - `example/react/tsconfig.json` has `@/*` and `#suraia/*`.
-- The configured Suraia alias is `"#suraia/*": ["./src/suraira/*"]`.
+- The configured Suraia alias is `"#suraia/*": ["./src/suraia/*"]`.

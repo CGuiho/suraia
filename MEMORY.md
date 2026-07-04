@@ -1,4 +1,4 @@
-# Suraia Project Memory
+﻿# Suraia Project Memory
 
 ## Core Vision & Styling Rules
 - **AI-First UI Blueprints:** `@guiho/suraia` is a devDependency-only library containing framework-agnostic design tokens, component anatomy, layout CSS, and behavioral JS/TS controllers.
@@ -15,30 +15,30 @@
     *   **Input:** `input.json`, `input.structure.html`, `input.css`, `input.ts` (controller), `input.test.ts`, and `input.md` (spec and guidelines).
 
 ## Outstanding Roadmap & Active Kanban Tasks
-- **Active Task:** [task_20260520_2_package_include.md](file:///.agentkanban/tasks/task_20260520_2_package_include.md) — Audit and configure NPM/JSR file inclusion parameters in `package.json` and `jsr.json`.
-- **Pending Task:** [task_20260520_4_components_hooks_list.md](file:///.agentkanban/tasks/task_20260520_4_components_hooks_list.md) — Compile master list of components, adapter hooks, and editor integration hooks.
+- **Active Task:** [task_20260520_2_package_include.md](file:///.agentkanban/tasks/task_20260520_2_package_include.md) â€” Audit and configure NPM/JSR file inclusion parameters in `package.json` and `jsr.json`.
+- **Pending Task:** [task_20260520_4_components_hooks_list.md](file:///.agentkanban/tasks/task_20260520_4_components_hooks_list.md) â€” Compile master list of components, adapter hooks, and editor integration hooks.
 - **Remaining MVP Blueprints:** Card, Badge, and Dialog component folders under `suraia/source/components/`.
 - **Visual Design Profiles:** Implement theme override sheets (`apple-like.css`, `material-like.css`) in `suraia/source/themes/profiles/`.
 
-## 2026-05-25 — Philosophy Document & Vision Alignment
-- **Created:** `docs/2026-05-25-philosophy.md` — comprehensive philosophy document articulating the full library vision.
+## 2026-05-25 â€” Philosophy Document & Vision Alignment
+- **Created:** `docs/2026-05-25-philosophy.md` â€” comprehensive philosophy document articulating the full library vision.
 - **Confirmed Alignment:** Owner's verbal description matches ARCHITECTURE.md precisely. Key points validated:
   - Suraia is a **blueprint library**, not a framework-specific component library.
   - AI reads blueprints and generates native components into the developer's project.
   - Components are generated **once**, stored locally, and fully owned by the developer.
   - Same blueprint generates React, Vue, Angular, Svelte, Vanilla, or any framework.
-  - **devDependency only** — zero production runtime footprint.
-- **New concept explicitly documented:** Dependency resolution contract — complex components declare dependencies on simpler ones; AI must resolve and generate them in dependency order before generating the complex component.
-- **Component complexity tiers documented:** Tier 1 (Primitives) → Tier 2 (Composites) → Tier 3 (Patterns) → Tier 4 (Blocks).
+  - **devDependency only** â€” zero production runtime footprint.
+- **New concept explicitly documented:** Dependency resolution contract â€” complex components declare dependencies on simpler ones; AI must resolve and generate them in dependency order before generating the complex component.
+- **Component complexity tiers documented:** Tier 1 (Primitives) â†’ Tier 2 (Composites) â†’ Tier 3 (Patterns) â†’ Tier 4 (Blocks).
 - **Long-term vision documented:** Hero sections, app shells, full page blueprints, multi-platform expansion (React Native, Flutter, SwiftUI).
 
-## 2026-05-25 — Design Tokens & Component Implementation Sprint
+## 2026-05-25 â€” Design Tokens & Component Implementation Sprint
 
 ### Design Token Updates
-- **Primary color changed:** `#2563eb` (blue) → `#7950f2` (violet) — updated in `tokens.json`, `base-tokens.css`, `base-tokens.ts`.
-- **Secondary color changed:** `#475569` → `#4a5167` (blue-gray).
+- **Primary color changed:** `#2563eb` (blue) â†’ `#7950f2` (violet) â€” updated in `tokens.json`, `base-tokens.css`, `base-tokens.ts`.
+- **Secondary color changed:** `#475569` â†’ `#4a5167` (blue-gray).
 - **Full token system complete:** Fonts (sizes, weights, line-heights, headings, display), spacing (1-12 scale), radius (none-full), shadows (xs-xl), z-index, transitions, component sizes (xs-xl), glass effects, opacity/cursor disabled, focus ring.
-- **Files added:** `fonts.css`, `fonts.ts`, `vars.css`, `vars.ts` — all in `source/styles/`.
+- **Files added:** `fonts.css`, `fonts.ts`, `vars.css`, `vars.ts` â€” all in `source/styles/`.
 
 ### Components Implemented (17 total)
 Each component has 6 files: `.json`, `.structure.html`, `.css`, `.ts`, `.md`, `.test.ts`.
@@ -70,7 +70,7 @@ Each component has 6 files: `.json`, `.structure.html`, `.css`, `.ts`, `.md`, `.
 
 ### Mantine Reference Architecture
 - Mantine source available at `.ignored/mantine/packages/@mantine/core/src/components/`.
-- Pattern observed: `varsResolver` maps props → CSS vars, CSS Modules consume them, `polymorphicFactory` enables composition.
+- Pattern observed: `varsResolver` maps props â†’ CSS vars, CSS Modules consume them, `polymorphicFactory` enables composition.
 - Suraia translates this to framework-agnostic blueprints using data attributes (`data-suraia-*`) and CSS custom properties.
 
 ### Owner Preferences
@@ -79,7 +79,7 @@ Each component has 6 files: `.json`, `.structure.html`, `.css`, `.ts`, `.md`, `.
 - **Directive:** "Implement as many components as you can without my help."
 - For complex components requiring non-obvious strategies, write a `/docs` document.
 
-## 2026-05-25 (Session 2) — Primitive & Layout Components Implementation Sprint
+## 2026-05-25 (Session 2) â€” Primitive & Layout Components Implementation Sprint
 - **Implemented Components Batch A:** Box, Center, AspectRatio, UnstyledButton, VisuallyHidden, Card, Kbd, Mark, Highlight (each with spec, anatomy structure, css, controller, test, and md guide).
 - **Implemented Components Batch B:** SimpleGrid, AppShell, CopyButton, FileButton, NativeSelect, Fieldset, PinInput, FileInput, Chip (each with spec, structure, css, controller, test, and md guide).
 - **Bug Fix:** Fixed precision rounding issue in `NumberInputController` where standard floating-point representation boundaries led to failing tests for rounding up values like 1.005. Resolved using `Math.round` and `Number.EPSILON`.
@@ -122,29 +122,29 @@ Each component has 6 files: `.json`, `.structure.html`, `.css`, `.ts`, `.md`, `.
 
 ## 2026-05-29 00:02 +02:00 - React Blueprint Conversion Instruction Draft
 - Created `docs/2026-05-28-react-blueprint-conversion-instructions.md` as the working draft for converting Suraia blueprints into local React components.
-- Captured owner direction that generated Suraia components must live in a library-owned local namespace such as `app/suraira/suraira-button.tsx` or `src/suraira/suraira-button.tsx`, not as inline `GeneratedButton` functions inside `App.tsx` and not primarily under a generic `components/` directory.
+- Captured owner direction that generated Suraia components must live in a library-owned local namespace such as `app/suraia/suraia-button.tsx` or `src/suraia/suraia-button.tsx`, not as inline `GeneratedButton` functions inside `App.tsx` and not primarily under a generic `components/` directory.
 - Captured the first operational step: locate `@guiho/suraia` in the target app's `package.json` and `node_modules`, verify `library/components/<component>/` or local-source fallback paths, ask before running `bun add -d @guiho/suraia`, and stop with an explicit report if verification repeatedly fails.
 - Current `example/react` status noted in the draft: `@guiho/suraia` is not listed in `example/react/package.json`, and `example/react/node_modules/@guiho/suraia` is absent. No install was run.
 
-## 2026-05-29 00:14 +02:00 - Suaira Config TOML Contract Draft
-- Created `docs/2026-05-29-suaira-config-toml.md` documenting the first TOML configuration contract for blueprint conversion.
-- The config filename is currently documented exactly as specified by the owner: `suaira.config.toml`.
+## 2026-05-29 00:14 +02:00 - Suraia Config TOML Contract Draft
+- Created `docs/2026-05-29-suraia-config-toml.md` documenting the first TOML configuration contract for blueprint conversion.
+- The config filename is currently documented exactly as specified by the owner: `suraia.config.toml`.
 - The config file must live beside the target app's `package.json`; that directory is the package scope and relative config paths resolve from there.
 - Documented `[paths].read` with default `node_modules/@guiho/suraia`, checking `library/components/<component>/` first and `source/components/<component>/` as a fallback for linked/local package layouts.
-- Documented `[paths].write` as the final local Suraia-owned output directory. If omitted, default to `source/suraira` when `source/` exists, else `src/suraira` when `src/` exists, else `suraira` beside the config.
-- Updated the React conversion instructions so the process starts by loading `suaira.config.toml`, then ensures the library is installed, then verifies the local component output path before writing React files.
-- Current `example/react` status: `suaira.config.toml` is absent, `src/` exists, and the default write directory would be `example/react/src/suraira/`.
+- Documented `[paths].write` as the final local Suraia-owned output directory. If omitted, default to `source/suraia` when `source/` exists, else `src/suraia` when `src/` exists, else `suraia` beside the config.
+- Updated the React conversion instructions so the process starts by loading `suraia.config.toml`, then ensures the library is installed, then verifies the local component output path before writing React files.
+- Current `example/react` status: `suraia.config.toml` is absent, `src/` exists, and the default write directory would be `example/react/src/suraia/`.
 
 ## 2026-05-29 00:27 +02:00 - React Conversion General Verification Update
-- Updated `docs/2026-05-29-suaira-config-toml.md` so missing `suaira.config.toml` no longer blocks the workflow. The assistant should tell the user it is creating a default config, create it beside `package.json`, and continue.
+- Updated `docs/2026-05-29-suraia-config-toml.md` so missing `suraia.config.toml` no longer blocks the workflow. The assistant should tell the user it is creating a default config, create it beside `package.json`, and continue.
 - Updated `docs/2026-05-28-react-blueprint-conversion-instructions.md` so Step 3 is now general project verification, not only output-path verification.
-- Documented preferred generated-component import alias: `#suraia/*`, mapped to the resolved local write directory, such as `"#suraia/*": ["./src/suraira/*"]`.
+- Documented preferred generated-component import alias: `#suraia/*`, mapped to the resolved local write directory, such as `"#suraia/*": ["./src/suraia/*"]`.
 - If `tsconfig.json` exists, the assistant should inspect `compilerOptions.paths`, preserve existing aliases, and add `#suraia/*` when missing. If `tsconfig.json` is absent, use the project's existing import mechanism when available, otherwise fall back to relative imports.
-- Current `example/react/tsconfig.json` has `@/*` mapped to `./src/*` but does not yet have `#suraia/*`; the matching alias would be `"#suraia/*": ["./src/suraira/*"]`.
+- Current `example/react/tsconfig.json` has `@/*` mapped to `./src/*` but does not yet have `#suraia/*`; the matching alias would be `"#suraia/*": ["./src/suraia/*"]`.
 
 ## 2026-05-29 00:33 +02:00 - React Example Config And Alias Applied
-- Applied the new workflow defaults to `example/react`: added `suaira.config.toml` with `[paths] read = "node_modules/@guiho/suraia"` and `write = "src/suraira"`.
-- Added `"#suraia/*": ["./src/suraira/*"]` to `example/react/tsconfig.json` while preserving the existing `"@/*": ["./src/*"]` alias.
+- Applied the new workflow defaults to `example/react`: added `suraia.config.toml` with `[paths] read = "node_modules/@guiho/suraia"` and `write = "src/suraia"`.
+- Added `"#suraia/*": ["./src/suraia/*"]` to `example/react/tsconfig.json` while preserving the existing `"@/*": ["./src/*"]` alias.
 - Added `@guiho/suraia` to `example/react/package.json` as a local file devDependency: `"file:../../suraia"`, and updated `example/react/bun.lock`.
 - `bun install` for the local file dependency currently fails with `EPERM: failed copying files from cache to destination for package @guiho/suraia`; using `link:../../suraia` also failed because Bun could not link the local package. The workspace `node_modules/@guiho/suraia` was manually populated from `suraia/package.json`, `jsr.json`, `CHANGELOG.md`, `LICENSE.md`, `library/`, and `docs/` so the current example can resolve the blueprint read path.
 - Verification: `example/react/node_modules/@guiho/suraia/library/components/button/` is present, `bun run typecheck` passes in `example/react`, and `bun run build` passes when run outside the sandbox after sandboxed node_modules reads hit EPERM.
@@ -162,17 +162,17 @@ Each component has 6 files: `.json`, `.structure.html`, `.css`, `.ts`, `.md`, `.
 - Generated components import their CSS module as `classes`, define props as `interface Props`, use a TypeScript `function` declaration, and import other generated Suraia components through the configured `#suraia/*` alias.
 
 ## 2026-05-29 00:47 +02:00 - React Conversion Existing Output Rule
-- Added idempotency/override rules to `AGENTS.md`, `docs/2026-05-28-react-blueprint-conversion-instructions.md`, and `docs/2026-05-29-suaira-config-toml.md`.
+- Added idempotency/override rules to `AGENTS.md`, `docs/2026-05-28-react-blueprint-conversion-instructions.md`, and `docs/2026-05-29-suraia-config-toml.md`.
 - Before generating a React component, check whether `suraia-<component-slug>.tsx` and `suraia-<component-slug>.modules.css` already exist in the resolved write directory.
 - If both exist and the user did not explicitly request override/overwrite/regeneration, report that the component is already written in React and stop for that component.
 - If only one expected file exists, treat it as a partial existing conversion and stop unless override/overwrite/regeneration was explicitly requested.
 - If override/overwrite/regeneration is explicitly requested, overwrite both generated files.
 - Existing dependency components should be imported through `#suraia/*` instead of regenerated.
 
-## 2026-05-29 01:00 +02:00 — Suraia Blueprint Workbench Implementation
+## 2026-05-29 01:00 +02:00 â€” Suraia Blueprint Workbench Implementation
 
 ### Workbench Built
-- Created `suraia/preview/` — a Bun + Vite + Vanilla TypeScript local workbench app that previews all 111 blueprint components directly from their source files in `source/components/`.
+- Created `suraia/preview/` â€” a Bun + Vite + Vanilla TypeScript local workbench app that previews all 111 blueprint components directly from their source files in `source/components/`.
 - No framework adapters (React, Vue, Svelte, Web Components) were used. The workbench uses pure DOM APIs and vanilla TypeScript.
 
 ### Files Created (18 files)
@@ -182,13 +182,13 @@ preview/
   vite.config.ts                      Vite configuration (root: preview/, fs.allow for source/)
   tsconfig.json                       TypeScript config (DOM lib, vite/client types)
   source/
-    main.ts                           DOMContentLoaded entry → initApp()
+    main.ts                           DOMContentLoaded entry â†’ initApp()
     app.ts                            App shell: hash routing, sidebar, component page rendering
     styles/workbench.css              Dense utilitarian workbench UI (sidebar, panels, tabs, matrix)
     blueprints/types.ts               BlueprintRecord, ComponentSpec, CategoryMap types
-    blueprints/load-blueprints.ts     import.meta.glob loader for all 111 × 6 component files
+    blueprints/load-blueprints.ts     import.meta.glob loader for all 111 Ã— 6 component files
     blueprints/normalize-blueprint.ts JSON spec parser + six-file contract validator
-    blueprints/categories.ts          Slug → category mapping from TODO.md inventory
+    blueprints/categories.ts          Slug â†’ category mapping from TODO.md inventory
     preview/render-preview.ts         iframe srcdoc renderer (tokens + component CSS + slot replacement)
     preview/apply-controls.ts         ControlState builder from JSON spec (variants/states/attributes)
     preview/render-matrix.ts          Variant/state/dark mode matrix generator (cap: 24 cells)
@@ -208,7 +208,7 @@ preview/
 
 ### Key Implementation Details
 - Vite `import.meta.glob` with `eager: true, query: '?raw'` loads all component source files at build time (689 modules, 920KB JS bundle).
-- Glob paths use `../../../source/components/*/*.json` — relative to `preview/source/blueprints/` going up to `suraia/source/components/`.
+- Glob paths use `../../../source/components/*/*.json` â€” relative to `preview/source/blueprints/` going up to `suraia/source/components/`.
 - Preview rendering uses `iframe srcdoc` with embedded token CSS + component CSS + slot placeholders.
 - `<slot>` elements are replaced in-memory only (HTML source is not modified).
 - Hash routing (`#/components/<slug>`) enables direct navigation without page reload.
@@ -230,5 +230,5 @@ preview/
 - `vite` (devDependency, v8.0.14)
 
 ### Known Warnings
-- Build chunk size warning (>500KB) — acceptable for a local workbench, can be optimized with code splitting later.
+- Build chunk size warning (>500KB) â€” acceptable for a local workbench, can be optimized with code splitting later.
 - No browser automation available for smoke testing; the build output and typecheck results serve as verification.

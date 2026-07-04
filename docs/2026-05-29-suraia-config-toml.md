@@ -1,4 +1,4 @@
-# Suaira Config TOML
+﻿# Suraia Config TOML
 
 Status: working draft. This document defines the first configuration contract for Suraia blueprint conversion.
 
@@ -7,7 +7,7 @@ Status: working draft. This document defines the first configuration contract fo
 The configuration file is named exactly:
 
 ```txt
-suaira.config.toml
+suraia.config.toml
 ```
 
 The file must live in the same directory as the target application's `package.json`.
@@ -17,18 +17,18 @@ Example:
 ```txt
 example/react/
   package.json
-  suaira.config.toml
+  suraia.config.toml
   src/
 ```
 
-The directory containing both `package.json` and `suaira.config.toml` is the package scope. All relative paths in the configuration file resolve from that package scope.
+The directory containing both `package.json` and `suraia.config.toml` is the package scope. All relative paths in the configuration file resolve from that package scope.
 
 ## Minimal File
 
 The file may rely on defaults:
 
 ```toml
-# suaira.config.toml
+# suraia.config.toml
 ```
 
 When fields are omitted, the assistant must apply the default read and write resolution rules below.
@@ -40,7 +40,7 @@ The first configuration section is `paths`.
 ```toml
 [paths]
 read = "node_modules/@guiho/suraia"
-write = "src/suraira"
+write = "src/suraia"
 ```
 
 ### `paths.read`
@@ -71,23 +71,23 @@ Example:
 
 ```toml
 [paths]
-write = "src/suraira"
+write = "src/suraia"
 ```
 
 Result:
 
 ```txt
 src/
-  suraira/
+  suraia/
     suraia-button.tsx
     suraia-button.modules.css
 ```
 
 If `paths.write` is omitted, the assistant must select the default write directory using this order:
 
-1. If `<package-scope>/source/` exists, use `<package-scope>/source/suraira/`.
-2. Else if `<package-scope>/src/` exists, use `<package-scope>/src/suraira/`.
-3. Else use `<package-scope>/suraira/`.
+1. If `<package-scope>/source/` exists, use `<package-scope>/source/suraia/`.
+2. Else if `<package-scope>/src/` exists, use `<package-scope>/src/suraia/`.
+3. Else use `<package-scope>/suraia/`.
 
 If both `source/` and `src/` exist, prefer `source/` and state that decision before writing files.
 
@@ -174,14 +174,14 @@ When a dependency component already exists locally, import it through `#suraia/*
 
 ## Missing Config Behavior
 
-The conversion process begins by loading `suaira.config.toml`.
+The conversion process begins by loading `suraia.config.toml`.
 
 If the file is missing, the assistant should not stop the workflow. It should tell the user that the configuration file is missing, create a default configuration file in the package scope, and continue.
 
 Use this message shape:
 
 ```txt
-I don't see `suaira.config.toml` beside this app's `package.json`. I'm going to create a default configuration file and continue.
+I don't see `suraia.config.toml` beside this app's `package.json`. I'm going to create a default configuration file and continue.
 ```
 
 Example default file content for an app that has `src/`:
@@ -189,10 +189,10 @@ Example default file content for an app that has `src/`:
 ```toml
 [paths]
 read = "node_modules/@guiho/suraia"
-write = "src/suraira"
+write = "src/suraia"
 ```
 
-The `write` value in the default file should match the detected package layout. If `source/` exists, use `source/suraira`. If only `src/` exists, use `src/suraira`. If neither exists, use `suraira`.
+The `write` value in the default file should match the detected package layout. If `source/` exists, use `source/suraia`. If only `src/` exists, use `src/suraia`. If neither exists, use `suraia`.
 
 ## TypeScript Import Alias
 
@@ -206,13 +206,13 @@ Preferred alias:
 
 The alias target should match the resolved write directory from `paths.write`.
 
-Example for a React app with `write = "src/suraira"`:
+Example for a React app with `write = "src/suraia"`:
 
 ```json
 {
   "compilerOptions": {
     "paths": {
-      "#suraia/*": ["./src/suraira/*"]
+      "#suraia/*": ["./src/suraia/*"]
     }
   }
 }
@@ -239,7 +239,7 @@ Current observed state:
 - `package.json` exists.
 - `src/` exists.
 - `source/` does not exist.
-- `suaira.config.toml` exists.
+- `suraia.config.toml` exists.
 - `tsconfig.json` exists.
 - `tsconfig.json` has an existing `@/*` alias.
 - `tsconfig.json` has `#suraia/*`.
@@ -251,18 +251,18 @@ The current config write path is:
 ```toml
 [paths]
 read = "node_modules/@guiho/suraia"
-write = "src/suraira"
+write = "src/suraia"
 ```
 
 The matching TypeScript alias should be:
 
 ```json
-"#suraia/*": ["./src/suraira/*"]
+"#suraia/*": ["./src/suraia/*"]
 ```
 
 A button component generated in this app should be created as:
 
 ```txt
-example/react/src/suraira/suraia-button.tsx
-example/react/src/suraira/suraia-button.modules.css
+example/react/src/suraia/suraia-button.tsx
+example/react/src/suraia/suraia-button.modules.css
 ```

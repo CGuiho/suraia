@@ -146,9 +146,9 @@ This URL opens the **GUIHO Suraia** list inside the **GUIHO Engineering** space 
 | --- | --- |
 | GUIHO Project ID | g0000 observed in current GUIHO runtime artifacts; confirm before using as a formal registry ID |
 | GUIHO Subject ID | TBD - formal subject ID for this component is not declared yet |
-| GUIHO Subject Name | Suraira |
+| GUIHO Subject Name | Suraia |
 | Project Family | guiho |
-| Repository Directory | C:\GUIHO\suraira |
+| Repository Directory | C:\GUIHO\suraia |
 | Repository Kind | shared experimental package |
 | Parent Project | GUIHO Root (C:\GUIHO\guiho) |
 | Parent Component | GUIHO Root |

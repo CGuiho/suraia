@@ -1,3 +1,3 @@
-[paths]
+﻿[paths]
 read = "node_modules/@guiho/suraia"
-write = "src/suraira"
+write = "src/suraia"
