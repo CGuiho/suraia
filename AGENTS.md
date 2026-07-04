@@ -1,6 +1,6 @@
-# Repository Notes
+﻿# Repository Notes
 
-- This is a single-package repo — not a monorepo. All code lives under the `suraia/` directory. All commands must be run from within `suraia/`.
+- This is a single-package repo â€” not a monorepo. All code lives under the `suraia/` directory. All commands must be run from within `suraia/`.
 - `@guiho/suraia` is an AI-first UI blueprint library. Component sources of truth (`.json` spec, `.structure.html`, `.css`, `.ts` behavior controller, `.md`, `.test.ts`) reside in `suraia/source/components/<component>/`.
 - No framework adapters (React, ArrowJS, etc.) exist yet; they're planned future outputs, not current packages.
 - Use Bun, not npm/pnpm/yarn. Install with `bun install` from within `suraia/`.
@@ -8,9 +8,9 @@
 
 ## Key Documents
 
-- **`ARCHITECTURE.md`** — Full technical architecture specification: library domains, component blueprint structure, design token system, naming conventions, and directory layout.
-- **`PHILOSOPHY.md`** — Library philosophy and vision: why Suraia exists, the blueprint-not-component model, AI-as-compiler consumption, dependency resolution contract, component complexity tiers (Primitives → Composites → Patterns → Blocks), and the long-term roadmap.
-- **`TODO.md`** — Master component inventory: the complete checklist of every component that must exist in the library, organized by category (Layout, Inputs, Combobox, Buttons, Navigation, Feedback, Overlays, Data Display, Typography, Miscellaneous).
+- **`ARCHITECTURE.md`** â€” Full technical architecture specification: library domains, component blueprint structure, design token system, naming conventions, and directory layout.
+- **`PHILOSOPHY.md`** â€” Library philosophy and vision: why Suraia exists, the blueprint-not-component model, AI-as-compiler consumption, dependency resolution contract, component complexity tiers (Primitives â†’ Composites â†’ Patterns â†’ Blocks), and the long-term roadmap.
+- **`TODO.md`** â€” Master component inventory: the complete checklist of every component that must exist in the library, organized by category (Layout, Inputs, Combobox, Buttons, Navigation, Feedback, Overlays, Data Display, Typography, Miscellaneous).
 
 Read these documents before making architectural decisions or working on component blueprints.
 
@@ -21,7 +21,7 @@ Run all commands from the `suraia/` directory:
 - Install: `bun install`
 - Typecheck: `bun run typecheck` (runs `tsc -p . --noEmit`)
 - Test: `bun test` (Bun built-in; no `test` script in package.json)
-- Build: `bun run build` (compiles `source/` → `library/` via `tsc`)
+- Build: `bun run build` (compiles `source/` â†’ `library/` via `tsc`)
 - Dev: `bun run dev` (watches and runs the CLI entrypoint)
 - Binary: `bun run binary` (compiles CLI to standalone executable in `bin/`)
 
@@ -29,9 +29,9 @@ Lint is not configured (no ESLint/Biome). Typecheck is the primary quality gate.
 
 ## TypeScript Quirks
 
-- `verbatimModuleSyntax: true` — must use `import type { ... }` for type-only imports. `import { SomeType }` will fail typecheck if `SomeType` is only used as a type.
-- `noUnusedLocals: true` and `noUnusedParameters: true` — unused variables/params fail typecheck.
-- `moduleResolution: "bundler"` — use extensionless relative imports.
+- `verbatimModuleSyntax: true` â€” must use `import type { ... }` for type-only imports. `import { SomeType }` will fail typecheck if `SomeType` is only used as a type.
+- `noUnusedLocals: true` and `noUnusedParameters: true` â€” unused variables/params fail typecheck.
+- `moduleResolution: "bundler"` â€” use extensionless relative imports.
 - Test files use `.test.ts` suffix. Files ending in `.spec.ts` are excluded from compilation (`tsconfig.json` excludes `source/**/*.spec.ts`).
 
 ## Directory Layout
@@ -53,8 +53,8 @@ Build artifacts (`library/`, `bundle/`, `bin/`) are gitignored.
 ## Key Conventions
 
 - CSS class prefix: `.suraia-`, CSS variable prefix: `--suraia-`, data attrs: `data-suraia-*`.
-- Every `.ts` file starts with `/** @copyright Copyright © 2026 GUIHO Technologies ... */`. Every `.css` file starts with `/*! Copyright ... */`.
-- CSS and TS token files are kept in sync: `themes/base-tokens.css` ↔ `themes/base-tokens.ts`, `styles/colors.css` ↔ `styles/colors.ts`.
+- Every `.ts` file starts with `/** @copyright Copyright Â© 2026 GUIHO Technologies ... */`. Every `.css` file starts with `/*! Copyright ... */`.
+- CSS and TS token files are kept in sync: `themes/base-tokens.css` â†” `themes/base-tokens.ts`, `styles/colors.css` â†” `styles/colors.ts`.
 - Opacity in CSS: use `color-mix(in srgb, var(--color) var(--suraia-alpha-N), transparent)`. Opacity in TS: use the `alpha()` utility from `styles/functions.ts`.
 
 ## Generated React Component Rules
@@ -90,7 +90,7 @@ Build artifacts (`library/`, `bundle/`, `bin/`) are gitignored.
 - Package name: `@guiho/suraia`. Publishes to both **npm** and **JSR**.
 - `jsr.json` exports source TypeScript directly; `package.json` exports compiled output from `library/`.
 - Versioning uses `@guiho/mirror` (configured in `mirror.config.toml`). Version is synced across `package.json`, `jsr.json`, and git tags.
-- The `.github/_workflows/` CI files have `working-directory: mirror` — they are stale/copied from another project and do **not** match the suraia package structure.
+- The `.github/_workflows/` CI files have `working-directory: mirror` â€” they are stale/copied from another project and do **not** match the suraia package structure.
 
 ## Styles & Tokens Architecture
 
@@ -98,7 +98,7 @@ Build artifacts (`library/`, `bundle/`, `bin/`) are gitignored.
 - `base-tokens.css` maps tokens to `:root` CSS custom properties.
 - `functions.css` provides utility variables (`--suraia-px-to-rem`, `--suraia-alpha-*`).
 - `functions.ts` provides `rem()`, `fluid()`, and `alpha()` utilities.
-- `reset.css` is scoped to `.suraia-root` — not global.
+- `reset.css` is scoped to `.suraia-root` â€” not global.
 - See `docs/llm-instructions.md` for color opacity guidelines.
 
 
@@ -137,3 +137,47 @@ This URL opens the **GUIHO Suraia** list inside the **GUIHO Engineering** space 
 - Statuses available: `to do`, `on hold`, `scheduled`, `in progress`, `testing`, `complete`.
 - When asked what work is left, what is done, or what is on hold, use `cup tasks --list 901523550736 --status "<status>"` and answer from the results instead of guessing from chat history.
 - When asked what work is left, what is done, or what is on hold, inspect `.agentkanban/board.yaml` and `.agentkanban/tasks/**/*.md` and answer from those files instead of guessing from chat history.
+
+## GUIHO Project
+
+### Identity
+
+| Field | Value |
+| --- | --- |
+| GUIHO Project ID | g0000 observed in current GUIHO runtime artifacts; confirm before using as a formal registry ID |
+| GUIHO Subject ID | TBD - formal subject ID for this component is not declared yet |
+| GUIHO Subject Name | Suraira |
+| Project Family | guiho |
+| Repository Directory | C:\GUIHO\suraira |
+| Repository Kind | shared experimental package |
+| Parent Project | GUIHO Root (C:\GUIHO\guiho) |
+| Parent Component | GUIHO Root |
+
+### Component Purpose
+
+Experimental UI blueprint library and UI generation research package.
+
+### Parent Context
+
+- Parent AGENTS: [../guiho/AGENTS.md](../guiho/AGENTS.md)
+- Parent TODO: [../guiho/TODO.md](../guiho/TODO.md)
+- Local TODO: [./TODO.md](./TODO.md)
+
+For the full project map, sibling components, package index, service index,
+project-wide TODOs, and cross-repository coordination rules, read the parent
+repository's AGENTS.md GUIHO Project section.
+
+### Local Scope
+
+- Kind: shared experimental package
+- Work directory: .
+- Primary skills: guiho-s-0004-frontend-engineer, guiho-s-0016-writing-docs
+- Baseline checks: package-local typecheck/test scripts when present
+
+### Coordination Rules
+
+- This repository is a child of C:\GUIHO\guiho.
+- Keep component-specific implementation tasks in the local TODO file.
+- Keep cross-component planning and parent delegation in the parent TODO file.
+- Read this component's existing local instructions before editing source code.
+- Do not publish, deploy, run migrations, rotate secrets, or mutate production resources without explicit user approval.
