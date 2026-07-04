@@ -1,4 +1,12 @@
-# Suraia — TODO
+﻿# Suraia â€” TODO
+
+## Parent TODO
+
+- Parent: [../guiho/TODO.md](../guiho/TODO.md)
+- Parent AGENTS: [../guiho/AGENTS.md](../guiho/AGENTS.md)
+- Local AGENTS: [./AGENTS.md](./AGENTS.md)
+- Local context: Experimental UI blueprint library and UI generation research package.
+
 
 ## Backlog
 
