@@ -1,4 +1,4 @@
-﻿# Repository Notes
+# Repository Notes
 
 - This is a single-package repo â€” not a monorepo. All code lives under the `suraia/` directory. All commands must be run from within `suraia/`.
 - `@guiho/suraia` is an AI-first UI blueprint library. Component sources of truth (`.json` spec, `.structure.html`, `.css`, `.ts` behavior controller, `.md`, `.test.ts`) reside in `suraia/source/components/<component>/`.
@@ -101,7 +101,6 @@ Build artifacts (`library/`, `bundle/`, `bin/`) are gitignored.
 - `reset.css` is scoped to `.suraia-root` â€” not global.
 - See `docs/llm-instructions.md` for color opacity guidelines.
 
-
 ## Document Writing
 
 - Create every new project document inside `docs/` unless the user explicitly asks for a different path.
@@ -136,7 +135,6 @@ This URL opens the **GUIHO Suraia** list inside the **GUIHO Engineering** space 
 - Use `cup tasks --list 901523550736` to see existing tasks. Use `cup create -l 901523550736` to create new ones.
 - Statuses available: `to do`, `on hold`, `scheduled`, `in progress`, `testing`, `complete`.
 - When asked what work is left, what is done, or what is on hold, use `cup tasks --list 901523550736 --status "<status>"` and answer from the results instead of guessing from chat history.
-- When asked what work is left, what is done, or what is on hold, inspect `.agentkanban/board.yaml` and `.agentkanban/tasks/**/*.md` and answer from those files instead of guessing from chat history.
 
 ## GUIHO Project
 
