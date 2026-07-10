@@ -1,0 +1,25 @@
+---
+name: "Suraia/Source/Components/Transition Overview"
+purpose: "Provide a companion overview for suraia-suraia-source-components-transition."
+description: "Links to transition.xdocs.md and summarizes the documented directory."
+created: "2026-07-10T18:07:41.706Z"
+flags:
+  - generated
+tags:
+  - xdocs
+  - documentation
+keywords:
+  - "suraia-suraia-source-components-transition"
+  - "suraia-source-components-transition"
+owner: "suraia-suraia-source-components-transition"
+---
+
+<!-- generated-by-xdocs-pass -->
+
+# Suraia/Source/Components/Transition Overview
+
+This companion document links to [transition.xdocs.md](transition.xdocs.md), the xdocs descriptor for this directory.
+
+## Child Modules
+
+- None.
