@@ -1,4 +1,4 @@
-﻿# Suraia Project Memory
+# Suraia Project Memory
 
 ## Core Vision & Styling Rules
 - **AI-First UI Blueprints:** `@guiho/suraia` is a devDependency-only library containing framework-agnostic design tokens, component anatomy, layout CSS, and behavioral JS/TS controllers.
@@ -14,9 +14,7 @@
     *   **Button:** `button.json`, `button.structure.html`, `button.css`, `button.ts` (controller), `button.test.ts`, and `button.md` (spec and guidelines).
     *   **Input:** `input.json`, `input.structure.html`, `input.css`, `input.ts` (controller), `input.test.ts`, and `input.md` (spec and guidelines).
 
-## Outstanding Roadmap & Active Kanban Tasks
-- **Active Task:** [task_20260520_2_package_include.md](file:///.agentkanban/tasks/task_20260520_2_package_include.md) â€” Audit and configure NPM/JSR file inclusion parameters in `package.json` and `jsr.json`.
-- **Pending Task:** [task_20260520_4_components_hooks_list.md](file:///.agentkanban/tasks/task_20260520_4_components_hooks_list.md) â€” Compile master list of components, adapter hooks, and editor integration hooks.
+## Outstanding Roadmap & Active Tasks
 - **Remaining MVP Blueprints:** Card, Badge, and Dialog component folders under `suraia/source/components/`.
 - **Visual Design Profiles:** Implement theme override sheets (`apple-like.css`, `material-like.css`) in `suraia/source/themes/profiles/`.
 
