@@ -1,8 +1,8 @@
 ---
 name: "Suraia Overview"
-purpose: "Provide a companion overview for the suraia xdocs descriptor."
+purpose: "Provide a companion overview for suraia."
 description: "Links to suraia.xdocs.md and summarizes the documented directory."
-created: "2026-07-10T17:59:22.988Z"
+created: "2026-07-10T18:07:41.706Z"
 flags:
   - generated
 tags:
@@ -22,4 +22,7 @@ This companion document links to [suraia.xdocs.md](suraia.xdocs.md), the xdocs d
 
 ## Child Modules
 
-- None.
+- [devops/](devops/): suraia-devops
+- [docs/](docs/): suraia-docs
+- [example/](example/): suraia-example
+- [suraia/](suraia/): suraia-suraia
