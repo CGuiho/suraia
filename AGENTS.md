@@ -179,3 +179,30 @@ repository's AGENTS.md GUIHO Project section.
 - Keep cross-component planning and parent delegation in the parent TODO file.
 - Read this component's existing local instructions before editing source code.
 - Do not publish, deploy, run migrations, rotate secrets, or mutate production resources without explicit user approval.
+
+<!-- BEGIN XDOCS — DO NOT EDIT THIS SECTION -->
+## XDocs Structured Documentation
+
+This project uses **xdocs** (`@guiho/xdocs`) for structured, machine-readable
+documentation. The repository has one root `XDOCS.md` index (no frontmatter),
+and each package/application has a root named `*.xdocs.md` descriptor file. Each
+documented module has exactly one named `*.xdocs.md` descriptor in its directory
+with YAML frontmatter (`subject`, `description`, `parent`, `children`,
+`files`, `documents`, `tags`, `keywords`, `flags`). Same-directory plain
+`*.md` files are companion documents and must be listed in the descriptor's
+`documents` metadata map. Ordinary companion documents should also include
+`keywords` in their own frontmatter.
+
+**Load the `guiho-s-xdocs` agent skill** for any documentation work:
+creating, updating, regenerating, scanning, merging, or navigating xdocs descriptors.
+The skill holds the full workflow, metadata schema, and CLI reference.
+
+Before changing documentation, read `xdocs.config.toml` and respect `[ai].mode`:
+
+- **prompt** — announce which xdocs descriptors need updating and wait for confirmation.
+- **auto** — update the relevant xdocs descriptors immediately.
+
+Use the installed xdocs CLI for operations: `xdocs scan`, `xdocs tree`,
+`xdocs generate`, `xdocs list`, `xdocs merge`, `xdocs upgrade`, and
+`xdocs uninstall --dry-run`.
+<!-- END XDOCS -->
