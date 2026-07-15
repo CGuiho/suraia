@@ -1,5 +1,11 @@
 # Repository Notes
 
+## Agent
+
+Always read this: /c/GUIHO/superiority/agents/guiho-a-0001-swe.AGENTS.md (C:\GUIHO\superiority\agents\guiho-a-0001-swe.AGENTS.md)
+Stop if you can not find it.
+
+
 - This is a single-package repo â€” not a monorepo. All code lives under the `suraia/` directory. All commands must be run from within `suraia/`.
 - `@guiho/suraia` is an AI-first UI blueprint library. Component sources of truth (`.json` spec, `.structure.html`, `.css`, `.ts` behavior controller, `.md`, `.test.ts`) reside in `suraia/source/components/<component>/`.
 - No framework adapters (React, ArrowJS, etc.) exist yet; they're planned future outputs, not current packages.
